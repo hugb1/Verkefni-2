@@ -21,7 +21,7 @@
 <!-- nafn breytan send með skipuninni /demo/hver-->
 
 <form method="POST" action="/demo/hver">
-	hvað heitirðu? <input name="nafn" type="text" placeholder="Nafn" </input>
+	hvað heitirðu? <input name="nafn" type="text" placeholder="Nafn" ></input>
 	<input type="submit" value="í lagi"/>
 </form>
 </body>
