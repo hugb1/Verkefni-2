@@ -1,4 +1,4 @@
-package search;
+package is.hi.byrjun.search;
 
 
 public class BanquetModel {
