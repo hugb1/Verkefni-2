@@ -4,6 +4,8 @@ import is.hi.byrjun.model.Banquet;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
@@ -31,6 +33,31 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String userName = "postgres";
 	private final String password = "123456";
 	
+	public BanquetRepositoryImp() {
+		ArrayList<Banquet> list = new ArrayList<Banquet>();
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquet");
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Banquet temp = new Banquet(rs.getInt("id"),
+										   rs.getString("name"),
+										   rs.getString("location"),
+										   rs.getString("street"),
+										   rs.getInt("price"),
+										   rs.getInt("maxppl"),
+										   rs.getInt("phonenr"),
+										   rs.getString("email"));
+				list.add(temp);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		this.banquets = list;
+	}
+	
 	// Connection to Database
 	public Connection connect() {
 		try {
@@ -43,10 +70,6 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			e.printStackTrace();
 		}
 		return con;
-	}
-	
-	public BanquetRepositoryImp() {
-		this.banquets = new ArrayList<Banquet>();
 	}
 	
 	@Override
