@@ -24,7 +24,7 @@ import org.springframework.stereotype.Repository;
 public class BanquetRepositoryImp implements BanquetRepository {
 	
 	//Listi af Veislusölum
-	private final List<Banquet> banquets;
+	private List<Banquet> banquets;
 	
 	// Attributes for SQL Connection
 	Connection con;
@@ -33,7 +33,28 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String userName = "postgres";
 	private final String password = "123456";
 	
+	
+	// Connection to Database
+	public Connection connect() {
+		try {
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, userName, password);
+			if (con == null) {
+				System.out.println("Connection cannot be established");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+	
 	public BanquetRepositoryImp() {
+		banquets = new ArrayList<Banquet>();
+	}
+	
+	@Override
+	public List<Banquet> getAll() {
+		// TODO Auto-generated method stub
 		ArrayList<Banquet> list = new ArrayList<Banquet>();
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
@@ -56,25 +77,6 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		}
 		
 		this.banquets = list;
-	}
-	
-	// Connection to Database
-	public Connection connect() {
-		try {
-			Class.forName(driver);
-			con = DriverManager.getConnection(url, userName, password);
-			if (con == null) {
-				System.out.println("Connection cannot be established");
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return con;
-	}
-	
-	@Override
-	public List<Banquet> getAll() {
-		// TODO Auto-generated method stub
 		return banquets;
 	}
 }
