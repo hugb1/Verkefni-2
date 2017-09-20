@@ -1,7 +1,7 @@
-package is.hi.byrjun.search;
+package is.hi.byrjun.model;
 
 
-public class BanquetModel {
+public class Banquet {
 	private String name;
 	private String location;
 	private String streetAddrs;
@@ -10,7 +10,7 @@ public class BanquetModel {
 	private int phonenr;
 	private String email;
 	
-	public BanquetModel(String name, String loc, String address, int price,
+	public Banquet(String name, String loc, String address, int price,
 						int max, int phone, String email) {
 		this.name = name;
 		this.location = loc;
