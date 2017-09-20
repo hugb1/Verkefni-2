@@ -18,4 +18,6 @@ public interface BanquetRepository {
 	 * @return listi af veitingasölum
 	 */
 	List<Banquet> getAll();
+	
+	
 }
