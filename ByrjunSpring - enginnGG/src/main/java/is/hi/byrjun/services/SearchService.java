@@ -1,5 +1,9 @@
 package is.hi.byrjun.services;
 
+import java.util.List;
+
+import is.hi.byrjun.model.Banquet;
+
 /**
 *
 * @author Pétur Logi Pétursson
@@ -13,4 +17,9 @@ package is.hi.byrjun.services;
 
 public interface SearchService {
 	
+	/*
+	 * Nær í alla veitingasali sem staðsettir eru í loc og hafa pláss fyrir a.m.k
+	 * maxCap manns.
+	 */
+	List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap);
 }
