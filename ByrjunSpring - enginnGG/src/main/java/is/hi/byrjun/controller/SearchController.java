@@ -1,5 +1,9 @@
-package is.hi.byrjun.search;
+package is.hi.byrjun.controller;
 
+import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.repository.BanquetRepository;
+import is.hi.byrjun.services.SearchService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -10,17 +14,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
- * @author Vilhjalmur Jonsson vij7@hi.is
- * 
- * Byrjunarcontroller sem styrir hvad er gert thegar notandi eda vidmot
- * setur inn skipun 
- */
+*
+* @author Pétur Logi Pétursson
+* @date september 2017
+* HBV501G Hugbúnaðarverkefni 1
+* Háskóli Íslands
+* 
+* Tekur við skipunum frá vefviðmóti til að leita af veislusölum og birta 
+* leitarniðurstöðurnar.
+* 
+*/
 
 @Controller
 @RequestMapping("/demo") //Request Mapping er gerd fyrir klasann til ad slidinn byrji a /demo fyrir allar skipanir.
 public class SearchController {
 	
+	// Tenging yfir í þjónustu klasa fyrir Search aðgerðina
+	@Autowired
+	SearchService searchService;
 	
+	//Tenging yfir í safn af veislusölum
+	@Autowired
+	BanquetRepository banquetRep;
 	
 	// Þar sem klasinn hefur slóðina "/demo", er þessi slóð "/demo/search"
 	@RequestMapping("/search")
