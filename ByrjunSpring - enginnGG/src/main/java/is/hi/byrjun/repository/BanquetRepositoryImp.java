@@ -77,13 +77,4 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		// TODO Auto-generated method stub
 		return banquets;
 	}
-	
-	public static void main(String[] args) {
-		BanquetRepositoryImp prufa = new BanquetRepositoryImp();
-		List<Banquet> test = prufa.getAll();
-		for (int i = 0; i < test.size(); i++) {
-			System.out.println(test.get(i).toString());
-		}
-	}
-
 }
