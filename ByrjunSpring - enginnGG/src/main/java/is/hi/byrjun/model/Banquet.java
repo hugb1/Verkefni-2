@@ -86,4 +86,11 @@ public class Banquet {
 	public void setEmail(String mail) {
 		this.email = mail;
 	}
+	
+	@Override
+	public String toString() { 
+		return String.format("<BR>" + "Id:" + id + "<BR>" + "Nafn:" + name + "<BR>" + "Location:" + location
+				+ "<BR>" + "Address:" + streetAddrs + "<BR>" + "price:" + price + "<BR>" + "Max people:" + maxppl
+				+ "<BR>" + "Phone nr:" + phonenr + "<BR>" + "e-mail:" + email);
+	}
 }
