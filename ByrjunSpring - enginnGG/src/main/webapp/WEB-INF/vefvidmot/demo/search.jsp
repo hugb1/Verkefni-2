@@ -1,58 +1,37 @@
-<!DOCTYPE html>
- 
-<%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body >
 
-<html lang="is">
-  <head>
-    <meta charset"utf-8">
-    <link rel="stylesheet" type="text/css" href="bookings.css">
-    <title>Bookings</title>
-  </head>
-  <body>
-    <header>
-      <section class="Header-section">
-      </section>
-    </header>
-    <main>
-      <Section class="search-bar-section">
-      <div class="header-text">
-        <h1> Finndu salinn sem hentar Ã¾Ã©r! </h1>
-        <h3> Hvernig sal viltu?</h2>
-      <div class="field">
-          <label>
-            <span>Veislusalir</span> <input type="radio" value="Veislusalir" name="number">
-            <span>Ã­Ã¾rÃ³ttasalir</span><input type="radio" value="Ã­Ã¾rÃ³ttasalir" name="number">
-          </label>
-      </div>
-      <form method="post" action="">
-        <fieldset style=width:200px>
-          <legend>search bar</legend>
-          <div class="field">
-            <label for="qualif">Location </label>
-            <select name="location" id="location">
-              <option>ReykjavÃ­k</option>
-              <option>KÃ³pavogur</option>
-              <option>GarÃ°abÃ¦r</option>
-              <option>HafnafjÃ¶rÃ°ur</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="qualif">max capacity</label>
-            <select name="location" id="location">
-              <option>50</option>
-              <option>100</option>
-              <option>150</option>
-              <option>200+</option>
-            </select>
-          </div>
- 
+<font size="20"><marquee behavior="alternate">Search Interface</marquee></font>
+    <h1>Search Page</h1>
+        <h2>Search Details</h2>
+        <form action="/demo/submit" method="post">
+        <br/>select your desired accomidation:
+        <input type="radio" name=myradio value="1"/>Veislusalir
+        <input type="radio" name=myradio value="2"/>Íþróttasalir
+        
+        <br/>select your desired location:
+        <select name=dropdown>
+        <option name=one value=one> Reykjavík </option>
+        <option name=two value=two> Hafnarfjörður </option>
+        <option name=three value=three> Garðabær </option>
+        <option name=four value=four> Kópavogur </option>
+        </select>
+
+
+        <br/>select your required capacity:
+        <select name=dropdown>
+        <option name=one value=one> 50 </option>
+        <option name=two value=two> 100 </option>
+        <option name=three value=three> 150 </option>
+        <option name=four value=four> 200+ </option>
+        </select>
+
+
+
+        <br/><input type="submit" value="Submit">
         </form>
-      </div>
-        <button class="button">search</button>
-    </main>
-    <footer>
-    </footer>
 </body>
 </html>

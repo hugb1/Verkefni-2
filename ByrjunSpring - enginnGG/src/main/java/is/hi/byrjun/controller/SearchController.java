@@ -2,7 +2,11 @@ package is.hi.byrjun.controller;
 
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.repository.BanquetRepository;
+import is.hi.byrjun.repository.BanquetRepositoryImp;
 import is.hi.byrjun.services.SearchService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,12 +39,20 @@ public class SearchController {
 	
 	//Tenging yfir í safn af veislusölum
 	@Autowired
-	BanquetRepository banquetRep;
-	
+	BanquetRepositoryImp banquetRep;
+		
 	// Þar sem klasinn hefur slóðina "/demo", er þessi slóð "/demo/search"
 	@RequestMapping("/search")
 	public String searchPage() {
 		return "demo/search"; //Skilar .jsp skrá sem er /webapp/WEB-INF/vefvidmot/demo/search.jsp
+	}
+	
+	@RequestMapping(value = "/submit", method = RequestMethod.POST)
+	public String submit(@RequestParam(value = "myradio", required = false) String type, ModelMap model) {
+		List<Banquet> list = banquetRep.getAll();
+
+		model.addAttribute("salir", list);
+		return "demo/synaSali";
 	}
 	
 }
