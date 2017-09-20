@@ -28,7 +28,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	
 	// Attributes for SQL Connection
 	Connection con;
-	private final String url = "jdbc:postgresql://localhost:5432/bookingsdb";
+	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
 	private final String userName = "postgres";
 	private final String password = "123456";
@@ -37,7 +37,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		ArrayList<Banquet> list = new ArrayList<Banquet>();
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquet");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquets");
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -78,4 +78,12 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		return banquets;
 	}
 	
+	public static void main(String[] args) {
+		BanquetRepositoryImp prufa = new BanquetRepositoryImp();
+		List<Banquet> test = prufa.getAll();
+		for (int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i).toString());
+		}
+	}
+
 }
