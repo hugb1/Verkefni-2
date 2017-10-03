@@ -49,11 +49,62 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
-	public String submit(@RequestParam(value = "myradio", required = false) String type, ModelMap model) {
-		List<Banquet> list = banquetRep.getAll();
-
-		model.addAttribute("salir", list);
-		return "demo/synaSali";
+	public String submit(@RequestParam(value = "myradio", required = true) int chosen,
+						 @RequestParam(value = "loc", required = true) int locNr,
+						 @RequestParam(value = "cap", required = false) int capNr, Model model) {
+		if (chosen == 1) {
+			List<Banquet> all = banquetRep.getAll();
+			String location;
+			int maxcap;
+			
+			switch(locNr) {
+			case 1 :
+				location = "Reykjavík";
+				break;
+			case 2:
+				location = "Hafnarfjörður";
+				break;
+			case 3:
+				location = "Garðabær";
+				break;
+			case 4:
+				location = "Kópavogur";
+			default :
+				throw new IllegalArgumentException("Invalid Location");
+			}
+			
+			switch(capNr) {
+			case 1 :
+				maxcap = 50;
+				break;
+			case 2 :
+				maxcap = 100;
+				break;
+			case 3 :
+				maxcap = 150;
+				break;
+			case 4 :
+				maxcap = 200;
+				break;
+			default :
+				throw new IllegalArgumentException("Invalid Capacity Number");
+			}
+			
+			List<Banquet> list = searchService.searchBanquet(all, location, maxcap);
+			
+			if (list.size() == 0) {
+				model.addAttribute("veislusalir", all);
+				return "demo/engarNidurstodur";
+			} else {
+				model.addAttribute("veislusalir", list);
+				return "demo/allirSalir";
+			}
+		} else {
+			ArrayList<Banquet> list;
+			list = (ArrayList<Banquet>) banquetRep.getAll();
+			model.addAttribute("veislusalir", list);
+			return "demo/allirSalir";
+		}
 	}
 	
 	@RequestMapping(value = "/salir", method = RequestMethod.POST)

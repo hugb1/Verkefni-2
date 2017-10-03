@@ -21,7 +21,7 @@ public class SearchServiceImp implements SearchService {
 	public List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap) {
 		ArrayList<Banquet> result = new ArrayList<Banquet>();
 		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getLocation().equalsIgnoreCase(loc) || list.get(i).getMax() >= maxCap) {
+			if (list.get(i).getLocation().equalsIgnoreCase(loc) && list.get(i).getMax() >= maxCap) {
 				result.add(list.get(i));
 			}
 		}

@@ -7,26 +7,26 @@
 <font size="20"><marquee behavior="alternate">Search Interface</marquee></font>
     <h1>Search Page</h1>
         <h2>Search Details</h2>
-        <form action="/demo/salir" method="post">
+        <form action="/demo/submit" method="post">
         <br/>select your desired accomidation:
         <input type="radio" name=myradio value="1"/>Veislusalir
         <input type="radio" name=myradio value="2"/>Íþróttasalir
         
         <br/>select your desired location:
-        <select name=dropdown>
-        <option name=one value=one> Reykjavík </option>
-        <option name=two value=two> Hafnarfjörður </option>
-        <option name=three value=three> Garðabær </option>
-        <option name=four value=four> Kópavogur </option>
+        <select name=loc>
+        <option name=one value="1"> Reykjavík </option>
+        <option name=two value="2"> Hafnarfjörður </option>
+        <option name=three value="3"> Garðabær </option>
+        <option name=four value="4"> Kópavogur </option>
         </select>
 
 
         <br/>select your required capacity:
-        <select name=dropdown>
-        <option name=one value=one> 50 </option>
-        <option name=two value=two> 100 </option>
-        <option name=three value=three> 150 </option>
-        <option name=four value=four> 200+ </option>
+        <select name=cap>
+        <option name=one value="1"> 50 </option>
+        <option name=two value="2"> 100 </option>
+        <option name=three value="3"> 150 </option>
+        <option name=four value="4"> 200+ </option>
         </select>
 
 
