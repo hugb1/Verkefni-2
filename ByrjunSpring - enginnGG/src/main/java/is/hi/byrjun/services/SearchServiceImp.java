@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.SportVenues;
 
 
 /**
@@ -26,6 +27,12 @@ public class SearchServiceImp implements SearchService {
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public List<SportVenues> searchSportVenues(List<SportVenues> list, String loc) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
 <head>
     <title>Search</title>
@@ -16,14 +12,14 @@
         <form action="/demo/submit" method="post">
         <br/>select your desired accomidation:
         <input type="radio" name=myradio value="1"/>Veislusalir
-        <input type="radio" name=myradio value="2"/>Íþróttasalir
+        <input type="radio" name=myradio value="2"/>ï¿½ï¿½rï¿½ttasalir
         
         <br/>select your desired location:
         <select name=loc>
-        <option name=one value="1"> Reykjavík </option>
-        <option name=two value="2"> Hafnarfjörður </option>
-        <option name=three value="3"> Garðabær </option>
-        <option name=four value="4"> Kópavogur </option>
+        <option name=one value="1"> Reykjavï¿½k </option>
+        <option name=two value="2"> Hafnarfjï¿½rï¿½ur </option>
+        <option name=three value="3"> Garï¿½abï¿½r </option>
+        <option name=four value="4"> Kï¿½pavogur </option>
         </select>
 
 
