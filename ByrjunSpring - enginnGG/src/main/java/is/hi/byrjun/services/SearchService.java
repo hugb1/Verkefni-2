@@ -1,7 +1,6 @@
 package is.hi.byrjun.services;
 
 import java.util.List;
-
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.SportVenues;
 
