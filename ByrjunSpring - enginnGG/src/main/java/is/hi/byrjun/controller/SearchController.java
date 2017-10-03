@@ -75,6 +75,7 @@ public class SearchController {
 				break;
 			case 4:
 				location = "Kópavogur";
+				break;
 			default :
 				throw new IllegalArgumentException("Invalid Location");
 			}
@@ -116,6 +117,7 @@ public class SearchController {
 				break;
 			case 4:
 				location = "Kópavogur";
+				break;
 			default :
 				throw new IllegalArgumentException("Invalid Location");
 			}
