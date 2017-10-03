@@ -1,4 +1,12 @@
-<html>
+<!DOCTYPE html>
+
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!-- author: Vilhjalmur Jonsson -->
+<!-- email: vij7@hi.is -->
+
 <head>
     <title>Search</title>
 </head>
@@ -8,20 +16,20 @@
     <h1>Search Page</h1>
         <h2>Search Details</h2>
         <form action="/demo/submit" method="post">
-        <br/>select your desired accomidation:
+        <br>select your desired accomidation:
         <input type="radio" name=myradio value="1"/>Veislusalir
-        <input type="radio" name=myradio value="2"/>Íşróttasalir
+        <input type="radio" name=myradio value="2"/>Ã­Ã¾rÃ³ttasalir
         
-        <br/>select your desired location:
+        <br>select your desired location:
         <select name=dropdown>
-        <option name=one value=one> Reykjavík </option>
-        <option name=two value=two> Hafnarfjörğur </option>
-        <option name=three value=three> Garğabær </option>
-        <option name=four value=four> Kópavogur </option>
+        <option name=one value=one> ReykjavÃ­k </option>
+        <option name=two value=two> HafnarfjÃ¶rÃ°ur </option>
+        <option name=three value=three> GarÃ°abÃ¦r </option>
+        <option name=four value=four> KÃ³pavogur</option>
         </select>
 
 
-        <br/>select your required capacity:
+        <br>select your required capacity:
         <select name=dropdown>
         <option name=one value=one> 50 </option>
         <option name=two value=two> 100 </option>
@@ -31,7 +39,7 @@
 
 
 
-        <br/><input type="submit" value="Submit">
+        <br><input type="submit" value="Submit">
         </form>
 </body>
 </html>
