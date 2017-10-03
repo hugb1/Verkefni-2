@@ -8,7 +8,7 @@
 
 <head>
     <title>Allir kennarar </title>  
-    
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
     <c:choose>

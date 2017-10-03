@@ -1,0 +1,52 @@
+
+body {
+
+}
+
+.veislusalir {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.veislusalir td, .veislusalir th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.veislusalir tr:nth-child(even){background-color: #f2f2f2;}
+
+.veislusalir tr:hover {background-color: #ddd;}
+
+.veislusalir th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #000000;
+    color: white;
+}
+
+
+
+.sportsalir {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.sportsalir td, .sportsalir th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.sportsalir tr:nth-child(even){background-color: #f2f2f2;}
+
+.sportsalir tr:hover {background-color: #ddd;}
+
+.sportsalir th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #000000;
+    color: white;
+}

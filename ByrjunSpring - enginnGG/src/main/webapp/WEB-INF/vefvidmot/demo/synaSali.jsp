@@ -8,6 +8,7 @@
 
 <head>
     <title>Allir kennarar </title>  
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
     
 </head>
 <body>
@@ -16,7 +17,7 @@
             <table class="veislusalir">
             
                 <thead>
-                	<table border="1">
+
                     <tr>
                         <th>Heiti</th>
                         <th>Fjöldi</th>
