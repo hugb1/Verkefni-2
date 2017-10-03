@@ -18,8 +18,13 @@ import is.hi.byrjun.model.Banquet;
 public interface SearchService {
 	
 	/*
-	 * Nær í alla veitingasali sem staðsettir eru í loc og hafa pláss fyrir a.m.k
+	 * Nær í alla veitingasali sem staðsettir eru í location og hafa pláss fyrir a.m.k
 	 * maxCap manns.
 	 */
 	List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap);
+	
+	/*
+	 * Nær í alla íþróttasali sem staðsettir eru í locaction
+	 */
+	List<SportVenues> searchSportVenues(List<SportVenues> list, String loc);
 }
