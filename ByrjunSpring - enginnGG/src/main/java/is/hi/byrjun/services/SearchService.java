@@ -21,5 +21,11 @@ public interface SearchService {
 	 * Nær í alla veitingasali sem staðsettir eru í loc og hafa pláss fyrir a.m.k
 	 * maxCap manns.
 	 */
-	List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap);
+	public List<Banquet> searchBanquet(String loc, int maxCap);
+	
+	/*
+	 * Nær í alla veitingasali
+	 */
+	public List<Banquet> allBanquets();
+	
 }

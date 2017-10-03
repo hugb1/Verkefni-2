@@ -8,6 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -34,6 +38,10 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String password = "123456";
 	
 	
+	public BanquetRepositoryImp() {
+		banquets = new ArrayList<Banquet>();
+	}
+	
 	// Connection to Database
 	public Connection connect() {
 		try {
@@ -48,12 +56,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		return con;
 	}
 	
-	public BanquetRepositoryImp() {
-		banquets = new ArrayList<Banquet>();
-	}
-	
 	@Override
-	public List<Banquet> getAll() {
+	public ArrayList<Banquet> getAll() {
 		// TODO Auto-generated method stub
 		ArrayList<Banquet> list = new ArrayList<Banquet>();
 		try {
@@ -77,6 +81,123 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		}
 		
 		this.banquets = list;
-		return banquets;
+		return list;
+	}
+	
+	/*public static void main(String[] args) {
+		List<Banquet> test;
+		BanquetRepositoryImp list = new BanquetRepositoryImp();
+		test = list.getAll();
+		for (int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i).toString());
+		}
+	}*/
+
+	@Override
+	public List<Banquet> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Banquet> findAll(Sort sort) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Banquet> findAll(Iterable<Long> ids) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Banquet> List<S> save(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void flush() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public <S extends Banquet> S saveAndFlush(S entity) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteInBatch(Iterable<Banquet> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAllInBatch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Banquet getOne(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Page<Banquet> findAll(Pageable arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(Long arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Banquet arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Iterable<? extends Banquet> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean exists(Long arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Banquet findOne(Long arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Banquet> S save(S arg0) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

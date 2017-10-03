@@ -2,6 +2,8 @@ package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
 import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 /**
 *
@@ -12,7 +14,7 @@ import java.util.List;
 * 
 */
 
-public interface BanquetRepository {
+public interface BanquetRepository extends JpaRepository<Banquet, Long> {
 	/**
 	 * Nær í alla veitingasali
 	 * @return listi af veitingasölum

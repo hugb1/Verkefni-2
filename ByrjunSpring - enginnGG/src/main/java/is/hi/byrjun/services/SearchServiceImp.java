@@ -2,8 +2,11 @@ package is.hi.byrjun.services;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.repository.BanquetRepositoryImp;
 
 
 /**
@@ -16,16 +19,26 @@ import is.hi.byrjun.model.Banquet;
 */
 @Service
 public class SearchServiceImp implements SearchService {
+	
+	// Tenging yfir í safn af veislusölum
+	@Autowired
+	BanquetRepositoryImp banquetRep;
 
 	@Override
-	public List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap) {
+	public List<Banquet> searchBanquet(String loc, int maxCap) {
 		ArrayList<Banquet> result = new ArrayList<Banquet>();
+		List<Banquet> list = banquetRep.getAll();
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).getLocation().equalsIgnoreCase(loc) || list.get(i).getMax() >= maxCap) {
 				result.add(list.get(i));
 			}
 		}
 		return result;
+	}
+
+	@Override
+	public List<Banquet> allBanquets() {
+		return banquetRep.getAll();
 	}
 	
 }

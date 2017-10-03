@@ -5,6 +5,7 @@ import is.hi.byrjun.repository.BanquetRepository;
 import is.hi.byrjun.repository.BanquetRepositoryImp;
 import is.hi.byrjun.services.SearchService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,8 +39,8 @@ public class SearchController {
 	SearchService searchService;
 	
 	//Tenging yfir í safn af veislusölum
-	@Autowired
-	BanquetRepositoryImp banquetRep;
+	//@Autowired
+	public static BanquetRepositoryImp banquetRep = new BanquetRepositoryImp();
 		
 	// Þar sem klasinn hefur slóðina "/demo", er þessi slóð "/demo/search"
 	@RequestMapping("/search")
@@ -48,11 +49,19 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
-	public String submit(@RequestParam(value = "myradio", required = false) String type, ModelMap model) {
-		List<Banquet> list = banquetRep.getAll();
+	public String submit(ModelMap model) {
+		ArrayList<Banquet> list = banquetRep.getAll();
 
 		model.addAttribute("salir", list);
 		return "demo/synaSali";
+	}
+	
+	public static void main(String[] args) {
+		List<Banquet> test;
+		test = banquetRep.getAll();
+		for (int i = 0; i < test.size(); i++) {
+			System.out.println(test.get(i).toString());
+		}
 	}
 	
 }
