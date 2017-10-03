@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
+<%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<html lang="en">
+<html lang="is">
 
 <head>
     <title>Allir kennarar </title>  
@@ -14,17 +15,22 @@
         <c:when test="${not empty sportsalir}">
             <table class="sportsalir">
                 <thead>
+                	<table border="1">
                     <tr>
                         <th>Heiti</th>
-                        <th>Bær</th>
-                        <th>Verð</th>
+                        <th>BÃ¦r</th>
+                        <th>Gata</th>
+                        <th>VerÃ°</th>
+                        <th>BÃ³kunar Nr.</th>
                         </tr>
                         </thead>
                         <c:forEach var = "sportVenues" items = "${sportsalir }">
                         	<tr>
                         		<td>${sportVenues.name} </td>
                         		<td>${sportVenues.getLocation()} </td>
+                        		<td>${SportVenues.getAddress()} </td>
                         		<td>${SportVenues.getPrice()} </td>
+                        		<td>${SportVenues.getID()} </td>
                         	</tr>
                         </c:forEach>
                      </table>

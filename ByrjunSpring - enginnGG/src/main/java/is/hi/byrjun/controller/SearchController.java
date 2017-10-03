@@ -100,7 +100,7 @@ public class SearchController {
 			List<Banquet> list = searchService.searchBanquet(all, location, maxcap);
 
 			model.addAttribute("veislusalir", list);
-			return "demo/allirSalir";
+			return "demo/synaSali";
 		} else {
 			List<SportVenues> all = sportsRep.getAll();
 			String location;
@@ -135,7 +135,7 @@ public class SearchController {
 		list = (ArrayList<Banquet>) banquetRep.getAll();
 		model.addAttribute("veislusalir", list);
 
-		return "demo/allirSalir";
+		return "demo/synaSali";
 	}
 
 }
