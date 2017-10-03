@@ -4,21 +4,45 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<html>
+<html lang="is">
+
 <head>
-    <title>Syna Veitingasali </title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/salir.css"/>"/>
+    <title>Allir kennarar </title>  
+    
 </head>
 <body>
-
-    <h1>Allir Veitingasalir </h>
-    <tr>
-    	<th>nafn</th>
-    	<th>asdf</th>
-    	<th>asdff</th>
-    <tr>    
-    ${salir} 
-
+    <c:choose>
+        <c:when test="${not empty veislusalir}">
+            <table class="veislusalir">
+            
+                <thead>
+                	<table border="1">
+                    <tr>
+                        <th>Heiti</th>
+                        <th>Fjöldi</th>
+                        <th>Bær</th>
+                        <th>Gata</th>
+                        <th>Verð</th>
+                        <th>Bókunar Nr.</th>
+                        </tr>
+                        </thead>
+                        <c:forEach var = "banquet" items = "${veislusalir }">
+                        	<tr>
+                        		<td>${banquet.name} </td>
+                        		<td>${banquet.getMax()} </td>
+                        		<td>${banquet.getLocation()} </td>
+                        		<td>${banquet.getAddress()} </td>
+                        		<td>${banquet.getPrice()} </td>
+                        		<td>${banquet.getId()} </td>
+                        	</tr>
+                        </c:forEach>
+                     </table>
+                 </c:when>
+             	 <c:otherwise>
+             	 	<h3> Engir veislusalir </h3>
+             	 </c:otherwise>
+             </c:choose>
 </body>
-
+<footer>
+</footer>
 </html>

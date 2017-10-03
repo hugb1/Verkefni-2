@@ -7,8 +7,7 @@
 <!-- author: Vilhjálmur Jónsson -->
 <!-- email: vij7@hi.is -->
 
-
-<html lang="en">
+<html>
 
 <head>
     <title>Hver er notandinn</title>
