@@ -5,6 +5,7 @@ import is.hi.byrjun.repository.BanquetRepository;
 import is.hi.byrjun.repository.BanquetRepositoryImp;
 import is.hi.byrjun.services.SearchService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,15 @@ public class SearchController {
 
 		model.addAttribute("salir", list);
 		return "demo/synaSali";
+	}
+	
+	@RequestMapping(value = "/salir", method = RequestMethod.POST)
+	public String birtaSali(Model model) {
+		ArrayList<Banquet> list;
+		list = (ArrayList<Banquet>) banquetRep.getAll();
+		model.addAttribute("veislusalir", list);
+		
+		return "demo/allirSalir";
 	}
 	
 }

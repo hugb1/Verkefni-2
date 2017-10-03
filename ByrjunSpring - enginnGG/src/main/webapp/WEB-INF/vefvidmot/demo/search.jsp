@@ -7,7 +7,7 @@
 <font size="20"><marquee behavior="alternate">Search Interface</marquee></font>
     <h1>Search Page</h1>
         <h2>Search Details</h2>
-        <form action="/demo/submit" method="post">
+        <form action="/demo/salir" method="post">
         <br/>select your desired accomidation:
         <input type="radio" name=myradio value="1"/>Veislusalir
         <input type="radio" name=myradio value="2"/>Íþróttasalir
