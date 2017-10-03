@@ -35,6 +35,15 @@ public class SearchServiceImp implements SearchService {
 		return null;
 	}
 	
-	
+	@Override
+	public List<SportVenues> searchSportVenues(List<SportVenues> list, String loc) {
+		ArrayList<SportVenues> result = new ArrayList<SportVenues>();
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getLocation().equalsIgnoreCase(loc)) {
+				result.add(list.get(i));
+			}
+		}
+		return result;
+	}
 	
 }
