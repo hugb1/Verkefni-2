@@ -28,12 +28,6 @@ public class SearchServiceImp implements SearchService {
 		}
 		return result;
 	}
-
-	@Override
-	public List<SportVenues> searchSportVenues(List<SportVenues> list, String loc) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	@Override
 	public List<SportVenues> searchSportVenues(List<SportVenues> list, String loc) {
