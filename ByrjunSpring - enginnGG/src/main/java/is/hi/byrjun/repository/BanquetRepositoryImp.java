@@ -30,13 +30,12 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-<<<<<<< HEAD
-	private final String userName = "gunnarmarhardarson";
-	private final String password = "abcd1234";
-=======
+
+	
+
 	private final String userName = "postgres";
-	private final String password = "123456";
->>>>>>> e4cf723f4ee691b3d99f7c438a8164c48058b54e
+	private final String password = "villijons";
+
 	
 	
 	// Connection to Database
