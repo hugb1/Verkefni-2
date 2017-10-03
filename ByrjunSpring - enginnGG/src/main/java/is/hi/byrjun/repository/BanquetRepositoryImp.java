@@ -33,8 +33,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 
 	
 
-	private final String userName = "postgres";
-	private final String password = "villijons";
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
 
 	
 	
