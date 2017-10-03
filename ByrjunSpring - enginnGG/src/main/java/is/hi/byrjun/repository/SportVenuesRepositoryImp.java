@@ -1,6 +1,6 @@
 package is.hi.byrjun.repository;
 
-import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.SportVenues;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,20 +11,20 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 /**
-*
-* @author Pétur Logi Pétursson
-* @date september 2017
-* HBV501G Hugbúnaðarverkefni 1
-* Háskóli Íslands
-* 
-* Safn af veislusölum
-* 
-*/
+ * 
+ * @author Gunnar Már Harðarson
+ * @date október 2017
+ * HBV501G Hugbúnaðarverkefni 1
+ * Háskóli Íslands
+ * 
+ * Safn af íþróttasölum
+ *
+ */
 @Repository
-public class BanquetRepositoryImp implements BanquetRepository {
+public class SportVenuesRepositoryImp {
 	
-	//Listi af veislusölum
-	private List<Banquet> banquets;
+	//Listi af íþróttasölum
+	private List<SportVenues> sportvenues;
 	
 	// Attributes for SQL Connection
 	Connection con;
@@ -32,7 +32,6 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String driver = "org.postgresql.Driver";
 	private final String userName = "gunnarmarhardarson";
 	private final String password = "abcd1234";
-	
 	
 	// Connection to Database
 	public Connection connect() {
@@ -48,34 +47,32 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		return con;
 	}
 	
-	public BanquetRepositoryImp() {
-		banquets = new ArrayList<Banquet>();
+	public SportVenuesRepositoryImp() {
+		sportvenues = new ArrayList<SportVenues>();
 	}
 	
-	@Override
-	public List<Banquet> getAll() {
-		ArrayList<Banquet> list = new ArrayList<Banquet>();
+	public List<SportVenues> getAll() {
+		ArrayList<SportVenues> list = new ArrayList<SportVenues>();
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquets");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM  sportvenues");
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Banquet temp = new Banquet(rs.getInt("id"),
-										   rs.getString("name"),
-										   rs.getString("location"),
-										   rs.getString("street"),
-										   rs.getInt("price"),
-										   rs.getInt("maxppl"),
-										   rs.getInt("phonenr"),
-										   rs.getString("email"));
+				SportVenues temp = new SportVenues(rs.getInt("id"),
+													rs.getString("name"),
+													rs.getString("location"),
+													rs.getString("street"),
+													rs.getInt("price"),
+													rs.getInt("phonenr"),
+													rs.getString("email"));
 				list.add(temp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		this.banquets = list;
-		return banquets;
+		this.sportvenues = list;
+		return sportvenues;
 	}
 }
