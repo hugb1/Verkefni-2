@@ -19,6 +19,7 @@
         <br/>select your desired accomidation:
         <input type="radio" name=myradio value="1"/>Veislusalir
         <input type="radio" name=myradio value="2"/>íþróttasalir
+        <input type="radio" name=myradio value="3"/>Allir salir
         
         <br/>select your desired location:
         <select name=loc>
@@ -40,6 +41,8 @@
 
 
         <br/><input type="submit" value="Submit">
+        
+        	 
         </form>
 </body>
 <footer>

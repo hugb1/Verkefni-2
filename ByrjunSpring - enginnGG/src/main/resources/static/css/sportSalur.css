@@ -1,24 +1,23 @@
 
-body {
-
+body{
 }
 
-table.veislusalir {
+table.sportsalir {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-table.veislusalir td, table.veislusalir th {
+table.sportsalir td, table.sportsalir th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-table.veislusalir tr:nth-child(even){background-color: #f2f2f2;}
+table.sportsalir tr:nth-child(even){background-color: #f2f2f2;}
 
-table.veislusalir tr:hover {background-color: #ddd;}
+table.sportsalir tr:hover {background-color: #ddd;}
 
-table.veislusalir th {
+table.sportsalir th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;

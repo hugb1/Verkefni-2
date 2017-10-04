@@ -135,7 +135,7 @@ public class SearchController {
 		list = (ArrayList<Banquet>) banquetRep.getAll();
 		model.addAttribute("veislusalir", list);
 
-		return "demo/synaSali";
+		return "demo/allirSalir";
 	}
 
 }
