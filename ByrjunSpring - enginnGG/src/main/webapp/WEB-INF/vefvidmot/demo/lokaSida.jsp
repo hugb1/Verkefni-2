@@ -12,7 +12,7 @@
 <body >
 
 
-<marquee behavior="alternate"><img src="https://i.imgur.com/YfU0Cvz.jpg" alt="some_text" style="width:150px;height:150px;"></marquee>
+<marquee behavior="alternate"><img src="https://i.imgur.com/aBrqV19.jpg" alt="some_text" style="width:150px;height:150px;"></marquee>
     <h1>Pöntun hefur verið móttekin</h1>
         <h2>Takk fyrir viðskiptin!</h2>
 
