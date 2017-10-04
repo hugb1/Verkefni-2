@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/demo") //Request Mapping er gerd fyrir klasann til ad slidinn byrji a /demo fyrir allar skipanir.
-public class SearchController {
+public class ProgramController {
 
 	// Tenging yfir í þjónustu klasa fyrir Search aðgerðina
 	@Autowired
@@ -137,5 +137,19 @@ public class SearchController {
 
 		return "demo/synaSali";
 	}
-
+	
+	
+	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
+	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
+		Banquet salur = searchService.searchBanquetById(banquetRep.getAll(), nr);
+		model.addAttribute("Banquet", salur);
+		return "demo/bokunStadfest";
+	}
+	
+	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
+	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
+		SportVenues sport = searchService.searchSportVenuesById(sportsRep.getAll(), nr);
+		model.addAttribute("SportVenues", sport);
+		return "demo/bokunStadfest";
+	}
 }

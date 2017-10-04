@@ -39,5 +39,25 @@ public class SearchServiceImp implements SearchService {
 		}
 		return result;
 	}
+
+	@Override
+	public Banquet searchBanquetById(List<Banquet> list, int id) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				return list.get(i);
+			}
+		}
+		throw new IllegalArgumentException("No banquets were found with the given ID number");
+	}
+
+	@Override
+	public SportVenues searchSportVenuesById(List<SportVenues> list, int id) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				return list.get(i);
+			}
+		}
+		throw new IllegalArgumentException("No banquets were found with the given ID number");
+	}
 	
 }

@@ -7,7 +7,7 @@
 <html lang="is">
 
 <head>
-    <title>Allir kennarar </title>  
+    <title>Veitingasalir </title>  
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
     
 </head>
@@ -45,5 +45,12 @@
              </c:choose>
 </body>
 <footer>
+	<form action="/demo/bokaSal" method="post">
+	<table><tr>
+		<td> Sláðu inn Bókunar Nr:</td><td> <input name = "bokunNr" type = "text"/></td>
+		</tr>
+	</table>
+		<input type = "submit" value = "Bóka!"/>
+	</form>
 </footer>
 </html>
