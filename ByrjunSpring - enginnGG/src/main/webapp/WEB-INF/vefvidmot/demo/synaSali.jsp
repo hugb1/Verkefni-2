@@ -7,7 +7,7 @@
 <html lang="is">
 
 <head>
-    <title>Veitingasalir </title>  
+    <title>Veitingasalir</title>  
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
     
 </head>
@@ -15,9 +15,7 @@
     <c:choose>
         <c:when test="${not empty veislusalir}">
             <table class="veislusalir">
-            
                 <thead>
-
                     <tr>
                         <th>Heiti</th>
                         <th>Fjöldi</th>
@@ -27,7 +25,7 @@
                         <th>Bókunar Nr.</th>
                         </tr>
                         </thead>
-                        <c:forEach var = "banquet" items = "${veislusalir }">
+                        <c:forEach var = "banquet" items = "${veislusalir}">
                         	<tr>
                         		<td>${banquet.name} </td>
                         		<td>${banquet.getMax()} </td>
@@ -40,7 +38,7 @@
                      </table>
                  </c:when>
              	 <c:otherwise>
-             	 	<h3> Engir veislusalir </h3>
+             	 	<h3>Engir veislusalir</h3>
              	 </c:otherwise>
              </c:choose>
 </body>
