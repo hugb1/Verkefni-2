@@ -4,6 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!-- author: Vilhjálmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir bókun veislusala viðmót-->
+
 <html lang="is">
 <head>
 <title>Bókun á Veislusal</title>  

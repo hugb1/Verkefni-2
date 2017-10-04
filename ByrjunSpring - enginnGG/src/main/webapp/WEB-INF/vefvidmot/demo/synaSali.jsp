@@ -6,6 +6,11 @@
 
 <html lang="is">
 
+<!-- author: Vilhjállmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur sem birtir okkur töfluna með veislusölum -->
+<!-- hér byrjar einnig bókunarferlið -->
+
 <head>
     <title>Veitingasalir</title>  
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>

@@ -4,6 +4,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="is">
 
+<!-- author: Vilhjállmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir leitarviðmót -->
+
 <html>
     <head>
         <title>Search</title>
