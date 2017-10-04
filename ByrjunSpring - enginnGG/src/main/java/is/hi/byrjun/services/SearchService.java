@@ -27,4 +27,14 @@ public interface SearchService {
 	 * Nær í alla íþróttasali sem staðsettir eru í locaction
 	 */
 	List<SportVenues> searchSportVenues(List<SportVenues> list, String loc);
+	
+	/*
+	 * Nær í veislusal sem er með gefið ID númer
+	 */
+	Banquet searchBanquetById(List<Banquet> list, int id);
+	
+	/*
+	 * Nær í íþróttasal sem er með gefið ID númer
+	 */
+	SportVenues searchSportVenuesById(List<SportVenues> list, int id);
 }
