@@ -235,6 +235,13 @@ SELECT pg_catalog.setval('banquetbookings_id_seq', 1, false);
 COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, email) FROM stdin;
 1	Glersalurinn	Reykjavík	Tjarnargata 5	43636	150	6547654	hans@gmail.com
 2	Tjörnin	Kópavogur	Guðrúnartún 2	74995	100	8765654	gretar@gmail.com
+3	Harpa	Reykjavík	Austurbakki 2	84830	400	5935464	harpa@harpa.is
+7	Sólon	Reykjavík	Bankastræti 7a	45654	150	5623232	solon@solon.is
+8	Hótel Cabin	Reykjavík	Borgartún 32	78995	100	5116030	cabin@cabin.is
+9	Garðskálinn, Gerðarsafn	Kópavogur	Hamraborg 4	39995	50	4417611	gardur@gardur.is
+4	Hótel Vellir	Hafnarfjörður	Tjarnarvöllum 3	50000	200	5264321	hotelvellir@vellir.is
+5	Fjörukráin	Hafnarfjörður	Víkingastræti 1-3	34995	100	5651213	fjorukrain@fjara.is
+6	Salur Hraunbúa	Hafnarfjörður	Hjallabraut 51	67845	110	5650900	hraun@hraun.is
 \.
 
 
@@ -242,7 +249,7 @@ COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, em
 -- Name: banquets_banquetnumber_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('banquets_banquetnumber_seq', 2, true);
+SELECT pg_catalog.setval('banquets_banquetnumber_seq', 9, true);
 
 
 --
@@ -267,6 +274,12 @@ SELECT pg_catalog.setval('sportvenuebookings_id_seq', 1, false);
 COPY sportvenues (sportvenuenumber, name, location, street, price, phonenr, email) FROM stdin;
 1	Kórinn	Kópavogur	Vallakór 12-14	99324	5647383	korinn@kor.is
 2	Fífan	Kópavogur	Dalsmári 5	67894	5642346	fifan@fifan.is
+3	Stjarnan	Garðabær	Ásgarður	139995	5651940	stjarnan@stjarnan.is
+4	Knattspyrnufélag Reykjavíkur	Reykjavík	Frostaskjól	99995	5105300	kr@kr.is
+5	Íþróttafélagið Fylkir	Reykjavík	Fylkisvegi 6	67567	5715600	fylkir@fylkir.com
+6	Knattspyrnufélagið Valur	Reykjavík	Hlíðarenda	79995	4148000	valur@valur.is
+7	Fimleikafélag Hafnafjarðar	Hafnarfjörður	Kaplakriki	54995	5504050	fh@fh.is
+8	Knattspyrnufélagið Haukar	Hafnarfjörður	Ásvöllum 1	45499	5258700	haukar@haukar.is
 \.
 
 
@@ -274,15 +287,7 @@ COPY sportvenues (sportvenuenumber, name, location, street, price, phonenr, emai
 -- Name: sportvenues_sportvenuenumber_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('sportvenues_sportvenuenumber_seq', 2, true);
-
-
---
--- Name: banquetbookings banquetbookings_email_key; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
---
-
-ALTER TABLE ONLY banquetbookings
-    ADD CONSTRAINT banquetbookings_email_key UNIQUE (email);
+SELECT pg_catalog.setval('sportvenues_sportvenuenumber_seq', 8, true);
 
 
 --
@@ -294,14 +299,6 @@ ALTER TABLE ONLY banquetbookings
 
 
 --
--- Name: banquets banquets_email_key; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
---
-
-ALTER TABLE ONLY banquets
-    ADD CONSTRAINT banquets_email_key UNIQUE (email);
-
-
---
 -- Name: banquets banquets_pkey; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
 --
 
@@ -310,27 +307,11 @@ ALTER TABLE ONLY banquets
 
 
 --
--- Name: sportvenuebookings sportvenuebookings_email_key; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
---
-
-ALTER TABLE ONLY sportvenuebookings
-    ADD CONSTRAINT sportvenuebookings_email_key UNIQUE (email);
-
-
---
 -- Name: sportvenuebookings sportvenuebookings_pkey; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
 --
 
 ALTER TABLE ONLY sportvenuebookings
     ADD CONSTRAINT sportvenuebookings_pkey PRIMARY KEY (id);
-
-
---
--- Name: sportvenues sportvenues_email_key; Type: CONSTRAINT; Schema: public; Owner: gunnarmarhardarson
---
-
-ALTER TABLE ONLY sportvenues
-    ADD CONSTRAINT sportvenues_email_key UNIQUE (email);
 
 
 --
