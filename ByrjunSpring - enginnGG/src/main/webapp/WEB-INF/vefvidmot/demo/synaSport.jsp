@@ -40,4 +40,13 @@
              	 </c:otherwise>
              </c:choose>
 </body>
+<footer>
+	<form action="/demo/bokaSport" method="post">
+	<table><tr>
+		<td> Sláðu inn Bókunar Nr:</td><td> <input name = "bokunNr" type = "text"/></td>
+		</tr>
+	</table>
+		<input type = "submit" value = "Bóka!"/>
+	</form>
+</footer>
 </html>
