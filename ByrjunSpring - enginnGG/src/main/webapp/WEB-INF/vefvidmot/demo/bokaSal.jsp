@@ -10,7 +10,12 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-<h1>${banquet}</h1>
+<h1>Nafn: ${banquet.getName()}</h1>
+<h1>Gata: ${banquet.getAddress()}</h1>
+<h1>Verð: ${banquet.getPrice()} kr.</h1>
+<h1>Fjöldi: ${banquet.getMax()}</h1>
+<h1>Sími: ${banquet.getPhonenr()}</h1>
+<h1>Mail: ${banquet.getEmail()}</h1>
 </body>
 <footer>
 <form action="/demo/salurStadfest" method="POST" >

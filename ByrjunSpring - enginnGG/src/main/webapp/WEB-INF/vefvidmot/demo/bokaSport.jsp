@@ -10,7 +10,11 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-<h1>${sportvenues}</h1>
+<h1>Nafn: ${sportvenues.getName()}</h1>
+<h1>Gata: ${sportvenues.getAddress()}</h1>
+<h1>Verð: ${sportvenues.getPrice()} kr.</h1>
+<h1>Sími: ${sportvenues.getPhonenr()}</h1>
+<h1>Mail: ${sportvenues.getEmail()}</h1>
 </body>
 <footer>
 <form action="/demo/sportStadfest" method="POST" >
