@@ -63,5 +63,27 @@ INSERT INTO sportvenues (name, location, street, price, phonenr, email) VALUES
 	'Knattspyrnufélagið Haukar', 'Hafnafjörður', 'Ásvöllum 1', 45499, 5258700, 'haukar@haukar.is'
 );
 
+UPDATE banquets SET location = 'Hafnarfjörður' WHERE banquetnumber = 4;
+
+UPDATE banquets SET location = 'Hafnarfjörður' WHERE banquetnumber = 5;
+
+UPDATE banquets SET location = 'Hafnarfjörður' WHERE banquetnumber = 6;
+
+UPDATE sportvenues SET location = 'Hafnarfjörður' WHERE sportvenuenumber = 7;
+
+UPDATE sportvenues SET location = 'Hafnarfjörður' WHERE sportvenuenumber = 8;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
