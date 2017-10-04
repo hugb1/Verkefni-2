@@ -1,6 +1,7 @@
 package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.BanquetBookings;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,12 +31,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-
-	
-
-	private final String userName = "postgres";
-	private final String password = "villijons";
-
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
 	
 	
 	// Connection to Database
@@ -65,7 +62,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				Banquet temp = new Banquet(rs.getInt("id"),
+				Banquet temp = new Banquet(rs.getInt("banquetnumber"),
 										   rs.getString("name"),
 										   rs.getString("location"),
 										   rs.getString("street"),
@@ -82,4 +79,34 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		this.banquets = list;
 		return banquets;
 	}
+	
+	// Add a banquet booking to the banquetbookings table in database
+	public void addNewBanquetBooking(BanquetBookings booking) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("INSERT INTO banquetbookings ("
+					+ "name, kennitala, email, phonenr, banquetnumber) VALUES ("
+					+ "?,?,?,?,?)");
+			
+			ps.setString(1, booking.getName());
+			ps.setInt(2, booking.getKennitala());
+			ps.setString(3, booking.getEmail());
+			ps.setInt(4, booking.getPhonenr());
+			ps.setInt(5, booking.getBanquetnumber());
+			
+			// execute the prepared statement insert
+			ps.executeUpdate();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
+
+
+
+
+
+
+

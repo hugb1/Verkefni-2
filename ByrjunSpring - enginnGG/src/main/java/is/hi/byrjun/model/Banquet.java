@@ -10,7 +10,7 @@ package is.hi.byrjun.model;
 */
 
 public class Banquet {
-	private int id;
+	private int banquetnumber;
 	private String name;
 	private String location;
 	private String streetAddrs;
@@ -19,9 +19,9 @@ public class Banquet {
 	private int phonenr;
 	private String email;
 
-	public Banquet(int idnr,String name, String loc, String address, int price,
+	public Banquet(int idnr, String name, String loc, String address, int price,
 			int max, int phone, String email) {
-		this.id = idnr;
+		this.banquetnumber = idnr;
 		this.name = name;
 		this.location = loc;
 		this.streetAddrs = address;
@@ -32,11 +32,11 @@ public class Banquet {
 	}
 	
 	public int getId() {
-		return id;
+		return banquetnumber;
 	}
 	
 	public void setId(int idnr) {
-		this.id = idnr;
+		this.banquetnumber = idnr;
 	}
 
 	public String getName() {
@@ -97,7 +97,7 @@ public class Banquet {
 	
 	@Override
 	public String toString() { 
-		return String.format("<BR>" + "Id:" + id + "<BR>" + "Nafn:" + name + "<BR>" + "Location:" + location
+		return String.format("<BR>" + "Id:" + banquetnumber + "<BR>" + "Nafn:" + name + "<BR>" + "Location:" + location
 				+ "<BR>" + "Address:" + streetAddrs + "<BR>" + "price:" + price + "<BR>" + "Max people:" + maxppl
 				+ "<BR>" + "Phone nr:" + phonenr + "<BR>" + "e-mail:" + email);
 	}

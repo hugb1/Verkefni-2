@@ -10,7 +10,7 @@ package is.hi.byrjun.model;
  */
 
 public class SportVenues {
-	private int id;
+	private int sportvenuenumber;
 	private String name;
 	private String location;
 	private String street;
@@ -20,7 +20,7 @@ public class SportVenues {
 
 	public SportVenues(int id, String name, String location, String street,
 						int price, int phonenr, String email) {
-		this.id = id;
+		this.sportvenuenumber = id;
 		this.name = name;
 		this.location = location;
 		this.street = street;
@@ -30,11 +30,11 @@ public class SportVenues {
 	}
 	
 	public int getId() {
-		return id;
+		return sportvenuenumber;
 	}
 	
 	public void setId(int id) {
-		this.id = id;
+		this.sportvenuenumber = id;
 	}
 	
 	public String getName() {

@@ -1,6 +1,7 @@
 package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.SportVenues;
+import is.hi.byrjun.model.SportVenuesBookings;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,8 +31,8 @@ public class SportVenuesRepositoryImp {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "postgres";
-	private final String password = "villijons";
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
 	
 	// Connection to Database
 	public Connection connect() {
@@ -59,7 +60,7 @@ public class SportVenuesRepositoryImp {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				SportVenues temp = new SportVenues(rs.getInt("id"),
+				SportVenues temp = new SportVenues(rs.getInt("sportvenuenumber"),
 													rs.getString("name"),
 													rs.getString("location"),
 													rs.getString("street"),
@@ -74,5 +75,27 @@ public class SportVenuesRepositoryImp {
 		
 		this.sportvenues = list;
 		return sportvenues;
+	}
+	
+	// Add a sportvenue booking to the sportvenuebookings table in database
+	public void addNewSportVenueBooking(SportVenuesBookings booking) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("INSERT INTO sportvenuebookings ("
+					+ "name, kennitala, email, phonenr, sportvenuenumber) VALUES ("
+					+ "?,?,?,?,?)");
+			
+			ps.setString(1, booking.getName());
+			ps.setInt(2, booking.getKennitala());
+			ps.setString(3, booking.getEmail());
+			ps.setInt(4, booking.getPhonenr());
+			ps.setInt(5, booking.getSportvenuenumber());
+			
+			// execute the prepared statement insert
+			ps.executeUpdate();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
