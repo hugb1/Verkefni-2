@@ -13,17 +13,17 @@ public class SportVenues {
 	private int sportvenuenumber;
 	private String name;
 	private String location;
-	private String street;
+	private String streetAddrs;
 	private int price;
 	private int phonenr;
 	private String email;
 
-	public SportVenues(int id, String name, String location, String street,
+	public SportVenues(int id, String name, String location, String streetAddrs,
 						int price, int phonenr, String email) {
 		this.sportvenuenumber = id;
 		this.name = name;
 		this.location = location;
-		this.street = street;
+		this.streetAddrs = streetAddrs;
 		this.price = price;
 		this.phonenr = phonenr;
 		this.email = email;
@@ -53,12 +53,12 @@ public class SportVenues {
 		this.location = location;
 	}
 	
-	public String getStreet() {
-		return street;
+	public String getAddress() {
+		return streetAddrs;
 	}
 	
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddress(String streetAddrs) {
+		this.streetAddrs = streetAddrs;
 	}
 	
 	public int getPrice() {
