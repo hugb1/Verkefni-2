@@ -1,3 +1,4 @@
+﻿/*
 INSERT INTO banquets (name, location, street, price, maxppl, phonenr, email) VALUES
 (
 	'Harpa', 'Reykjavík', 'Austurbakki 2', 84830, 400, 5935464, 'harpa@harpa.is'
@@ -62,6 +63,7 @@ INSERT INTO sportvenues (name, location, street, price, phonenr, email) VALUES
 (
 	'Knattspyrnufélagið Haukar', 'Hafnafjörður', 'Ásvöllum 1', 45499, 5258700, 'haukar@haukar.is'
 );
+*/
 
 UPDATE banquets SET location = 'Hafnarfjörður' WHERE banquetnumber = 4;
 

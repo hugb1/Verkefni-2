@@ -3,6 +3,7 @@ package is.hi.byrjun.controller;
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
 import is.hi.byrjun.model.SportVenues;
+import is.hi.byrjun.model.SportVenuesBookings;
 import is.hi.byrjun.repository.BanquetRepository;
 import is.hi.byrjun.repository.BanquetRepositoryImp;
 import is.hi.byrjun.repository.SportVenuesRepositoryImp;
@@ -163,6 +164,19 @@ public class ProgramController {
 		BanquetBookings book = new BanquetBookings(nafn, kennit, mail, phNr, id);
 		
 		searchService.addBanquetBooking(book);
+		
+		return "demo/lokaSida";
+	}
+	
+	@RequestMapping(value = "/sportStadfest", method = RequestMethod.POST)
+	public String sportStad(@RequestParam(value = "name")String nafn,
+							@RequestParam(value = "kt")int kennit,
+							@RequestParam(value = "mail")String mail,
+							@RequestParam(value = "phone")int phNr,
+							@RequestParam(value = "id")int id, Model model) {
+		SportVenuesBookings book = new SportVenuesBookings(nafn, kennit, mail, phNr, id);
+		
+		searchService.addSportVenuesBooking(book);
 		
 		return "demo/lokaSida";
 	}

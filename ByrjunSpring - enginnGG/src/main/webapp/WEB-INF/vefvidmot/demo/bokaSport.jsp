@@ -13,7 +13,7 @@
 <h1>${sportVenues}</h1>
 </body>
 <footer>
-<form action="demo/salurStadfest" method="POST" >
+<form action="/demo/sportStadfest" method="POST" >
       <table width="75%">
         <tr> 
           <td width="48%">Nafn:</td>
@@ -38,6 +38,10 @@
           <td width="52%">
             <input type="text" name="name" />
           </td>
+        </tr>
+        <tr>
+        <td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
+        </td>
         </tr>
       </table>
       <p> 

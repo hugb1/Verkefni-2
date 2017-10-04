@@ -17,9 +17,8 @@ public class SportVenuesBookings {
 	private int phonenr;
 	private int sportvenuenumber;
 
-	public SportVenuesBookings(int id, String name, int kennitala, String email,
+	public SportVenuesBookings(String name, int kennitala, String email,
 			int phonenr, int sportvenuenumber) {
-		this.id = id;
 		this.name = name;
 		this.kennitala = kennitala;
 		this.email = email;
