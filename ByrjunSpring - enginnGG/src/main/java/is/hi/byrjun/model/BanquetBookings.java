@@ -7,6 +7,8 @@ package is.hi.byrjun.model;
  * HBV501G Hugbúnaðarverkefni 1
  * Háskóli Íslands
  *
+ * BanquetBookings klasi inniheldur auðkennisnúmer, nafn, kennitölu,
+ * póstfang, símanúmer og veislusalsnúmer fyrir bókanir á veislusal
  */
 
 public class BanquetBookings {

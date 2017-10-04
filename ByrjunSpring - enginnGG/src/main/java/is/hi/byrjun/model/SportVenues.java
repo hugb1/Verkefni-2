@@ -7,6 +7,8 @@ package is.hi.byrjun.model;
  * HBV501G Hugbúnaðarverkefni 1
  * Háskóli Íslands
  *
+ * SportVenues klasi inniheldur íþróttasalsnúmer, nafn, staðsetningu, götuheiti,
+ * verð, símanúmer og póstfang fyrir íþróttasali
  */
 
 public class SportVenues {
