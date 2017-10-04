@@ -151,7 +151,7 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
 		SportVenues sport = searchService.searchSportVenuesById(sportsRep.getAll(), nr);
-		model.addAttribute("sportVenues", sport);
+		model.addAttribute("sportvenues", sport);
 		return "demo/bokaSport";
 	}
 	

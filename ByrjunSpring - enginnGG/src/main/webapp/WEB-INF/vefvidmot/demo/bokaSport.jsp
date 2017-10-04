@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-<h1>${sportVenues}</h1>
+<h1>${sportvenues}</h1>
 </body>
 <footer>
 <form action="/demo/sportStadfest" method="POST" >
@@ -24,23 +24,23 @@
         <tr> 
           <td width="48%">kennitala:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="kt" />
           </td>
         </tr>
         <tr> 
           <td width="48%">email:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="mail" />
           </td>
         </tr>
         <tr> 
           <td width="48%">sími:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="phone" />
           </td>
         </tr>
         <tr>
-        <td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
+        <td> <input type = "hidden" name = "id" value = "${sportvenues.getId()}"/>
         </td>
         </tr>
       </table>
