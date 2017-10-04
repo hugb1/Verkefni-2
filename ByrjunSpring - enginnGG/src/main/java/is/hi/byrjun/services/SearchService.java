@@ -2,7 +2,9 @@ package is.hi.byrjun.services;
 
 import java.util.List;
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.BanquetBookings;
 import is.hi.byrjun.model.SportVenues;
+import is.hi.byrjun.model.SportVenuesBookings;
 
 /**
 *
@@ -37,4 +39,8 @@ public interface SearchService {
 	 * Nær í íþróttasal sem er með gefið ID númer
 	 */
 	SportVenues searchSportVenuesById(List<SportVenues> list, int id);
+	
+	void addBanquetBooking(BanquetBookings book);
+	
+	void addSportVenuesBooking(SportVenuesBookings book);
 }

@@ -17,9 +17,8 @@ public class BanquetBookings {
 	private int phonenr;
 	private int banquetnumber;
 	
-	public BanquetBookings(int id, String name, int kennitala, String email,
+	public BanquetBookings(String name, int kennitala, String email,
 							int phonenr, int banquetnumber) {
-		this.id = id;
 		this.name = name;
 		this.kennitala = kennitala;
 		this.email = email;

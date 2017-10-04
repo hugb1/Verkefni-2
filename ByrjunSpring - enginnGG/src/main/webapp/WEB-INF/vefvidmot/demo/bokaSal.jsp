@@ -6,12 +6,14 @@
 
 <html lang="is">
 <head>
-<title>Bókun á sal</title>  
+<title>Bókun á Veislusal</title>  
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-
-<form action="demo/salurStadfest" method="POST" >
+<h1>${banquet}</h1>
+</body>
+<footer>
+<form action="/demo/salurStadfest" method="POST" >
       <table width="75%">
         <tr> 
           <td width="48%">Nafn:</td>
@@ -22,28 +24,29 @@
         <tr> 
           <td width="48%">kennitala:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="kt" />
           </td>
         </tr>
         <tr> 
           <td width="48%">email:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="mail" />
           </td>
         </tr>
         <tr> 
           <td width="48%">sími:</td>
           <td width="52%">
-            <input type="text" name="name" />
+            <input type="text" name="phone" />
           </td>
+        </tr>
+        <tr>
+        <td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
+        </td>
         </tr>
       </table>
       <p> 
         <input type="submit" name="Submit" value="Bóka" />
       </p>
 </form>
-
-</body>
-<footer>
 </footer>
 </html>

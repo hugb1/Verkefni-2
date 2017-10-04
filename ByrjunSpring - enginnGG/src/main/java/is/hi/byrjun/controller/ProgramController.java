@@ -1,6 +1,7 @@
 package is.hi.byrjun.controller;
 
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.BanquetBookings;
 import is.hi.byrjun.model.SportVenues;
 import is.hi.byrjun.repository.BanquetRepository;
 import is.hi.byrjun.repository.BanquetRepositoryImp;
@@ -142,14 +143,27 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
 	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
 		Banquet salur = searchService.searchBanquetById(banquetRep.getAll(), nr);
-		model.addAttribute("Banquet", salur);
-		return "demo/bokunStadfest";
+		model.addAttribute("banquet", salur);
+		return "demo/bokaSal";
 	}
 	
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
 		SportVenues sport = searchService.searchSportVenuesById(sportsRep.getAll(), nr);
-		model.addAttribute("SportVenues", sport);
-		return "demo/bokunStadfest";
+		model.addAttribute("sportVenues", sport);
+		return "demo/bokaSport";
+	}
+	
+	@RequestMapping(value = "/salurStadfest", method = RequestMethod.POST)
+	public String salurStad(@RequestParam(value = "name")String nafn,
+							@RequestParam(value = "kt")int kennit,
+							@RequestParam(value = "mail")String mail,
+							@RequestParam(value = "phone")int phNr,
+							@RequestParam(value = "id")int id, Model model) {
+		BanquetBookings book = new BanquetBookings(nafn, kennit, mail, phNr, id);
+		
+		searchService.addBanquetBooking(book);
+		
+		return "demo/lokaSida";
 	}
 }

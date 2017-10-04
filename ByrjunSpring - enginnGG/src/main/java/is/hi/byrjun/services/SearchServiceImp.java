@@ -2,9 +2,15 @@ package is.hi.byrjun.services;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.BanquetBookings;
 import is.hi.byrjun.model.SportVenues;
+import is.hi.byrjun.model.SportVenuesBookings;
+import is.hi.byrjun.repository.BanquetRepositoryImp;
+import is.hi.byrjun.repository.SportVenuesRepositoryImp;
 
 
 /**
@@ -17,6 +23,14 @@ import is.hi.byrjun.model.SportVenues;
 */
 @Service
 public class SearchServiceImp implements SearchService {
+	
+	//Tenging yfir í safn af veislusölum
+	 @Autowired
+	 BanquetRepositoryImp banquetRep;
+	 
+	 //Tenging yfir í safn af íþróttasölum
+	 @Autowired
+	 SportVenuesRepositoryImp sportRep;
 
 	@Override
 	public List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap) {
@@ -58,6 +72,16 @@ public class SearchServiceImp implements SearchService {
 			}
 		}
 		throw new IllegalArgumentException("No banquets were found with the given ID number");
+	}
+
+	@Override
+	public void addBanquetBooking(BanquetBookings book) {
+		banquetRep.addNewBanquetBooking(book);
+	}
+
+	@Override
+	public void addSportVenuesBooking(SportVenuesBookings book) {
+		sportRep.addNewSportVenueBooking(book);
 	}
 	
 }
