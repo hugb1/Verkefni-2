@@ -30,7 +30,7 @@
                         		<td>${sportVenues.getLocation()} </td>
                         		<td>${sportVenues.getAddress()} </td>
                         		<td>${sportVenues.getPrice()} </td>
-                        		<td>${sportVenues.getID()} </td>
+                        		<td>${sportVenues.getId()} </td>
                         	</tr>
                         </c:forEach>
                      </table>
