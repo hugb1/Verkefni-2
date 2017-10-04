@@ -15,7 +15,6 @@
         <c:when test="${not empty sportsalir}">
             <table class="sportsalir">
                 <thead>
-                	<table border="1">
                     <tr>
                         <th>Heiti</th>
                         <th>Bær</th>
@@ -25,20 +24,20 @@
                         </tr>
                         </thead>
                         <c:forEach var = "sportVenues" items = "${sportsalir}">
-                        	<tr>
-                        		<td>${sportVenues.name} </td>
-                        		<td>${sportVenues.getLocation()} </td>
-                        		<td>${sportVenues.getAddress()} </td>
-                        		<td>${sportVenues.getPrice()} </td>
-                        		<td>${sportVenues.getId()} </td>
-                        	</tr>
+                            <tr>
+                                <td>${sportVenues.name} </td>
+                                <td>${sportVenues.getLocation()} </td>
+                                <td>${sportVenues.getAddress()} </td>
+                                <td>${sportVenues.getPrice()} </td>
+                                <td>${sportVenues.getId()} </td>
+                            </tr>
                         </c:forEach>
-                     </table>
+                </table>
                  </c:when>
-             	 <c:otherwise>
-             	 	<h3>Engir sportsalir</h3>
-             	 </c:otherwise>
-             </c:choose>
+                 <c:otherwise>
+                    <h3>Engir sportsalir</h3>
+                 </c:otherwise>
+    </c:choose>
 </body>
 <footer>
 	<form action="/demo/bokaSport" method="post">
