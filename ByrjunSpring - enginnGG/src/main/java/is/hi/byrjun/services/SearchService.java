@@ -70,4 +70,8 @@ public interface SearchService {
 	 * @param book Bókun á íþróttasal
 	 */
 	void addSportVenuesBooking(SportVenuesBookings book);
+
+	List<Banquet> getAllBanq();
+
+	List<SportVenues> getAllSport();
 }

@@ -22,6 +22,8 @@
 <h1>Mail: ${banquet.getEmail()}</h1>
 </body>
 <footer>
+<br>
+<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
 <form action="/demo/salurStadfest" method="POST" >
       <table width="75%">
         <tr> 
