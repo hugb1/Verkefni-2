@@ -4,6 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!-- author: Vilhjállmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir bókun íþróttasala viðmót -->
+
 <html lang="is">
 <head>
 <title>Bókun á Íþróttahúsi</title>  
@@ -17,6 +21,8 @@
 <h1>Mail: ${sportvenues.getEmail()}</h1>
 </body>
 <footer>
+<br>
+<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
 <form action="/demo/sportStadfest" method="POST" >
       <table width="75%">
         <tr> 

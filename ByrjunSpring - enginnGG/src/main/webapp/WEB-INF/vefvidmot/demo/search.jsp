@@ -4,6 +4,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="is">
 
+<!-- author: Vilhjállmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir leitarviðmót -->
+
 <html>
     <head>
         <title>Search</title>
@@ -12,7 +16,7 @@
     <body >
 
 
-    <marquee behavior="alternate"><img src="https://i.imgur.com/YfU0Cvz.jpg" alt="some_text" style="width:150px;height:150px;"></marquee>
+    <marquee behavior="alternate"><img src="" alt="" style="width:150px;height:150px;"></marquee>
         <h1>Leitar síða</h1>
             <h2>Leitar upplýsingar</h2>
             <form action="/demo/submit" method="post">

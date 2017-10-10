@@ -42,26 +42,34 @@ public class ProgramController {
 	@Autowired
 	SearchService searchService;
 
-	//Tenging yfir í safn af veislusölum
-	@Autowired
-	BanquetRepositoryImp banquetRep;
-
-	//Tenging yfir í safn af íþróttahúsum
-	@Autowired
-	SportVenuesRepositoryImp sportsRep;
-
-	// Þar sem klasinn hefur slóðina "/demo", er þessi slóð "/demo/search"
+	/*
+	 * Biður notandann um leitarupplýsingar, tegund sals, staðsetningu
+	 * og fjölda.
+	 * 
+	 * @return vefsíða með spurningum.
+	 */
 	@RequestMapping("/search")
 	public String searchPage() {
 		return "demo/search"; //Skilar .jsp skrá sem er /webapp/WEB-INF/vefvidmot/demo/search.jsp
 	}
-
+	
+	/*
+	 * Tekur við leitarupplýsingum frá notanda og birtir þá sali sem 
+	 * eiga við. Biður síðan notandann um að velja einn af þeim sölum
+	 * sem eru birtir.
+	 * 
+	 * @param chosen Tegund sals
+	 * @param locNr  Staðsetning sals
+	 * @param capNr  Lámarks fólksfjöldi sals
+	 * @param model  Módel með attributum
+	 * @return vefsíða sem birtir alla sali sem eiga við
+	 */
 	@RequestMapping(value = "/submit", method = RequestMethod.POST)
 	public String submit(@RequestParam(value = "myradio", required = true) int chosen,
 			@RequestParam(value = "loc", required = true) int locNr,
 			@RequestParam(value = "cap", required = false) int capNr, Model model) {
 		if (chosen == 1) {
-			List<Banquet> all = banquetRep.getAll();
+			List<Banquet> all = searchService.getAllBanq();
 			String location;
 			int maxcap;
 
@@ -104,7 +112,7 @@ public class ProgramController {
 			model.addAttribute("veislusalir", list);
 			return "demo/synaSali";
 		} else {
-			List<SportVenues> all = sportsRep.getAll();
+			List<SportVenues> all = searchService.getAllSport();
 			String location;
 
 			switch(locNr) {
@@ -130,31 +138,66 @@ public class ProgramController {
 			return "demo/synaSport";
 		}
 	}
-
+	
+	/*
+	 * Aðferð sem hægt er að nota til þess að birta alla veislusali
+	 */
 	@RequestMapping(value = "/salir", method = RequestMethod.POST)
 	public String birtaSali(Model model) {
 		ArrayList<Banquet> list;
-		list = (ArrayList<Banquet>) banquetRep.getAll();
+		list = (ArrayList<Banquet>) searchService.getAllBanq();
 		model.addAttribute("veislusalir", list);
 
 		return "demo/synaSali";
 	}
 	
 	
+	/*
+	 * Ef notandinn ákvað að velja veitingasal þá tekur þessi aðferð við hvaða
+	 * salur var valinn og birtir notandanum upplýsingar um salinn. Og biður 
+	 * síðan um persónuupplýsingar notanda fyrir bókun salsins.
+	 * 
+	 * @param nr    Id númer veislusals sem var valinn
+	 * @param model Módel með attributum
+	 * @return Vefsíða sem birtir upplýsingar um veislusal
+	 */
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
 	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
-		Banquet salur = searchService.searchBanquetById(banquetRep.getAll(), nr);
+		Banquet salur = searchService.searchBanquetById(searchService.getAllBanq(), nr);
 		model.addAttribute("banquet", salur);
 		return "demo/bokaSal";
 	}
 	
+	
+	/*
+	 * Ef notandinn ákvað að velja íþróttasal þá tekur þessi aðferð við hvaða
+	 * salur var valinn og birtir notandanum upplýsingar um salinn. Og biður 
+	 * síðan um persónuupplýsingar notanda fyrir bókun salsins.
+	 * 
+	 * @param nr    Id númer íþróttasals sem var valinn
+	 * @param model Módel með attributum
+	 * @return Vefsíða sem birtir upplýsingar um íþróttasal
+	 */
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
-		SportVenues sport = searchService.searchSportVenuesById(sportsRep.getAll(), nr);
+		SportVenues sport = searchService.searchSportVenuesById(searchService.getAllSport(), nr);
 		model.addAttribute("sportvenues", sport);
 		return "demo/bokaSport";
 	}
 	
+	/*
+	 * Tekur við persónuupplýsingum frá notanda og sendir bókunina í
+	 * gagnagrunn Veislusala bókanna og þakkar síðan notandanum fyrir
+	 * viðskiptin.
+	 * 
+	 * @param nafn     Nafn notanda
+	 * @param kennit   Kennitala notanda
+	 * @param mail     Netfang notanda
+	 * @param phNr     Símanúmer notanda
+	 * @param id       Id númer veislusals
+	 * @param model    Módel með attributum
+	 * return Vefsíða sem þakkar notandanum fyrir viðskiptin
+	 */
 	@RequestMapping(value = "/salurStadfest", method = RequestMethod.POST)
 	public String salurStad(@RequestParam(value = "name")String nafn,
 							@RequestParam(value = "kt")int kennit,
@@ -168,6 +211,19 @@ public class ProgramController {
 		return "demo/lokaSida";
 	}
 	
+	/*
+	 * Tekur við persónuupplýsingum frá notanda og sendir bókunina í
+	 * gagnagrunn Íþróttasala bókanna og þakkar síða notandanum fyrir
+	 * viðskiptin.
+	 * 
+	 * @param nafn     Nafn notanda
+	 * @param kennit   Kennitala notanda
+	 * @param mail     Netfang notanda
+	 * @param phNr     Símanúmer notanda
+	 * @param id       Id númer íþróttasals
+	 * @param model    Módel með attributum
+	 * return Vefsíða sem þakkar notandanum fyrir viðskiptin
+	 */
 	@RequestMapping(value = "/sportStadfest", method = RequestMethod.POST)
 	public String sportStad(@RequestParam(value = "name")String nafn,
 							@RequestParam(value = "kt")int kennit,

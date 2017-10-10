@@ -4,6 +4,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<!-- author: Vilhjálmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir bókun veislusala viðmót-->
+
 <html lang="is">
 <head>
 <title>Bókun á Veislusal</title>  
@@ -18,6 +22,8 @@
 <h1>Mail: ${banquet.getEmail()}</h1>
 </body>
 <footer>
+<br>
+<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
 <form action="/demo/salurStadfest" method="POST" >
       <table width="75%">
         <tr> 
