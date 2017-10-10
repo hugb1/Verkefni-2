@@ -42,14 +42,6 @@ public class ProgramController {
 	@Autowired
 	SearchService searchService;
 
-	//Tenging yfir í safn af veislusölum
-	@Autowired
-	BanquetRepositoryImp banquetRep;
-
-	//Tenging yfir í safn af íþróttahúsum
-	@Autowired
-	SportVenuesRepositoryImp sportsRep;
-
 	/*
 	 * Biður notandann um leitarupplýsingar, tegund sals, staðsetningu
 	 * og fjölda.
@@ -77,7 +69,7 @@ public class ProgramController {
 			@RequestParam(value = "loc", required = true) int locNr,
 			@RequestParam(value = "cap", required = false) int capNr, Model model) {
 		if (chosen == 1) {
-			List<Banquet> all = banquetRep.getAll();
+			List<Banquet> all = searchService.getAllBanq();
 			String location;
 			int maxcap;
 
@@ -120,7 +112,7 @@ public class ProgramController {
 			model.addAttribute("veislusalir", list);
 			return "demo/synaSali";
 		} else {
-			List<SportVenues> all = sportsRep.getAll();
+			List<SportVenues> all = searchService.getAllSport();
 			String location;
 
 			switch(locNr) {
@@ -153,7 +145,7 @@ public class ProgramController {
 	@RequestMapping(value = "/salir", method = RequestMethod.POST)
 	public String birtaSali(Model model) {
 		ArrayList<Banquet> list;
-		list = (ArrayList<Banquet>) banquetRep.getAll();
+		list = (ArrayList<Banquet>) searchService.getAllBanq();
 		model.addAttribute("veislusalir", list);
 
 		return "demo/synaSali";
@@ -171,7 +163,7 @@ public class ProgramController {
 	 */
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
 	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
-		Banquet salur = searchService.searchBanquetById(banquetRep.getAll(), nr);
+		Banquet salur = searchService.searchBanquetById(searchService.getAllBanq(), nr);
 		model.addAttribute("banquet", salur);
 		return "demo/bokaSal";
 	}
@@ -188,7 +180,7 @@ public class ProgramController {
 	 */
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
-		SportVenues sport = searchService.searchSportVenuesById(sportsRep.getAll(), nr);
+		SportVenues sport = searchService.searchSportVenuesById(searchService.getAllSport(), nr);
 		model.addAttribute("sportvenues", sport);
 		return "demo/bokaSport";
 	}

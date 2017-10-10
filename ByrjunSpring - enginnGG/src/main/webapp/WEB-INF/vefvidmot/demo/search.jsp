@@ -16,7 +16,7 @@
     <body >
 
 
-    <marquee behavior="alternate"><img src="https://i.imgur.com/YfU0Cvz.jpg" alt="some_text" style="width:150px;height:150px;"></marquee>
+    <marquee behavior="alternate"><img src="" alt="" style="width:150px;height:150px;"></marquee>
         <h1>Leitar síða</h1>
             <h2>Leitar upplýsingar</h2>
             <form action="/demo/submit" method="post">
