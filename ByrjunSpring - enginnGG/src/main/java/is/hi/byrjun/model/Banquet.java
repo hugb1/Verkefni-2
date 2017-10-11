@@ -7,6 +7,8 @@ package is.hi.byrjun.model;
 * HBV501G Hugbúnaðarverkefni 1
 * Háskóli Íslands
 * 
+* Banquet klasi inniheldur veislusalsnúmer, nafn, staðsetningu, götuheiti,
+* verð, fólksfjölda, símanúmer og póstfang fyrir veislusali
 */
 
 public class Banquet {

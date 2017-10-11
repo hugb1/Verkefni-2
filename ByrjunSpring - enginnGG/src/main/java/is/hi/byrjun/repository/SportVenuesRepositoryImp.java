@@ -31,8 +31,14 @@ public class SportVenuesRepositoryImp {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
+<<<<<<< HEAD
 	private final String userName = "postgres";
 	private final String password = "abcd1234";
+=======
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
+	
+>>>>>>> f70b2659b1dbe400bdaf1b75549113eda2cc1ef0
 	
 	// Connection to Database
 	public Connection connect() {
@@ -86,7 +92,7 @@ public class SportVenuesRepositoryImp {
 					+ "?,?,?,?,?)");
 			
 			ps.setString(1, booking.getName());
-			ps.setInt(2, booking.getKennitala());
+			ps.setLong(2, booking.getKennitala());
 			ps.setString(3, booking.getEmail());
 			ps.setInt(4, booking.getPhonenr());
 			ps.setInt(5, booking.getSportvenuenumber());

@@ -236,4 +236,30 @@ public class ProgramController {
 		
 		return "demo/lokaSida";
 	}
+	
+	/*
+	 * Það sem kemur fyrir neðan þetta comment eru notendatilvik sem enn er verið að vinna að
+	 * fyrir verkefni 4
+	 */
+	
+	@RequestMapping(value = "/nyrSalur")
+	public String nyrSalur() {
+		return "demo/newSalur";
+	}
+	
+	@RequestMapping(value = "/skraSal")
+	public String skraSal(@RequestParam(value = "myradio", required = true)int chosen,
+						  @RequestParam(value = "heiti", required = true)String name,
+						  @RequestParam(value = "loc")int location,
+						  @RequestParam(value = "streetAddress", required = true) String streetAddrs,
+						  @RequestParam(value = "price", required = true)int price,
+						  @RequestParam(value = "maxppl", required = true)int maxppl,
+						  @RequestParam(value = "phone", required = true)int phoneNr,
+						  @RequestParam(value = "mail", required = true)String email, Model model) {
+		
+		if (chosen == 1) {
+			
+		}
+		return null;
+	}
 }

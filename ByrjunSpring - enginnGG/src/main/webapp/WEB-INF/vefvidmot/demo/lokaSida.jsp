@@ -22,5 +22,8 @@
 
 </body>
 <footer>
+<form action="/demo/search">
+<input type = "submit" name = "Submit" value = "Aftur á byrjunarsíðu" />
+</form>
 </footer>
 </html>

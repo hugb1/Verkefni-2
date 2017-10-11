@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="/Users/gunnarmarhardarson/Dropbox/Skóli/Hugb. verkefni 1/postgresql-42.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

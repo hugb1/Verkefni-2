@@ -41,7 +41,7 @@ SET default_with_oids = false;
 CREATE TABLE banquetbookings (
     id integer NOT NULL,
     name text NOT NULL,
-    kennitala character(10) NOT NULL,
+    kennitala bigint NOT NULL,
     email text NOT NULL,
     phonenr integer NOT NULL,
     banquetnumber integer NOT NULL
@@ -83,7 +83,8 @@ CREATE TABLE banquets (
     price integer NOT NULL,
     maxppl integer NOT NULL,
     phonenr integer NOT NULL,
-    email text NOT NULL
+    email text NOT NULL,
+    key text DEFAULT '12345'::text NOT NULL
 );
 
 
@@ -117,7 +118,7 @@ ALTER SEQUENCE banquets_banquetnumber_seq OWNED BY banquets.banquetnumber;
 CREATE TABLE sportvenuebookings (
     id integer NOT NULL,
     name text NOT NULL,
-    kennitala character(10) NOT NULL,
+    kennitala bigint NOT NULL,
     email text NOT NULL,
     phonenr integer NOT NULL,
     sportvenuenumber integer NOT NULL
@@ -158,7 +159,8 @@ CREATE TABLE sportvenues (
     street text NOT NULL,
     price integer NOT NULL,
     phonenr integer NOT NULL,
-    email text NOT NULL
+    email text NOT NULL,
+    key text DEFAULT '12345'::text NOT NULL
 );
 
 
@@ -218,6 +220,8 @@ ALTER TABLE ONLY sportvenues ALTER COLUMN sportvenuenumber SET DEFAULT nextval('
 --
 
 COPY banquetbookings (id, name, kennitala, email, phonenr, banquetnumber) FROM stdin;
+1	gh	1234567890	gg	1234567	3
+2	mh	1234567890	gh	1234567	8
 \.
 
 
@@ -225,23 +229,23 @@ COPY banquetbookings (id, name, kennitala, email, phonenr, banquetnumber) FROM s
 -- Name: banquetbookings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('banquetbookings_id_seq', 1, false);
+SELECT pg_catalog.setval('banquetbookings_id_seq', 2, true);
 
 
 --
 -- Data for Name: banquets; Type: TABLE DATA; Schema: public; Owner: gunnarmarhardarson
 --
 
-COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, email) FROM stdin;
-1	Glersalurinn	Reykjavík	Tjarnargata 5	43636	150	6547654	hans@gmail.com
-2	Tjörnin	Kópavogur	Guðrúnartún 2	74995	100	8765654	gretar@gmail.com
-3	Harpa	Reykjavík	Austurbakki 2	84830	400	5935464	harpa@harpa.is
-7	Sólon	Reykjavík	Bankastræti 7a	45654	150	5623232	solon@solon.is
-8	Hótel Cabin	Reykjavík	Borgartún 32	78995	100	5116030	cabin@cabin.is
-9	Garðskálinn, Gerðarsafn	Kópavogur	Hamraborg 4	39995	50	4417611	gardur@gardur.is
-4	Hótel Vellir	Hafnarfjörður	Tjarnarvöllum 3	50000	200	5264321	hotelvellir@vellir.is
-5	Fjörukráin	Hafnarfjörður	Víkingastræti 1-3	34995	100	5651213	fjorukrain@fjara.is
-6	Salur Hraunbúa	Hafnarfjörður	Hjallabraut 51	67845	110	5650900	hraun@hraun.is
+COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, email, key) FROM stdin;
+1	Glersalurinn	Reykjavík	Tjarnargata 5	43636	150	6547654	hans@gmail.com	12345
+2	Tjörnin	Kópavogur	Guðrúnartún 2	74995	100	8765654	gretar@gmail.com	12345
+3	Harpa	Reykjavík	Austurbakki 2	84830	400	5935464	harpa@harpa.is	12345
+7	Sólon	Reykjavík	Bankastræti 7a	45654	150	5623232	solon@solon.is	12345
+8	Hótel Cabin	Reykjavík	Borgartún 32	78995	100	5116030	cabin@cabin.is	12345
+9	Garðskálinn, Gerðarsafn	Kópavogur	Hamraborg 4	39995	50	4417611	gardur@gardur.is	12345
+4	Hótel Vellir	Hafnarfjörður	Tjarnarvöllum 3	50000	200	5264321	hotelvellir@vellir.is	12345
+5	Fjörukráin	Hafnarfjörður	Víkingastræti 1-3	34995	100	5651213	fjorukrain@fjara.is	12345
+6	Salur Hraunbúa	Hafnarfjörður	Hjallabraut 51	67845	110	5650900	hraun@hraun.is	12345
 \.
 
 
@@ -257,6 +261,7 @@ SELECT pg_catalog.setval('banquets_banquetnumber_seq', 9, true);
 --
 
 COPY sportvenuebookings (id, name, kennitala, email, phonenr, sportvenuenumber) FROM stdin;
+1	GMH	1234567890	gh	1234567	5
 \.
 
 
@@ -264,22 +269,22 @@ COPY sportvenuebookings (id, name, kennitala, email, phonenr, sportvenuenumber) 
 -- Name: sportvenuebookings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('sportvenuebookings_id_seq', 1, false);
+SELECT pg_catalog.setval('sportvenuebookings_id_seq', 1, true);
 
 
 --
 -- Data for Name: sportvenues; Type: TABLE DATA; Schema: public; Owner: gunnarmarhardarson
 --
 
-COPY sportvenues (sportvenuenumber, name, location, street, price, phonenr, email) FROM stdin;
-1	Kórinn	Kópavogur	Vallakór 12-14	99324	5647383	korinn@kor.is
-2	Fífan	Kópavogur	Dalsmári 5	67894	5642346	fifan@fifan.is
-3	Stjarnan	Garðabær	Ásgarður	139995	5651940	stjarnan@stjarnan.is
-4	Knattspyrnufélag Reykjavíkur	Reykjavík	Frostaskjól	99995	5105300	kr@kr.is
-5	Íþróttafélagið Fylkir	Reykjavík	Fylkisvegi 6	67567	5715600	fylkir@fylkir.com
-6	Knattspyrnufélagið Valur	Reykjavík	Hlíðarenda	79995	4148000	valur@valur.is
-7	Fimleikafélag Hafnafjarðar	Hafnarfjörður	Kaplakriki	54995	5504050	fh@fh.is
-8	Knattspyrnufélagið Haukar	Hafnarfjörður	Ásvöllum 1	45499	5258700	haukar@haukar.is
+COPY sportvenues (sportvenuenumber, name, location, street, price, phonenr, email, key) FROM stdin;
+1	Kórinn	Kópavogur	Vallakór 12-14	99324	5647383	korinn@kor.is	12345
+2	Fífan	Kópavogur	Dalsmári 5	67894	5642346	fifan@fifan.is	12345
+3	Stjarnan	Garðabær	Ásgarður	139995	5651940	stjarnan@stjarnan.is	12345
+4	Knattspyrnufélag Reykjavíkur	Reykjavík	Frostaskjól	99995	5105300	kr@kr.is	12345
+5	Íþróttafélagið Fylkir	Reykjavík	Fylkisvegi 6	67567	5715600	fylkir@fylkir.com	12345
+6	Knattspyrnufélagið Valur	Reykjavík	Hlíðarenda	79995	4148000	valur@valur.is	12345
+7	Fimleikafélag Hafnafjarðar	Hafnarfjörður	Kaplakriki	54995	5504050	fh@fh.is	12345
+8	Knattspyrnufélagið Haukar	Hafnarfjörður	Ásvöllum 1	45499	5258700	haukar@haukar.is	12345
 \.
 
 
