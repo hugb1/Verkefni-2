@@ -1,7 +1,235 @@
 
 body {
+	margin: 0;
+    padding: 0;
+}
+
+header {
+	padding: 0 5%
+	display: block;
+}
+
+section {
+	margin-bottom: 0;
+	
+}
+
+footer {
+	padding: 0 0;
+	
+}
+
+.headerSection {
+	
 
 }
+
+.header1 {
+	padding: 0% 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.loginToAdmin {
+	left: 75%;
+	position: relative;
+	font-weight: bold;
+	
+	
+}
+
+/*main*/
+
+.salirIMG {
+	position:relative;
+	top: 20px;
+	right: -40%;
+	
+	width: 357px;
+	height: 300x;
+	
+}
+
+
+form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: absolute;
+	left: 35%;
+}
+
+option:first {
+	color: #999;
+	
+}
+
+.searchSection {
+	padding: 5% 0%;
+}
+
+.leitButton {
+	padding: 4%;
+    margin: 0;
+    border: 2px solid #000;
+    width: 70px;
+    border-radius: 3px;
+    overflow: hidden;
+ 	font-weight:bold;
+    background: #fff;
+    position: relative;
+    background-color: #982149;
+}
+
+.skraButton {
+	padding: 4%;
+    margin: 0;
+    border: 2px solid #000;
+    width: 70px;
+    border-radius: 3px;
+    overflow: hidden;
+ 	font-weight:bold;
+    background: #fff;
+    position: relative;
+    background-color: #982149;
+}
+.locationID{
+    padding: 0;
+    margin: 0;
+    border: 2px solid #000;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+ 
+    background: #fff;
+    position: relative;
+	
+}
+
+.locationID:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 5px;
+    margin-top: -2px;
+    z-index: 100;
+}
+
+.locationID select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+}
+
+.maxRoom{
+    padding: 0;
+    margin: 0;
+    border: 2px solid #000;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+ 
+    background: #fff;
+    position: relative;
+	
+}
+
+.maxRoom:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 5px;
+    margin-top: -2px;
+    z-index: 100;
+}
+
+.maxRoom select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+}
+
+
+
+
+.tegundSals{
+    padding: 0;
+    margin: 0;
+    border: 2px solid #000;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+ 
+    background: #fff;
+    position: relative;
+	
+}
+
+.tegundSals:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 5px;
+    margin-top: -2px;
+    z-index: 100;
+}
+
+.tegundSals select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+}
+
+.leitarTakki {
+
+	
+}
+
+
+
+
 
 .veislusalir {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -49,4 +277,28 @@ body {
     text-align: left;
     background-color: #000000;
     color: white;
+}
+
+.infoSection {
+	background-color: #000000;
+}
+
+.infoInfo {
+	padding: 5% 5%;
+	
+}
+
+.followUs {
+	font-size: 18px;
+	font-weight:bold;
+	text-align:center;
+}
+
+.facebook, .twitter {
+	
+}
+
+.salirTexti1 {
+	text-align: center;
+	font-size: 15px;
 }

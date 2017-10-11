@@ -8,39 +8,84 @@
 <!-- email: vij7@hi.is -->
 <!-- vefur fyrir leitarviðmót -->
 <html>
-<head>
-<title>Search</title>
+    <head>
+        <title>Search</title>
+           <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
+         
+    </head>
+    <body>
+    	<header>
+    		<section class ="headerSection">
+    			<div class = "header1">
+    				<div class = "loginToAdmin">
+    					<p> Innskráning </p>
+    				</div>	
+    			</div>
+    		</section>
+   		 </header>
+   		 <main>
+   		 	<section class="GunnarSection">
+   		 	<img class="salirIMG" src="https://notendur.hi.is/~vij7/asdf/salirLogo.jpg" alt="Salir.com logo">
+   		 
+   			 </section>
+   		<section class="searchSection">
 
-</head>
-<body>
+        	<div class="searchForm">
+        		<form action="/demo/submit" method="post">
 
+       			<div class ="locationID">
+            		<select name=loc>
+            			<option name=zero value="0">Staðsetning</option>
+            			<option name=one value="1">Reykjavík</option>
+            			<option name=two value="2">Hafnarfjörður</option>
+            			<option name=three value="3">Garðsbær</option>
+            			<option name=four value="4">Kópsvogur</option> 
+           			</select>
+            	</div>
 
-	<marquee behavior="alternate">
-		<img src="" alt="" style="width: 150px; height: 150px;">
-	</marquee>
-	<h1>Leitar síða</h1>
-	<h2>Leitar upplýsingar</h2>
-	<form action="/demo/submit" method="post">
-		<br />Veldu tegund sals: <input type="radio" name=myradio value="1" />Veislusalir
-		<input type="radio" name=myradio value="2" />Íþróttasalir <br />Veldu
-		staðsetningu sals: <select name=loc>
-			<option name=one value="1">Reykjavík</option>
-			<option name=two value="2">Hafnarfjörður</option>
-			<option name=three value="3">Garðsbær</option>
-			<option name=four value="4">Kópsvogur</option>
-		</select> <br />Veldu fjölda: <select name=cap>
-			<option name=one value="1">50</option>
-			<option name=two value="2">100</option>
-			<option name=three value="3">150</option>
-			<option name=four value="4">200+</option>
-		</select> <br />
-		<input type="submit" value="Leita">
-	</form>
-</body>
-<footer>
-	<form action="/demo/nyrSalur">
-		<input type="submit" name="Submit" value="Skrá sal" />
-	</form>
+				<div class ="maxRoom">
+           			<select name=cap>
+           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=one value="1">50</option>
+           				<option name=two value="2">100</option>
+            			<option name=three value="3">150</option>
+            			<option name=four value="4">200+</option>
+            		</select>
+            	</div>
+            	
+            	<div class ="tegundSals">
+           			<select name=myradio>
+           				<option name=zero value="">Tegund sals</option>
+           				<option name=one value="1">Veislusalir</option>
+           				<option name=two value="2">íþróttasalir</option>
+            		</select>
+            	</div>
+			
+				<div class="leitarTakki">
+					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
+					<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
+            		
+            	</div>
+            
 
-</footer>
+            
+            	</form>
+            </div>
+        </section>
+        <section class="infoSection">
+        	<div class="infoInfo">
+        	</div>
+        </section>
+        
+        </main>
+        <footer>
+        	<div class="followUs">
+        		<p>Follow us for more information!<p>
+        		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		<img class="twitter" src="https://notendur.hi.is/~vij7/asdf/twitter-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		
+        		<p class="SalirTexti1">Salir.com</p>
+        	</div>
+     	</footer>       
+    </body>
 </html>
