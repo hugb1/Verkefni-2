@@ -7,7 +7,6 @@
 <!-- author: Vilhjállmur Jónsson -->
 <!-- email: vij7@hi.is -->
 <!-- vefur fyrir leitarviðmót -->
-
 <html>
     <head>
         <title>Search</title>
@@ -64,7 +63,7 @@
 			
 				<div class="leitarTakki">
 					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
-					<button class="skraButton" name="1" type="submit" value="Leita">Skrá</button>
+					<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             		
             	</div>
             

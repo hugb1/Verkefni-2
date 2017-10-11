@@ -7,6 +7,8 @@ package is.hi.byrjun.model;
  * HBV501G Hugbúnaðarverkefni 1
  * Háskóli Íslands
  *
+ * SportVenuesBookings klasi inniheldur auðkennisnúmer, nafn, kennitölu,
+ * póstfang, símanúmer og íþróttasalsnúmer fyrir bókanir á íþróttasal
  */
 
 public class SportVenuesBookings {

@@ -14,9 +14,15 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-<h1>${sportvenues}</h1>
+<h1>Nafn: ${sportvenues.getName()}</h1>
+<h1>Gata: ${sportvenues.getAddress()}</h1>
+<h1>Verð: ${sportvenues.getPrice()} kr.</h1>
+<h1>Sími: ${sportvenues.getPhonenr()}</h1>
+<h1>Mail: ${sportvenues.getEmail()}</h1>
 </body>
 <footer>
+<br>
+<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
 <form action="/demo/sportStadfest" method="POST" >
       <table width="75%">
         <tr> 

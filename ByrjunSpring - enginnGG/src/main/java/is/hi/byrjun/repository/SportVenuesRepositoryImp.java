@@ -31,8 +31,13 @@ public class SportVenuesRepositoryImp {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
+<<<<<<< HEAD
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
+=======
 	private final String userName = "postgres";
-	private final String password = "villijons";
+	private final String password = "123456";
+>>>>>>> cc54ee4cae3817bd9e7dc0360155b9a58a324b73
 	
 	// Connection to Database
 	public Connection connect() {

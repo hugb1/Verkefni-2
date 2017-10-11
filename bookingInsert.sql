@@ -63,7 +63,6 @@ INSERT INTO sportvenues (name, location, street, price, phonenr, email) VALUES
 (
 	'Knattspyrnufélagið Haukar', 'Hafnafjörður', 'Ásvöllum 1', 45499, 5258700, 'haukar@haukar.is'
 );
-*/
 
 UPDATE banquets SET location = 'Hafnarfjörður' WHERE banquetnumber = 4;
 
@@ -75,13 +74,18 @@ UPDATE sportvenues SET location = 'Hafnarfjörður' WHERE sportvenuenumber = 7;
 
 UPDATE sportvenues SET location = 'Hafnarfjörður' WHERE sportvenuenumber = 8;
 
+ALTER TABLE banquetbookings DROP CONSTRAINT banquetbookings_email_key;
+ALTER TABLE banquets DROP CONSTRAINT banquets_email_key;
+ALTER TABLE sportvenuebookings DROP CONSTRAINT sportvenuebookings_email_key;
+ALTER TABLE sportvenues DROP CONSTRAINT sportvenues_email_key;
 
+ALTER TABLE banquetbookings ALTER COLUMN kennitala TYPE bigint using kennitala::bigint;
+ALTER TABLE sportvenuebookings ALTER COLUMN kennitala TYPE bigint using kennitala::bigint;
 
+ALTER TABLE banquets ADD COLUMN key text DEFAULT '12345' NOT NULL;
+ALTER TABLE sportvenues ADD COLUMN key text DEFAULT '12345' NOT NULL;
 
-
-
-
-
+*/
 
 
 
