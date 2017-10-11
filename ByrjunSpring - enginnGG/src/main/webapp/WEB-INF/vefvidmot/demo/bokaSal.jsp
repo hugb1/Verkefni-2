@@ -4,60 +4,166 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- author: Vilhjálmur Jónsson -->
-<!-- email: vij7@hi.is -->
+<!-- author: Brynjar Árnason -->
+<!-- email: bra13@hi.is -->
 <!-- vefur fyrir bókun veislusala viðmót-->
 
 <html lang="is">
 <head>
-<title>Bókun á Veislusal</title>  
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
-</head>
-<body>
-<h1>Nafn: ${banquet.getName()}</h1>
-<h1>Gata: ${banquet.getAddress()}</h1>
-<h1>Verð: ${banquet.getPrice()} kr.</h1>
-<h1>Fjöldi: ${banquet.getMax()}</h1>
-<h1>Sími: ${banquet.getPhonenr()}</h1>
-<h1>Mail: ${banquet.getEmail()}</h1>
-</body>
-<footer>
-<br>
-<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
-<form action="/demo/salurStadfest" method="POST" >
-      <table width="75%">
-        <tr> 
-          <td width="48%">Nafn:</td>
-          <td width="52%">
-            <input type="text" name="name" />
-          </td>
-        </tr>
-        <tr> 
-          <td width="48%">kennitala:</td>
-          <td width="52%">
-            <input type="text" name="kt" />
-          </td>
-        </tr>
-        <tr> 
-          <td width="48%">email:</td>
-          <td width="52%">
-            <input type="text" name="mail" />
-          </td>
-        </tr>
-        <tr> 
-          <td width="48%">sími:</td>
-          <td width="52%">
-            <input type="text" name="phone" />
-          </td>
-        </tr>
-        <tr>
-        <td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
-        </td>
-        </tr>
-      </table>
-      <p> 
-        <input type="submit" name="Submit" value="Bóka" />
-      </p>
-</form>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>2 Column Layout &mdash; Left Menu with Header &amp; Footer</title>
+		<style type="text/css">
+		
+			body {
+				margin:0;
+				padding:0;
+				font-family: Sans-Serif;
+				line-height: 1.5em;
+			}
+			
+			#header {
+				background: #ccc;
+				height: 100px;
+			}
+			
+			#header h1 {
+				margin: 0;
+				padding-top: 15px;
+			}
+			
+			main {
+				padding-bottom: 10010px;
+				margin-bottom: -10000px;
+				float: left;
+				width: 100%;
+			}
+			
+			#nav {
+				padding-bottom: 10010px;
+				margin-bottom: -10000px;
+				float: left;
+				width: 230px;
+				margin-left: -100%;
+				background: #eee;
+			}
+			
+			#footer {
+				clear: left;
+				width: 100%;
+				background: #ccc;
+				text-align: center;
+				padding: 4px 0;
+			}
+	
+			#wrapper {
+				overflow: hidden;
+			}
+						
+			#content {
+				margin-left: 230px; /* Same as 'nav' width */
+			}
+			
+			.innertube {
+				margin: 15px; /* Padding for content */
+				margin-top: 0;
+			}
+		
+			p {
+				color: #555;
+			}
+	
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			nav ul a {
+				color: darkgreen;
+				text-decoration: none;
+			}
+		
+		</style>	
+	
+	</head>
+	
+	<body>		
+
+		<header id="header">
+			<div class="innertube">
+				<h1><center>Bókun á Veislusal</center></h1>
+			</div>
+		</header>
+		
+		<div id="wrapper">
+		
+			<main>
+				<div id="content">
+					<div class="innertube">
+						<h1>Bókunarupplýsingar</h1>
+						<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
+						
+						<form action="/demo/salurStadfest" method="POST" >
+      					<table width="75%">
+        			<tr> 
+          				<td width="48%">Nafn:</td>
+          				<td width="52%">
+            			<input type="text" name="name" />
+          				</td>
+        			</tr>
+        		<tr> 
+          			<td width="48%">kennitala:</td>
+          				<td width="52%">
+            			<input type="text" name="kt" />
+          				</td>
+        		</tr>
+        		<tr> 
+          			<td width="48%">email:</td>
+          				<td width="52%">
+            			<input type="text" name="mail" />
+          				</td>
+        		</tr>
+        		<tr> 
+          			<td width="48%">sími:</td>
+          			<td width="52%">
+            		<input type="text" name="phone" />
+          			</td>
+        		</tr>
+        		<tr>
+        			<td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
+        			</td>
+        		</tr>
+      		</table>
+      		<p> 
+        		<input type="submit" name="Submit" value="Bóka" />
+      		</p>
+			</form>
+						
+					</div>
+				</div>
+			</main>
+			
+			<nav id="nav">
+				<div class="innertube">
+					<h2>Upplýsingar um salinn</h2>
+					
+					<h4>Nafn: ${banquet.getName()}</h4>
+					<h4>Gata: ${banquet.getAddress()}</h4>
+					<h4>Verð: ${banquet.getPrice()} kr.</h4>
+					<h4>Fjöldi: ${banquet.getMax()}</h4>
+					<h4>Sími: ${banquet.getPhonenr()}</h4>
+					<h4>Mail: ${banquet.getEmail()}</h4>
+				
+				</div>
+			</nav>
+		
+		</div>
+		
+		<footer id="Bókun">
+			<div class="innertube">
+				<p>Footer...</p>
+			</div>
+			
 </footer>
 </html>
