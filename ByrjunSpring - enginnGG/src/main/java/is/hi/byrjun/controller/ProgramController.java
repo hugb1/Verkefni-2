@@ -237,6 +237,11 @@ public class ProgramController {
 		return "demo/lokaSida";
 	}
 	
+	/*
+	 * Það sem kemur fyrir neðan þetta comment eru notendatilvik sem enn er verið að vinna að
+	 * fyrir verkefni 4
+	 */
+	
 	@RequestMapping(value = "/nyrSalur")
 	public String nyrSalur() {
 		return "demo/newSalur";
