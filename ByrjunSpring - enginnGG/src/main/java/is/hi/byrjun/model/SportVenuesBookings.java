@@ -14,12 +14,12 @@ package is.hi.byrjun.model;
 public class SportVenuesBookings {
 	private int id;
 	private String name;
-	private int kennitala;
+	private long kennitala;
 	private String email;
 	private int phonenr;
 	private int sportvenuenumber;
 
-	public SportVenuesBookings(String name, int kennitala, String email,
+	public SportVenuesBookings(String name, long kennitala, String email,
 			int phonenr, int sportvenuenumber) {
 		this.name = name;
 		this.kennitala = kennitala;
@@ -44,11 +44,11 @@ public class SportVenuesBookings {
 		this.name = name;
 	}
 	
-	public int getKennitala() {
+	public long getKennitala() {
 		return kennitala;
 	}
 	
-	public void setKennitala(int kennitala) {
+	public void setKennitala(long kennitala) {
 		this.kennitala = kennitala;
 	}
 	

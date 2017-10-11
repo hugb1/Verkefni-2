@@ -6,8 +6,9 @@
 
 <!-- author: Vilhjálmur Jónsson -->
 <!-- email: vij7@hi.is -->
+<!-- Ónotað eins og er!!!! -->
 
-<html lang="en">
+<html lang="is">
 
 
 <head>
