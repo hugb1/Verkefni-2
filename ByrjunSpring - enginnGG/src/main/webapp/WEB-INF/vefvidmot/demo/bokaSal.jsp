@@ -10,8 +10,7 @@
 
 <html lang="is">
 <head>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>2 Column Layout &mdash; Left Menu with Header &amp; Footer</title>
 		<style type="text/css">
 		
@@ -25,6 +24,7 @@
 			#header {
 				background: #ccc;
 				height: 100px;
+				background-color: #982149;
 			}
 			
 			#header h1 {
@@ -40,8 +40,9 @@
 			}
 			
 			#nav {
-				padding-bottom: 10010px;
-				margin-bottom: -10000px;
+				position: relative;
+				padding:100px 0 60px 0; /* Header height and footer height */
+    			margin:0 auto 0 auto; 
 				float: left;
 				width: 230px;
 				margin-left: -100%;
@@ -49,11 +50,15 @@
 			}
 			
 			#footer {
+				position: fixed;
+				height: 60px;
+				bottom:0;
 				clear: left;
 				width: 100%;
 				background: #ccc;
 				text-align: center;
 				padding: 4px 0;
+				background-color: #000000;
 			}
 	
 			#wrapper {
@@ -70,7 +75,7 @@
 			}
 		
 			p {
-				color: #555;
+				color: #F0F8FF;
 			}
 	
 			nav ul {
@@ -84,7 +89,7 @@
 				text-decoration: none;
 			}
 		
-		</style>	
+		</style>
 	
 	</head>
 	
@@ -101,6 +106,7 @@
 			<main>
 				<div id="content">
 					<div class="innertube">
+						
 						<h1>Bókunarupplýsingar</h1>
 						<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
 						
@@ -139,7 +145,7 @@
         		<input type="submit" name="Submit" value="Bóka" />
       		</p>
 			</form>
-						
+					
 					</div>
 				</div>
 			</main>
@@ -147,23 +153,22 @@
 			<nav id="nav">
 				<div class="innertube">
 					<h2>Upplýsingar um salinn</h2>
-					
+					<ul>
 					<h4>Nafn: ${banquet.getName()}</h4>
 					<h4>Gata: ${banquet.getAddress()}</h4>
 					<h4>Verð: ${banquet.getPrice()} kr.</h4>
 					<h4>Fjöldi: ${banquet.getMax()}</h4>
 					<h4>Sími: ${banquet.getPhonenr()}</h4>
-					<h4>Mail: ${banquet.getEmail()}</h4>
-				
+					<h4>Mail: ${banquet.getEmail()}</h4>	
+					</ul>
 				</div>
 			</nav>
 		
 		</div>
 		
-		<footer id="Bókun">
+		<footer id="footer">
 			<div class="innertube">
-				<p>Footer...</p>
+				<p></p>
 			</div>
-			
-</footer>
+		</footer>
 </html>
