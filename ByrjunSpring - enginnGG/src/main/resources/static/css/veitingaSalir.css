@@ -11,16 +11,16 @@ header {
 
 section {
 	margin-bottom: 0;
-	
+
 }
 
 footer {
 	padding: 0 0;
-	
+
 }
 
 .headerSection {
-	
+
 
 }
 
@@ -34,8 +34,8 @@ footer {
 	left: 75%;
 	position: relative;
 	font-weight: bold;
-	
-	
+
+
 }
 
 /*main*/
@@ -44,10 +44,10 @@ footer {
 	position:relative;
 	top: 20px;
 	right: -40%;
-	
+
 	width: 357px;
 	height: 300x;
-	
+
 }
 
 
@@ -61,7 +61,7 @@ form {
 
 option:first {
 	color: #999;
-	
+
 }
 
 .searchSection {
@@ -93,6 +93,20 @@ option:first {
     position: relative;
     background-color: #982149;
 }
+
+.bokaButton {
+	padding: 4%;
+    margin: 0;
+    border: 2px solid #000;
+    width: 70px;
+    border-radius: 3px;
+    overflow: hidden;
+ 	font-weight:bold;
+    background: #fff;
+    position: relative;
+    background-color: #982149;
+}
+
 .locationID{
     padding: 0;
     margin: 0;
@@ -100,10 +114,10 @@ option:first {
     width: 120px;
     border-radius: 3px;
     overflow: hidden;
- 
+
     background: #fff;
     position: relative;
-	
+
 }
 
 .locationID:after {
@@ -142,10 +156,10 @@ option:first {
     width: 120px;
     border-radius: 3px;
     overflow: hidden;
- 
+
     background: #fff;
     position: relative;
-	
+
 }
 
 .maxRoom:after {
@@ -187,10 +201,10 @@ option:first {
     width: 120px;
     border-radius: 3px;
     overflow: hidden;
- 
+
     background: #fff;
     position: relative;
-	
+
 }
 
 .tegundSals:after {
@@ -224,7 +238,7 @@ option:first {
 
 .leitarTakki {
 
-	
+
 }
 
 
@@ -235,18 +249,11 @@ option:first {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    background-color: #FFFFFF;
 }
-
-.veislusalir td, .veislusalir th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.veislusalir tr:nth-child(even){background-color: #f2f2f2;}
-
-.veislusalir tr:hover {background-color: #ddd;}
 
 .veislusalir th {
+	border: 1px solid #ddd;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -256,13 +263,27 @@ option:first {
 
 
 
+.veislusalir td {
+    border: 1px solid #ddd;
+    padding: 8px;
+
+}
+
+.veislusalir tr:nth-child(even){background-color: #f2f2f2;}
+
+.veislusalir tr:hover {background-color: #ddd;}
+
+
+
+
 .sportsalir {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    background-color: white;
 }
 
-.sportsalir td, .sportsalir th {
+.sportsalir td {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -272,6 +293,7 @@ option:first {
 .sportsalir tr:hover {background-color: #ddd;}
 
 .sportsalir th {
+	border: 1px solid #ddd;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -285,7 +307,7 @@ option:first {
 
 .infoInfo {
 	padding: 5% 5%;
-	
+
 }
 
 .followUs {
@@ -295,10 +317,14 @@ option:first {
 }
 
 .facebook, .twitter {
-	
+
 }
 
 .salirTexti1 {
 	text-align: center;
 	font-size: 15px;
+}
+
+.bokunarTexti1 {
+	color: white;
 }
