@@ -41,7 +41,7 @@ main {
 			
 #nav {
 		position: relative;
-		padding:100px 0 60px 0; 
+		padding:40px 0 60px 0; 
     	margin:0 auto 0 auto; 
 		float: left;
 		width: 230px;
@@ -50,7 +50,7 @@ main {
 	  }
 			
 #footer {
-		position: fixed;
+		position: absolute;
 		height: 60px;
 		bottom:0;
 		clear: left;
