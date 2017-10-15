@@ -74,4 +74,16 @@ public interface SearchService {
 	List<Banquet> getAllBanq();
 
 	List<SportVenues> getAllSport();
+	
+	/*
+	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunninn.
+	 */
+	void addBanquet(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key);
+	
+	/*
+	 * Bætir við Íþróttasal með gefnar ulppýsingar í gagnagrunninn.
+	 */
+	void addSport(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key);
 }

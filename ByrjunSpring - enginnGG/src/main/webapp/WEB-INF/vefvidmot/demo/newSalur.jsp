@@ -18,7 +18,7 @@
 
     <marquee behavior="alternate"><img src="" alt="" style="width:150px;height:150px;"></marquee>
         <h1>Skráningar Síða</h1>
-            <form action="/demo/submit" method="post">            
+            <form action="/demo/skraSal" method="post">            
             <h2>Vinsamlegast fylltu út eftirfarandi upplýsingar:</h2>
             
             <br/>Veldu tegund sals:
@@ -39,16 +39,19 @@
             
             <br/>Verð í krónum: <input name = "price" type = "text" placeholder = "Price"/>
 
-            <br/>Hámarks fólksfjölda: <input name = "maxppl" type = "text" placeholder = "Maxppl"/>
+            <br/>Hámarks fólksfjöldi: <input name = "maxppl" type = "text" placeholder = "Maxppl"/>
             
             <br/>Símanúmer: <input name = "phone" type ="text" placeholder = "PhoneNr"/>
             
             <br/>Netfang: <input name = "mail" type = "text" placeholder = "Email"/>
+            
+            <br/>Key*: <input name = "key" type = "text" placeholder = "Key"/>
 
 
             <br/><input type="submit" value="Staðfesta">
             </form>
     </body>
     <footer>
+    *Key breytan er nokkurskonar password sem þarf að nota með ID númeri salsins ef breyta á upplýsingum varðandi salinn seinna meir.
     </footer>
 </html>

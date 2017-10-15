@@ -1,6 +1,8 @@
 package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
+import is.hi.byrjun.model.BanquetBookings;
+
 import java.util.List;
 
 /**
@@ -19,5 +21,12 @@ public interface BanquetRepository {
 	 */
 	List<Banquet> getAll();
 	
+	void addNewBanquetBooking(BanquetBookings booking);
+	
+	void addNewBanquet(String name, String loc, String streetAddrs, int price,
+					int maxppl, int phoneNr, String email, String key);
+	
+	void addNewSport(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key);
 	
 }

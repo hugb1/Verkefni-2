@@ -68,44 +68,45 @@ public class ProgramController {
 	public String submit(@RequestParam(value = "myradio", required = true) int chosen,
 			@RequestParam(value = "loc", required = true) int locNr,
 			@RequestParam(value = "cap", required = false) int capNr, Model model) {
+		String location;
+		int maxcap;
+
+		switch(locNr) {
+		case 1 :
+			location = "Reykjavík";
+			break;
+		case 2:
+			location = "Hafnarfjörður";
+			break;
+		case 3:
+			location = "Garðabær";
+			break;
+		case 4:
+			location = "Kópavogur";
+			break;
+		default :
+			throw new IllegalArgumentException("Invalid Location");
+		}
+
+		switch(capNr) {
+		case 1 :
+			maxcap = 50;
+			break;
+		case 2 :
+			maxcap = 100;
+			break;
+		case 3 :
+			maxcap = 150;
+			break;
+		case 4 :
+			maxcap = 200;
+			break;
+		default :
+			throw new IllegalArgumentException("Invalid Capacity Number");
+		}
+		
 		if (chosen == 1) {
 			List<Banquet> all = searchService.getAllBanq();
-			String location;
-			int maxcap;
-
-			switch(locNr) {
-			case 1 :
-				location = "Reykjavík";
-				break;
-			case 2:
-				location = "Hafnarfjörður";
-				break;
-			case 3:
-				location = "Garðabær";
-				break;
-			case 4:
-				location = "Kópavogur";
-				break;
-			default :
-				throw new IllegalArgumentException("Invalid Location");
-			}
-
-			switch(capNr) {
-			case 1 :
-				maxcap = 50;
-				break;
-			case 2 :
-				maxcap = 100;
-				break;
-			case 3 :
-				maxcap = 150;
-				break;
-			case 4 :
-				maxcap = 200;
-				break;
-			default :
-				throw new IllegalArgumentException("Invalid Capacity Number");
-			}
 
 			List<Banquet> list = searchService.searchBanquet(all, location, maxcap);
 
@@ -113,24 +114,6 @@ public class ProgramController {
 			return "demo/synaSali";
 		} else {
 			List<SportVenues> all = searchService.getAllSport();
-			String location;
-
-			switch(locNr) {
-			case 1 :
-				location = "Reykjavík";
-				break;
-			case 2:
-				location = "Hafnarfjörður";
-				break;
-			case 3:
-				location = "Garðabær";
-				break;
-			case 4:
-				location = "Kópavogur";
-				break;
-			default :
-				throw new IllegalArgumentException("Invalid Location");
-			}
 
 			List<SportVenues> list = searchService.searchSportVenues(all, location);
 
@@ -250,16 +233,37 @@ public class ProgramController {
 	@RequestMapping(value = "/skraSal")
 	public String skraSal(@RequestParam(value = "myradio", required = true)int chosen,
 						  @RequestParam(value = "heiti", required = true)String name,
-						  @RequestParam(value = "loc")int location,
+						  @RequestParam(value = "loc")int loc,
 						  @RequestParam(value = "streetAddress", required = true) String streetAddrs,
 						  @RequestParam(value = "price", required = true)int price,
 						  @RequestParam(value = "maxppl", required = true)int maxppl,
 						  @RequestParam(value = "phone", required = true)int phoneNr,
-						  @RequestParam(value = "mail", required = true)String email, Model model) {
+						  @RequestParam(value = "mail", required = true)String email,
+						  @RequestParam(value = "key", required = true)String key, Model model) {
+		
+		String location;
+		switch(loc) {
+		case 1 :
+			location = "Reykjavík";
+			break;
+		case 2:
+			location = "Hafnarfjörður";
+			break;
+		case 3:
+			location = "Garðabær";
+			break;
+		case 4:
+			location = "Kópavogur";
+			break;
+		default :
+			throw new IllegalArgumentException("Invalid Location");
+		}
 		
 		if (chosen == 1) {
-			
+			searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+		} else {
+			searchService.addSport(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
 		}
-		return null;
+		return "demo/skraLokid";
 	}
 }

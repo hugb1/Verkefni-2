@@ -32,7 +32,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
 	private final String userName = "postgres";
-	private final String password = "villijons";
+	private final String password = "123456";
 	
 	
 	// Connection to Database
@@ -81,6 +81,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	}
 	
 	// Add a banquet booking to the banquetbookings table in database
+	@Override
 	public void addNewBanquetBooking(BanquetBookings booking) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
@@ -97,6 +98,60 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			// execute the prepared statement insert
 			ps.executeUpdate();
 			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void addNewBanquet(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("INSERT INTO banquets ("
+					+ "name, location, street, price, maxppl, phonenr, email, key) VALUES ("
+					+ "?,?,?,?,?,?,?,?)");
+			
+			ps.setString(1, name);
+			ps.setString(2, loc);
+			ps.setString(3, streetAddrs);
+			ps.setInt(4, price);
+			ps.setInt(5, maxppl);
+			ps.setInt(6, phoneNr);
+			ps.setString(7, email);
+			ps.setString(8, key);
+			
+			//Execute the prepared statement insert
+			ps.executeUpdate();
+			ps.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void addNewSport(String name, String loc, String streetAddrs, int price, int maxppl, int phoneNr,
+			String email, String key) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("INSERT INTO sportvenues ("
+					+ "name, location, street, price, phonenr, email, key) VALUES ("
+					+ "?,?,?,?,?,?,?)");
+			
+			ps.setString(1, name);
+			ps.setString(2, loc);
+			ps.setString(3, streetAddrs);
+			ps.setInt(4, price);
+			//ps.setInt(5, maxppl);
+			ps.setInt(5, phoneNr);
+			ps.setString(6, email);
+			ps.setString(7, key);
+			
+			//Execute the prepared statement insert
+			ps.executeUpdate();
+			ps.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
