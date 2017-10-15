@@ -93,5 +93,18 @@ public class SearchServiceImp implements SearchService {
 	public List<SportVenues> getAllSport() {
 		return sportRep.getAll();
 	}
+
+	@Override
+	public void addBanquet(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key) {
+		banquetRep.addNewBanquet(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+	}
+
+	@Override
+	public void addSport(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key) {
+		banquetRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+		
+	}
 	
 }
