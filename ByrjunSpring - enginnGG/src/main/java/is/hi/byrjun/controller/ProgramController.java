@@ -242,6 +242,7 @@ public class ProgramController {
 						  @RequestParam(value = "key", required = true)String key, Model model) {
 		
 		String location;
+		int id;
 		switch(loc) {
 		case 1 :
 			location = "Reykjavík";
@@ -260,10 +261,13 @@ public class ProgramController {
 		}
 		
 		if (chosen == 1) {
-			searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			id = searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			Banquet salur = new Banquet(id, name, location, streetAddrs, price, maxppl, phoneNr, email);
+			model.addAttribute("banquet", salur);
+			return "demo/skraLokid";
 		} else {
 			searchService.addSport(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			return "demo/skraLokid";
 		}
-		return "demo/skraLokid";
 	}
 }

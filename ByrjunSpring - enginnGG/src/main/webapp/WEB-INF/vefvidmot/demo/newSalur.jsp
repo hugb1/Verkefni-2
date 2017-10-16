@@ -7,51 +7,48 @@
 <!-- author: Pétur Logi Pétursson -->
 <!-- email: plp2@hi.is -->
 <!-- vefur til að búa til sali -->
-
 <html>
-    <head>
-        <title>Nýr Salur</title>
-         
-    </head>
-    <body >
+<head>
+<title>Nýr Salur</title>
+
+</head>
+<body>
 
 
-    <marquee behavior="alternate"><img src="" alt="" style="width:150px;height:150px;"></marquee>
-        <h1>Skráningar Síða</h1>
-            <form action="/demo/skraSal" method="post">            
-            <h2>Vinsamlegast fylltu út eftirfarandi upplýsingar:</h2>
-            
-            <br/>Veldu tegund sals:
-            <input type="radio" name=myradio value="1"/>Veislusalir
-            <input type="radio" name=myradio value="2"/>Íþróttasalir
-            
-            <br/>Heiti sals: <input name = "heiti" type = "text" placeholder = "Nafn"/>
-             
-            <br/>Veldu staðsetningu sals:
-            <select name=loc>
-            <option name=one value="1">Reykjavík</option>
-            <option name=two value="2">Hafnarfjörður</option>
-            <option name=three value="3">Garðsbær</option>
-            <option name=four value="4">Kópsvogur</option>
-            </select>
-            
-            <br/>Götuheiti: <input name = "streetAddress" type ="text" placeholder = "Street"/>
-            
-            <br/>Verð í krónum: <input name = "price" type = "text" placeholder = "Price"/>
+	<marquee behavior="alternate">
+		<img src="" alt="" style="width: 150px; height: 150px;">
+	</marquee>
+	<h1>Skráningar síða</h1>
+	<form action="/demo/skraSal" method="post">
+		<h2>Vinsamlegast fylltu út eftirfarandi upplýsingar:</h2>
 
-            <br/>Hámarks fólksfjöldi: <input name = "maxppl" type = "text" placeholder = "Maxppl"/>
-            
-            <br/>Símanúmer: <input name = "phone" type ="text" placeholder = "PhoneNr"/>
-            
-            <br/>Netfang: <input name = "mail" type = "text" placeholder = "Email"/>
-            
-            <br/>Key*: <input name = "key" type = "text" placeholder = "Key"/>
+		<br />Veldu tegund sals: 
+		<input type="radio" name=myradio value="1" />Veislusalur
+		<input type="radio" name=myradio value="2" />Íþróttasalur 
+		<br />Heiti sals: <input name="heiti" type="text" placeholder="Nafn" /> 
+		<br />Veldu staðsetningu sals: <select name=loc>
+			<option name=one value="1">Reykjavík</option>
+			<option name=two value="2">Hafnarfjörður</option>
+			<option name=three value="3">Garðsbær</option>
+			<option name=four value="4">Kópsvogur</option>
+		</select> 
+		<br />Götuheiti: <input name="streetAddress" type="text" placeholder="Street" /> 
+		<br />Verð í krónum: <input name="price" type="text" placeholder="Price" /> 
+		<br />Hámarks fólksfjöldi: <input name="maxppl" type="text" placeholder="Maxppl" /> 
+		<br />Símanúmer: <input name="phone" type="text" placeholder="PhoneNr" /> 
+		<br />Netfang: <input name="mail" type="text" placeholder="Email" /> 
+		<br />Key*: <input name="key" type="text" placeholder="Key" /> <br />
+		<input type="submit" value="Staðfesta">
+	</form>
+</body>
+<footer>
+	*Key breytan er nokkurskonar password sem þarf að nota með ID númeri
+	salsins ef breyta á upplýsingum varðandi salinn seinna meir.
 
-
-            <br/><input type="submit" value="Staðfesta">
-            </form>
-    </body>
-    <footer>
-    *Key breytan er nokkurskonar password sem þarf að nota með ID númeri salsins ef breyta á upplýsingum varðandi salinn seinna meir.
-    </footer>
+	<form action="/demo/innskra">
+		<div class="innskratakki">
+			<button class="innskra" name="1" type="submit" value="innskra">Innskrá</button>
+		</div>
+	</form>
+</footer>
 </html>
