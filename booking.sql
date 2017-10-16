@@ -222,6 +222,10 @@ ALTER TABLE ONLY sportvenues ALTER COLUMN sportvenuenumber SET DEFAULT nextval('
 COPY banquetbookings (id, name, kennitala, email, phonenr, banquetnumber) FROM stdin;
 1	gh	1234567890	gg	1234567	3
 2	mh	1234567890	gh	1234567	8
+3	gg	1212121212	rj	1234567	3
+4	gg	1234567890	ff	1234567	3
+5	gg	1234567890	aa	1234567	4
+6	prufa fyrir kt	3112882299	prufa-kt	7889988	1
 \.
 
 
@@ -229,7 +233,7 @@ COPY banquetbookings (id, name, kennitala, email, phonenr, banquetnumber) FROM s
 -- Name: banquetbookings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('banquetbookings_id_seq', 2, true);
+SELECT pg_catalog.setval('banquetbookings_id_seq', 6, true);
 
 
 --
@@ -246,6 +250,7 @@ COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, em
 4	Hótel Vellir	Hafnarfjörður	Tjarnarvöllum 3	50000	200	5264321	hotelvellir@vellir.is	12345
 5	Fjörukráin	Hafnarfjörður	Víkingastræti 1-3	34995	100	5651213	fjorukrain@fjara.is	12345
 6	Salur Hraunbúa	Hafnarfjörður	Hjallabraut 51	67845	110	5650900	hraun@hraun.is	12345
+11	test1	Garðabær	test1	454545	80	5454556	test1@test1.is	abcd
 \.
 
 
@@ -253,7 +258,7 @@ COPY banquets (banquetnumber, name, location, street, price, maxppl, phonenr, em
 -- Name: banquets_banquetnumber_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('banquets_banquetnumber_seq', 9, true);
+SELECT pg_catalog.setval('banquets_banquetnumber_seq', 11, true);
 
 
 --
@@ -262,6 +267,7 @@ SELECT pg_catalog.setval('banquets_banquetnumber_seq', 9, true);
 
 COPY sportvenuebookings (id, name, kennitala, email, phonenr, sportvenuenumber) FROM stdin;
 1	GMH	1234567890	gh	1234567	5
+2	ss	3112882299	rr	7876655	4
 \.
 
 
@@ -269,7 +275,7 @@ COPY sportvenuebookings (id, name, kennitala, email, phonenr, sportvenuenumber) 
 -- Name: sportvenuebookings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: gunnarmarhardarson
 --
 
-SELECT pg_catalog.setval('sportvenuebookings_id_seq', 1, true);
+SELECT pg_catalog.setval('sportvenuebookings_id_seq', 2, true);
 
 
 --

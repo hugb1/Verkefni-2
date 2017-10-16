@@ -183,7 +183,7 @@ public class ProgramController {
 	 */
 	@RequestMapping(value = "/salurStadfest", method = RequestMethod.POST)
 	public String salurStad(@RequestParam(value = "name")String nafn,
-							@RequestParam(value = "kt")int kennit,
+							@RequestParam(value = "kt")long kennit,
 							@RequestParam(value = "mail")String mail,
 							@RequestParam(value = "phone")int phNr,
 							@RequestParam(value = "id")int id, Model model) {
@@ -209,7 +209,7 @@ public class ProgramController {
 	 */
 	@RequestMapping(value = "/sportStadfest", method = RequestMethod.POST)
 	public String sportStad(@RequestParam(value = "name")String nafn,
-							@RequestParam(value = "kt")int kennit,
+							@RequestParam(value = "kt")long kennit,
 							@RequestParam(value = "mail")String mail,
 							@RequestParam(value = "phone")int phNr,
 							@RequestParam(value = "id")int id, Model model) {
