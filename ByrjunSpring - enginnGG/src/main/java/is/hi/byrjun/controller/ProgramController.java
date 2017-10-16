@@ -266,7 +266,9 @@ public class ProgramController {
 			model.addAttribute("banquet", salur);
 			return "demo/skraLokid";
 		} else {
-			searchService.addSport(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			id = searchService.addSport(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			SportVenues salur = new SportVenues(id, name, location, streetAddrs, price, phoneNr, email);
+			model.addAttribute("banquet", salur);
 			return "demo/skraLokid";
 		}
 	}

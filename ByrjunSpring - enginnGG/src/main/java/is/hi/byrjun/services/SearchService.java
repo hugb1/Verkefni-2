@@ -84,7 +84,7 @@ public interface SearchService {
 	/*
 	 * Bætir við Íþróttasal með gefnar ulppýsingar í gagnagrunninn.
 	 */
-	void addSport(String name, String loc, String streetAddrs, int price,
+	int addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key);
 	
 	/*
@@ -98,4 +98,6 @@ public interface SearchService {
 	SportVenues verifySport(int id, String key);
 
 	void removeBanquet(int id);
+
+	void removeSport(int id);
 }

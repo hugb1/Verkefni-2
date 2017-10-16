@@ -101,9 +101,9 @@ public class SearchServiceImp implements SearchService {
 	}
 
 	@Override
-	public void addSport(String name, String loc, String streetAddrs, int price,
+	public int addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key) {
-		banquetRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+		return banquetRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
 		
 	}
 
@@ -114,14 +114,18 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public SportVenues verifySport(int id, String key) {
-		// TODO Auto-generated method stub
-		return null;
+		return banquetRep.verifySport(id, key);
 	}
 
 	@Override
 	public void removeBanquet(int id) {
 		banquetRep.removeBanquet(id);
 		
+	}
+
+	@Override
+	public void removeSport(int id) {
+		banquetRep.removeSport(id);
 	}
 	
 }
