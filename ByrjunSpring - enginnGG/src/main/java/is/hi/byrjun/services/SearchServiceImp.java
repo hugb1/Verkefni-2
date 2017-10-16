@@ -95,15 +95,32 @@ public class SearchServiceImp implements SearchService {
 	}
 
 	@Override
-	public void addBanquet(String name, String loc, String streetAddrs, int price,
+	public int addBanquet(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key) {
-		banquetRep.addNewBanquet(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+		return banquetRep.addNewBanquet(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
 	}
 
 	@Override
 	public void addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key) {
 		banquetRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+		
+	}
+
+	@Override
+	public Banquet verifyBanquet(int id, String key) {
+		return banquetRep.verifyBanquet(id, key);
+	}
+
+	@Override
+	public SportVenues verifySport(int id, String key) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removeBanquet(int id) {
+		banquetRep.removeBanquet(id);
 		
 	}
 	

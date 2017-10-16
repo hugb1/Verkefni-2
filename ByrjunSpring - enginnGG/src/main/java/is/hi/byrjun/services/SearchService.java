@@ -78,7 +78,7 @@ public interface SearchService {
 	/*
 	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunninn.
 	 */
-	void addBanquet(String name, String loc, String streetAddrs, int price,
+	int addBanquet(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key);
 	
 	/*
@@ -86,4 +86,16 @@ public interface SearchService {
 	 */
 	void addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key);
+	
+	/*
+	 * Athugar hvort ID númer Veitingasals og key eigi saman.
+	 */
+	Banquet verifyBanquet(int id, String key);
+	
+	/*
+	 * Athugar hvort ID númer Íþróttasals og key eigi saman.
+	 */
+	SportVenues verifySport(int id, String key);
+
+	void removeBanquet(int id);
 }

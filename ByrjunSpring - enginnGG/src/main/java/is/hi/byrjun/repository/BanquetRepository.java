@@ -23,10 +23,13 @@ public interface BanquetRepository {
 	
 	void addNewBanquetBooking(BanquetBookings booking);
 	
-	void addNewBanquet(String name, String loc, String streetAddrs, int price,
+	int addNewBanquet(String name, String loc, String streetAddrs, int price,
 					int maxppl, int phoneNr, String email, String key);
 	
 	void addNewSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key);
 	
+	Banquet verifyBanquet(int id, String key);
+	
+	void removeBanquet(int id);
 }

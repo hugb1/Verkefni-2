@@ -104,8 +104,9 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	}
 
 	@Override
-	public void addNewBanquet(String name, String loc, String streetAddrs, int price,
+	public int addNewBanquet(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key) {
+		int result = -1;
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO banquets ("
@@ -125,9 +126,22 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			ps.executeUpdate();
 			ps.close();
 			
+			ps = con.prepareStatement("SELECT * FROM banquets");
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				String temp = rs.getString("name");
+				if (temp.equals(name)) {
+					result = rs.getInt("banquetnumber");
+				}
+			}
+			
+			ps.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return result;
 	}
 
 	@Override
@@ -155,6 +169,45 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public Banquet verifyBanquet(int id, String key) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquets");
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				if (rs.getInt("banquetnumber") == id && rs.getString("key").equals(key)) {
+					Banquet temp = new Banquet(rs.getInt("banquetnumber"),
+							   rs.getString("name"),
+							   rs.getString("location"),
+							   rs.getString("street"),
+							   rs.getInt("price"),
+							   rs.getInt("maxppl"),
+							   rs.getInt("phonenr"),
+							   rs.getString("email"));
+					return temp;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		throw new IllegalArgumentException("ID/Key combination is not valid");
+	}
+
+	@Override
+	public void removeBanquet(int id) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("DELETE FROM banquets WHERE banquetnumber = " + id);
+			ps.executeQuery();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 }
