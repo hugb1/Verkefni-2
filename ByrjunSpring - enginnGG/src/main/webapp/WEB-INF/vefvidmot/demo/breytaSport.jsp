@@ -12,11 +12,11 @@
 <title>Breyta sal</title>
 </head>
 <body>
-${banquet.getName()} 
+${sportvenue.getName()} 
 </body>
 <footer>
-<form action="/demo/eydaSal" method = "post">
-<input type="hidden" name = "id" value = "${banquet.getId()}" />
+<form action="/demo/eydaSport" method = "post">
+<input type="hidden" name = "id" value = "${sportvenue.getId()}" />
 <input type = "submit" value = "Eyða Sal" />
 </form>
 </footer>

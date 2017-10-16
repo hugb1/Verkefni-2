@@ -57,13 +57,20 @@ public class ChangeController {
 			return "demo/breytaSal";
 		} else {
 			SportVenues result = searchService.verifySport(id, key);
-			return "demo/breytaSal";
+			model.addAttribute("sportvenue", result);
+			return "demo/breytaSport";
 		}
 	}
 	
 	@RequestMapping(value = "/eydaSal", method = RequestMethod.POST)
-	public String remove(@RequestParam(value = "id")int id) {
+	public String removeBanquet(@RequestParam(value = "id")int id) {
 		searchService.removeBanquet(id);
+		return "demo/salEytt";
+	}
+	
+	@RequestMapping(value = "/eydaSport", method = RequestMethod.POST)
+	public String removeSport(@RequestParam(value = "id")int id) {
+		searchService.removeSport(id);
 		return "demo/salEytt";
 	}
 }

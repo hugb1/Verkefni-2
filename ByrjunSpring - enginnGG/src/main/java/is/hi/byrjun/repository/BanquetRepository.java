@@ -2,6 +2,7 @@ package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
+import is.hi.byrjun.model.SportVenues;
 
 import java.util.List;
 
@@ -26,10 +27,14 @@ public interface BanquetRepository {
 	int addNewBanquet(String name, String loc, String streetAddrs, int price,
 					int maxppl, int phoneNr, String email, String key);
 	
-	void addNewSport(String name, String loc, String streetAddrs, int price,
+	int addNewSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key);
 	
 	Banquet verifyBanquet(int id, String key);
 	
+	SportVenues verifySport(int id, String key);
+	
 	void removeBanquet(int id);
+	
+	void removeSport(int id);
 }
