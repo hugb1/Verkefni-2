@@ -12,7 +12,17 @@
 <title>Breyta sal</title>
 </head>
 <body>
-${banquet.getName()} 
+<form action = "/demo/breytaSal" method = "post">
+<input type="text" name = "nafn" value = "${banquet.getName()}" />
+<br><input type="text" name = "location" value = "${banquet.getLocation()}" />
+<br><input type="text" name = "streetAddrs" value = "${banquet.getAddress()}" />
+<br><input type="text" name = "price" value = "${banquet.getPrice()}" />
+<br><input type="text" name = "maxppl" value = "${banquet.getMax()}" />
+<br><input type="text" name = "phonenr" value = "${banquet.getPhonenr()}" />
+<br><input type="text" name = "email" value = "${banquet.getEmail()}" />
+<input type="hidden" name = "id" value = "${banquet.getId()}" />
+<br><input type = "submit" value = "Staðfesta Breytingar" />
+</form>
 </body>
 <footer>
 <form action="/demo/eydaSal" method = "post">

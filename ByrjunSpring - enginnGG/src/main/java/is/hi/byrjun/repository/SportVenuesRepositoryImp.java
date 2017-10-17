@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
  *
  */
 @Repository
-public class SportVenuesRepositoryImp {
+public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	
 	//Listi af íþróttasölum
 	private List<SportVenues> sportvenues;
@@ -53,6 +53,7 @@ public class SportVenuesRepositoryImp {
 		sportvenues = new ArrayList<SportVenues>();
 	}
 	
+	@Override
 	public List<SportVenues> getAll() {
 		ArrayList<SportVenues> list = new ArrayList<SportVenues>();
 		try {
@@ -98,5 +99,86 @@ public class SportVenuesRepositoryImp {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	public int addNewSport(String name, String loc, String streetAddrs, int price, int maxppl, int phoneNr,
+			String email, String key) {
+		int result = -1;
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("INSERT INTO sportvenues ("
+					+ "name, location, street, price, phonenr, email, key) VALUES ("
+					+ "?,?,?,?,?,?,?)");
+			
+			ps.setString(1, name);
+			ps.setString(2, loc);
+			ps.setString(3, streetAddrs);
+			ps.setInt(4, price);
+			//ps.setInt(5, maxppl);
+			ps.setInt(5, phoneNr);
+			ps.setString(6, email);
+			ps.setString(7, key);
+			
+			//Execute the prepared statement insert
+			ps.executeUpdate();
+			ps.close();
+			
+			ps = con.prepareStatement("SELECT * FROM sportvenues");
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				String temp = rs.getString("name");
+				if (temp.equals(name)) {
+					result = rs.getInt("sportvenuenumber");
+				}
+			}
+			
+			ps.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	@Override
+	public SportVenues verifySport(int id, String key) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenues");
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				if (rs.getInt("sportvenuenumber") == id && rs.getString("key").equals(key)) {
+					SportVenues temp = new SportVenues(rs.getInt("sportvenuenumber"),
+							   rs.getString("name"),
+							   rs.getString("location"),
+							   rs.getString("street"),
+							   rs.getInt("price"),
+							   rs.getInt("phonenr"),
+							   rs.getString("email"));
+					return temp;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		throw new IllegalArgumentException("ID/Key combination is not valid");
+	}
+
+	
+	@Override
+	public void removeSport(int id) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("DELETE FROM sportvenues WHERE sportvenuenumber = " + id);
+			ps.executeQuery();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

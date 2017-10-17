@@ -27,14 +27,8 @@ public interface BanquetRepository {
 	int addNewBanquet(String name, String loc, String streetAddrs, int price,
 					int maxppl, int phoneNr, String email, String key);
 	
-	int addNewSport(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key);
-	
 	Banquet verifyBanquet(int id, String key);
-	
-	SportVenues verifySport(int id, String key);
-	
+		
 	void removeBanquet(int id);
 	
-	void removeSport(int id);
 }
