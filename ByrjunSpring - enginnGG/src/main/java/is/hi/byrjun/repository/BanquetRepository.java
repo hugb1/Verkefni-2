@@ -31,4 +31,8 @@ public interface BanquetRepository {
 		
 	void removeBanquet(int id);
 	
+	void removeSport(int id);
+	
+	void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email);
 }

@@ -25,4 +25,7 @@ public interface SportVenuesRepository {
 	SportVenues verifySport(int id, String key);
 	
 	void removeSport(int id);
+	
+	void changeSport(int sportvenuenumber, String name, String loc, String streetAddrs, int price,
+			int phonenr, String email);
 }

@@ -115,7 +115,6 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 			ps.setString(2, loc);
 			ps.setString(3, streetAddrs);
 			ps.setInt(4, price);
-			//ps.setInt(5, maxppl);
 			ps.setInt(5, phoneNr);
 			ps.setString(6, email);
 			ps.setString(7, key);
@@ -179,6 +178,30 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
 		
+	// Update Sportvenues in database
+	public void changeSport(int sportvenuenumber, String name, String loc, String streetAddrs, int price,
+			int phoneNr, String email) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("UPDATE sportvenues SET name = ?,"
+					+ "location = ?, street = ?, price = ?, phonenr = ?,"
+					+ "email = ? WHERE sportvenuenumber = ?");
+			ps.setString(1, name);
+			ps.setString(2, loc);
+			ps.setString(3, streetAddrs);
+			ps.setInt(4, price);
+			ps.setInt(5, phoneNr);
+			ps.setString(6, email);
+			ps.setInt(7, sportvenuenumber);
+			
+			// Execute the prepared statement update
+			ps.executeUpdate();
+			ps.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
