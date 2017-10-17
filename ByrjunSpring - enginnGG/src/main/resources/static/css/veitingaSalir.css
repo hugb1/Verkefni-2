@@ -83,7 +83,7 @@ option:first {
 
 .skraButton {
 	padding: 4%;
-    margin: 0;
+    margin: 3%;
     border: 2px solid #000;
     width: 70px;
     border-radius: 3px;
@@ -91,6 +91,7 @@ option:first {
  	font-weight:bold;
     background: #fff;
     position: relative;
+    left: 635%;
     background-color: #982149;
 }
 
