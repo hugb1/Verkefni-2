@@ -328,3 +328,23 @@ option:first {
 .bokunarTexti1 {
 	color: white;
 }
+
+/*lokaSida*/
+
+.infoInfoLokasida {
+	padding: 3% 5%;
+	
+}
+.PontunLokidTexti {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.TakkFyrirTexti {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
