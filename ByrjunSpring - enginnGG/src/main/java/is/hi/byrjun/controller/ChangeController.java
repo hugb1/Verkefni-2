@@ -77,12 +77,32 @@ public class ChangeController {
 	@RequestMapping(value = "/breytaSal", method = RequestMethod.POST)
 	public String editBanquet(@RequestParam(value = "id")int id,
 							  @RequestParam(value = "nafn")String nafn,
-							  @RequestParam(value = "location")String loc,
+							  @RequestParam(value = "location")int locNr,
 							  @RequestParam(value = "streetAddrs")String street,
 							  @RequestParam(value = "price")int price,
 							  @RequestParam(value = "maxppl")int maxppl,
 							  @RequestParam(value = "phonenr")int phonenr,
-							  @RequestParam(value = "email")String email, Model model) {
+							  @RequestParam(value = "email")String email,
+							  @RequestParam(value = "origLoc")String origLoc, Model model) {
+		String loc;
+		switch(locNr) {
+		case 0 :
+			loc = origLoc;
+		case 1 :
+			loc = "Reykjavík";
+			break;
+		case 2:
+			loc = "Hafnarfjörður";
+			break;
+		case 3:
+			loc = "Garðabær";
+			break;
+		case 4:
+			loc = "Kópavogur";
+			break;
+		default :
+			throw new IllegalArgumentException("Invalid Location");
+		}
 		searchService.editBanquet(id, nafn, loc, street, price, maxppl, phonenr, email);
 		return "demo/salBreytt";
 	}
@@ -90,12 +110,32 @@ public class ChangeController {
 	@RequestMapping(value = "/breytaSport", method = RequestMethod.POST)
 	public String editSport(@RequestParam(value = "id")int id,
 							@RequestParam(value = "nafn")String nafn,
-							@RequestParam(value = "location")String loc,
+							@RequestParam(value = "location")int locNr,
 							@RequestParam(value = "streetAddrs")String street,
 							@RequestParam(value = "price")int price,
 							@RequestParam(value = "phonenr")int phonenr,
-							@RequestParam(value = "email")String email, Model model) {
-		
+							@RequestParam(value = "email")String email,
+							@RequestParam(value = "origLoc")String origLoc, Model model) {
+		String loc;
+		switch(locNr) {
+		case 0 :
+			loc = origLoc;
+		case 1 :
+			loc = "Reykjavík";
+			break;
+		case 2:
+			loc = "Hafnarfjörður";
+			break;
+		case 3:
+			loc = "Garðabær";
+			break;
+		case 4:
+			loc = "Kópavogur";
+			break;
+		default :
+			throw new IllegalArgumentException("Invalid Location");
+		}
+		searchService.editSport(id, nafn, loc, street, price, phonenr, email);
 		return "demo/salBreytt";
 	}
 }

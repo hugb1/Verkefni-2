@@ -131,15 +131,15 @@ public class SearchServiceImp implements SearchService {
 	@Override
 	public void editBanquet(int id, String name, String loc, String streetAddrs, int price, int maxppl, int phoneNr,
 			String email) {
-//		banquetRep.changeBanquet(id, name, loc, streetAddrs, price, maxppl,
-//								 phoneNr, email);
+		banquetRep.changeBanquet(id, name, loc, streetAddrs, price, maxppl,
+								 phoneNr, email);
 		
 	}
 
 	@Override
 	public void editSport(int id, String name, String loc, String streetAddrs, int price, int phoneNr,
 			String email) {
-//		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email);
+		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email);
 		
 	}
 	
