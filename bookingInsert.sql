@@ -87,6 +87,8 @@ ALTER TABLE sportvenues ADD COLUMN key text DEFAULT '12345' NOT NULL;
 
 */
 
+ALTER TABLE banquets ADD UNIQUE (name);
+ALTER TABLE sportvenues ADD UNIQUE (name);
 
 
 
