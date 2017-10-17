@@ -67,13 +67,14 @@
 
 				<div class="leitarTakki">
 					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
-					<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
-
             	</div>
-
-
-
             	</form>
+            	
+            	<form action="/demo/nyrSalur">
+            	<div class="skraningarTakki">
+            		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
+            	</div>
+            	</form>            	
             </div>
         </section>
         <section class="infoSection">

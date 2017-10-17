@@ -63,11 +63,7 @@
 			
 				<div class="leitarTakki">
 					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
-            		
             	</div>
-            
-
-            
             	</form>
             	
             	<form action="/demo/nyrSalur">
