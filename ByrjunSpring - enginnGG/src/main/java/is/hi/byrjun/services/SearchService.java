@@ -100,4 +100,10 @@ public interface SearchService {
 	void removeBanquet(int id);
 
 	void removeSport(int id);
+	
+	void editBanquet(int id, String name, String loc, String streetAddrs,
+					 int price, int maxppl, int phoneNr, String email);
+	
+	void editSport(int id, String name, String loc, String streetAddrs,
+					 int price, int phoneNr, String email);
 }

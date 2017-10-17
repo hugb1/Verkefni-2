@@ -18,4 +18,11 @@ public interface SportVenuesRepository {
 	 * @return listi af íþróttasölum
 	 */
 	List<SportVenues> getAll();
+	
+	int addNewSport(String name, String loc, String streetAddrs, int price,
+			int maxppl, int phoneNr, String email, String key);
+	
+	SportVenues verifySport(int id, String key);
+	
+	void removeSport(int id);
 }

@@ -9,13 +9,22 @@
 <!-- vefur til að breyta sölum í gagnagrunni -->
 <html>
 <head>
-<title>Breyta sal</title>
+<title>Breyta Íþróttasal</title>
 </head>
 <body>
-${sportvenue.getName()} 
+<form action = "/demo/breytaSport" method = "post">
+<input type="text" name = "nafn" value = "${sportvenue.getName()}" />
+<br><input type="text" name = "location" value = "${sportvenue.getLocation()}" />
+<br><input type="text" name = "streetAddrs" value = "${sportvenue.getAddress()}" />
+<br><input type="text" name = "price" value = "${sportvenue.getPrice()}" />
+<br><input type="text" name = "phonenr" value = "${sportvenue.getPhonenr()}" />
+<br><input type="text" name = "email" value = "${sportvenue.getEmail()}" />
+<input type="hidden" name = "id" value = "${sportvenue.getId()}" />
+<br><input type = "submit" value = "Staðfesta Breytingar" />
+</form>
 </body>
 <footer>
-<form action="/demo/eydaSport" method = "post">
+<form action="/demo/eydaSal" method = "post">
 <input type="hidden" name = "id" value = "${sportvenue.getId()}" />
 <input type = "submit" value = "Eyða Sal" />
 </form>

@@ -103,7 +103,7 @@ public class SearchServiceImp implements SearchService {
 	@Override
 	public int addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key) {
-		return banquetRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+		return sportRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
 		
 	}
 
@@ -114,7 +114,7 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public SportVenues verifySport(int id, String key) {
-		return banquetRep.verifySport(id, key);
+		return sportRep.verifySport(id, key);
 	}
 
 	@Override
@@ -125,7 +125,22 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public void removeSport(int id) {
-		banquetRep.removeSport(id);
+		sportRep.removeSport(id);
+	}
+
+	@Override
+	public void editBanquet(int id, String name, String loc, String streetAddrs, int price, int maxppl, int phoneNr,
+			String email) {
+//		banquetRep.changeBanquet(id, name, loc, streetAddrs, price, maxppl,
+//								 phoneNr, email);
+		
+	}
+
+	@Override
+	public void editSport(int id, String name, String loc, String streetAddrs, int price, int phoneNr,
+			String email) {
+//		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email);
+		
 	}
 	
 }

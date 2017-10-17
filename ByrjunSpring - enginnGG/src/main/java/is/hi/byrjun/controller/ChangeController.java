@@ -73,5 +73,30 @@ public class ChangeController {
 		searchService.removeSport(id);
 		return "demo/salEytt";
 	}
+	
+	@RequestMapping(value = "/breytaSal", method = RequestMethod.POST)
+	public String editBanquet(@RequestParam(value = "id")int id,
+							  @RequestParam(value = "nafn")String nafn,
+							  @RequestParam(value = "location")String loc,
+							  @RequestParam(value = "streetAddrs")String street,
+							  @RequestParam(value = "price")int price,
+							  @RequestParam(value = "maxppl")int maxppl,
+							  @RequestParam(value = "phonenr")int phonenr,
+							  @RequestParam(value = "email")String email, Model model) {
+		searchService.editBanquet(id, nafn, loc, street, price, maxppl, phonenr, email);
+		return "demo/salBreytt";
+	}
+	
+	@RequestMapping(value = "/breytaSport", method = RequestMethod.POST)
+	public String editSport(@RequestParam(value = "id")int id,
+							@RequestParam(value = "nafn")String nafn,
+							@RequestParam(value = "location")String loc,
+							@RequestParam(value = "streetAddrs")String street,
+							@RequestParam(value = "price")int price,
+							@RequestParam(value = "phonenr")int phonenr,
+							@RequestParam(value = "email")String email, Model model) {
+		
+		return "demo/salBreytt";
+	}
 }
 
