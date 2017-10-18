@@ -2,7 +2,6 @@ package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
-import is.hi.byrjun.model.SportVenues;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,8 +31,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "postgres";
-	private final String password = "123456";
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
 	
 	
 	// Connection to Database
