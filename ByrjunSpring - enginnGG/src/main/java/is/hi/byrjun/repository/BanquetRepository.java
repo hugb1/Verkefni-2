@@ -2,7 +2,6 @@ package is.hi.byrjun.repository;
 
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
-import is.hi.byrjun.model.SportVenues;
 
 import java.util.List;
 
@@ -22,15 +21,32 @@ public interface BanquetRepository {
 	 */
 	List<Banquet> getAll();
 	
+	/*
+	 * Bætir við nýrri bókun á veislusal í banquetbookings gagnagrunninn
+	 * 
+	 * @param booking Bókun á veislusal
+	 */
 	void addNewBanquetBooking(BanquetBookings booking);
 	
+	/*
+	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunn
+	 */
 	int addNewBanquet(String name, String loc, String streetAddrs, int price,
 					int maxppl, int phoneNr, String email, String key);
 	
+	/*
+	 * Athugar hvort ID númer Veitingasals og key eigi saman.
+	 */
 	Banquet verifyBanquet(int id, String key);
-		
+	
+	/*
+	 * Eyðir veislusal úr gagnagrunni.
+	 */
 	void removeBanquet(int id);
 	
+	/*
+	 * Eyðir íþróttasal úr gagnagrunni.
+	 */
 	void removeSport(int id);
 	
 	void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
