@@ -35,7 +35,7 @@
    		<section class="searchSection">
 
         	<div class="searchForm">
-        		<form action="/demo/submit" method="post">
+        		<form class="LoL" action="/demo/submit" method="post">
 
        			<div class ="locationID">
             		<select name=loc>
@@ -70,7 +70,7 @@
             	</div>
             	</form>
             	
-            	<form action="/demo/nyrSalur">
+            	<form class="LoL1" action="/demo/nyrSalur">
             	<div class="skraningarTakki">
             		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             	</div>
