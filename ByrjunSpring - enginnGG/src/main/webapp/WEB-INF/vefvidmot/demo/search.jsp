@@ -31,7 +31,7 @@
    		<section class="searchSection">
 
         	<div class="searchForm">
-        		<form action="/demo/submit" method="post">
+        		<form class="LoL" action="/demo/submit" method="post">
 
        			<div class ="locationID">
             		<select name=loc>
@@ -45,7 +45,7 @@
 
 				<div class ="maxRoom">
            			<select name=cap>
-           				<option name=zero value="1">max Fjöldi</option>
+           				<option name=zero value="0">max Fjöldi</option>
            				<option name=one value="1">50</option>
            				<option name=two value="2">100</option>
             			<option name=three value="3">150</option>
@@ -67,7 +67,7 @@
             	</div>
             	</form>
             	
-            	<form action="/demo/nyrSalur">
+            	<form class="LoL1" action="/demo/nyrSalur">
             	<div class="skraningarTakki">
             		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             	</div>

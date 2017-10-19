@@ -4,51 +4,154 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="is">
 
-<!-- author: Pétur Logi Pétursson -->
-<!-- email: plp2@hi.is -->
-<!-- vefur til að búa til sali -->
+<!-- author: Vilhjállmur Jónsson & Pétur L Pétursson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir skráningu nýrra sala -->
 <html>
-<head>
-<title>Nýr Salur</title>
+    <head>
+        <title>Search</title>
+           <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
+         
+    </head>
+    <body>
+    	<header>
+    		<section class ="headerSection">
+    			<div class = "header1">
+    				<div class = "loginToAdmin">
+    					<p> Innskráning </p>
+    				</div>	
+    			</div>
+    		</section>
+   		 </header>
+   		 <main>
+   		 	<section class="GunnarSection">
+   		 	<img class="salirIMG" src="https://notendur.hi.is/~vij7/asdf/salirLogo.jpg" alt="Salir.com logo">
+   		 
+   			 </section>
+   		<section class="searchSection">
 
-</head>
-<body>
+        	<div class="searchForm">
+        		<form class="LoL" action="/demo/submit" method="post">
 
+       			<div class ="locationID">
+            		<select name=loc>
+            			<option name=zero value="0">Staðsetning</option>
+            			<option name=one value="1">Reykjavík</option>
+            			<option name=two value="2">Hafnarfjörður</option>
+            			<option name=three value="3">Garðsbær</option>
+            			<option name=four value="4">Kópsvogur</option> 
+           			</select>
+            	</div>
 
-	<marquee behavior="alternate">
-		<img src="" alt="" style="width: 150px; height: 150px;">
-	</marquee>
-	<h1>Skráningar síða</h1>
-	<form action="/demo/skraSal" method="post">
-		<h2>Vinsamlegast fylltu út eftirfarandi upplýsingar:</h2>
-
-		<br />Veldu tegund sals: 
-		<input type="radio" name=myradio value="1" />Veislusalur
-		<input type="radio" name=myradio value="2" />Íþróttasalur 
-		<br />Heiti sals: <input name="heiti" type="text" placeholder="Nafn" /> 
-		<br />Veldu staðsetningu sals: <select name=loc>
-			<option name=one value="1">Reykjavík</option>
-			<option name=two value="2">Hafnarfjörður</option>
-			<option name=three value="3">Garðsbær</option>
-			<option name=four value="4">Kópsvogur</option>
-		</select> 
-		<br />Götuheiti: <input name="streetAddress" type="text" placeholder="Street" /> 
-		<br />Verð í krónum: <input name="price" type="text" placeholder="Price" /> 
-		<br />Hámarks fólksfjöldi: <input name="maxppl" type="text" placeholder="Maxppl" /> 
-		<br />Símanúmer: <input name="phone" type="text" placeholder="PhoneNr" /> 
-		<br />Netfang: <input name="mail" type="text" placeholder="Email" /> 
-		<br />Key*: <input name="key" type="text" placeholder="Key" /> <br />
-		<input type="submit" value="Staðfesta">
-	</form>
-</body>
-<footer>
-	*Key breytan er nokkurskonar password sem þarf að nota með ID númeri
-	salsins ef breyta á upplýsingum varðandi salinn seinna meir.
-
-	<form action="/demo/innskra">
-		<div class="innskratakki">
-			<button class="innskra" name="1" type="submit" value="innskra">Innskrá</button>
-		</div>
-	</form>
-</footer>
+				<div class ="maxRoom">
+           			<select name=cap>
+           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=one value="1">50</option>
+           				<option name=two value="2">100</option>
+            			<option name=three value="3">150</option>
+            			<option name=four value="4">200+</option>
+            		</select>
+            	</div>
+            	
+            	<div class ="tegundSals">
+           			<select name=myradio>
+           				<option name=zero value="">Tegund sals</option>
+           				<option name=one value="1">Veislusalir</option>
+           				<option name=two value="2">íþróttasalir</option>
+            		</select>
+            	</div>
+			
+				<div class="leitarTakki">
+					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
+            		
+            	</div>
+            	</form>
+            	
+            	<form class="LoL1" action="/demo/nyrSalur">
+            	<div class="skraningarTakki">
+            		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
+            	</div>
+            	</form>
+            </div>
+        </section>
+        <section class="infoSection">
+        	<div class="infoInfoNyrSalur">
+				<h1>Skráningar síða</h1>
+				<form class="LoL4" action="/demo/skraSal" method="post">
+				<p class="salurHausTexti">Fylltu inn eftirfarandi upplýsingar til að skrá þinn sal!</p>
+				
+						<label for="">Tegund sals</label>
+						<div class="salurTegund">
+						<select name=myradio>
+           					<option name=zero value="">Tegund sals</option>
+           					<option name=one value="1">Veislusalir</option>
+           					<option name=two value="2">íþróttasalir</option>
+            			</select>
+            			</div>
+            			
+						<label for="stadur">Staðsetning sals</label>
+						<div class="selStadur">
+							<select id="stadur" name=loc>
+								<option name=one value="1">Staðsetning</option>
+  								<option name=one value="1">Reykjavík</option>
+  								<option name=two value="2">Hafnarfjörður</option>
+  								<option name=three value="3">Garðsbær</option>
+  								<option name=four value="4">Kópsvogur</option>
+  							</select> 
+  						</div>
+  						
+  						<label for="gata">Götuheiti</label>
+  						<div class="salurGata">
+  							<input id="gata" name="streetAddress" type="text" placeholder="Street" </label>
+  						</div>
+  						
+  						<label for="fjoldi">Max fjöldi</label>
+  						<div class="salurFjoldi">
+  							<input id="fjoldi" name="maxppl" type="text" placeholder="Max people">
+  						</div>
+  						
+  						<label for="verd"> Verð í Kr.</lable>
+  						<div class="salurVerd">
+  							<input id="verd" name="price" type="text" placeholder="Price">
+  						</div>
+  						
+  						<label for="simi"> Símanúmer</lable>
+  						<div class="salurSimi">
+  							<input id="simi" name="phone" type="text" placeholder="Phone number">
+  						</div>
+  						
+  						<label for="netfang"> Netfang</lable>
+  						<div class="salurNetfang">
+  							<input id="netfang" name="mail" type="text" placeholder="Email">
+  						</div>
+  						
+  						<label for="lykill"> Lykilorð</lable>
+  						<div class="salurLykill">
+  							<input id="lykill" name="key" type="text" placeholder="Password">
+  						</div>
+  						
+  						<div class="stadfestaTakki">
+  							<input type="submit" value="Staðfesta"> 
+						</div>
+						
+				</form>
+				<form class="LoL2" action="/demo/innskra">
+					<div class="innskratakki">
+						<button class="innskra" name="1" type="submit" value="innskra">Innskrá</button>
+					</div>
+				</form>
+        	</div>
+        </section>
+        
+        </main>
+        <footer>
+        	<div class="followUs">
+        		<p>Follow us for more information!<p>
+        		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		<img class="twitter" src="https://notendur.hi.is/~vij7/asdf/twitter-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		
+        		<p class="SalirTexti1">Salir.com</p>
+        	</div>
+     	</footer>       
+    </body>
 </html>
