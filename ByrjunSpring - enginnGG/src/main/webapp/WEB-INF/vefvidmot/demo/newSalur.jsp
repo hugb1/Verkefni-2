@@ -99,6 +99,11 @@
   								<option name=four value="4">Kópsvogur</option>
   							</select> 
   						</div>
+
+  						<label for="nafn">Nafn á sal</label>
+  						<div class="salurNafn">
+  							<input id="nafn" name="heiti" type="text" placeholder="Name of place" </label>
+  						</div>
   						
   						<label for="gata">Götuheiti</label>
   						<div class="salurGata">
@@ -131,7 +136,7 @@
   						</div>
   						
   						<div class="stadfestaTakki">
-  							<input type="submit" value="Staðfesta"> 
+  							<button class="stadfesta" type="submit" value="Staðfesta">Staðfesta </button>
 						</div>
 						
 				</form>

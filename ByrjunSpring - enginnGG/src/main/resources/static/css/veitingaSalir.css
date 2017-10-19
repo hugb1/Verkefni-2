@@ -423,6 +423,16 @@ label {
 	
 }
 
+.salurNafn input{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	
+}
 .salurFjoldi input{
 	width: 100%;
     padding: 12px 20px;
@@ -477,7 +487,7 @@ label {
 	
 }
 
-.StadfestaTakki {
+.stadfesta {
 	width: 100%;
 	background-color: #4CAF50;
 	color:white;
@@ -487,13 +497,13 @@ label {
 	border-radius: 4px;
 	cursor: pointer;
 }
-.StadfestaTakki:hover{
+.stadfesta:hover{
 	background-color: #45a049
 }
 
 .innskra{
 	width: 100%;
-	background-color: #7F8C8D;
+	background-color: #CCD1D1;
 	color:black;
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -503,7 +513,7 @@ label {
 }
 
 .innskra:hover {
-    background-color: #707B7C
+    background-color: #B2BABB;
     }
 
 .salurHausTexti {
