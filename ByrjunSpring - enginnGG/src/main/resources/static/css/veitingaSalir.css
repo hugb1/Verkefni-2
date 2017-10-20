@@ -345,6 +345,10 @@ option:first {
 	margin-left: 15%
 }
 
+.LoL5 {
+	
+}
+
 .salirTexti1 {
 	text-align: center;
 	font-size: 15px;
@@ -549,3 +553,47 @@ label {
 	font-weight:bold;
 	font-size: 20px;
 }
+
+/*Bóka veislusal*/
+
+.infoInfoBokasal {
+    padding-left: 30%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.infosalurBox {
+    color: #982149;
+    font-weight: bold;
+    position: absolute;
+    left: 8%;
+    padding-top: 10%;
+}
+
+.salurBokBok {
+	font-size:25px;
+}
+.infoBoxTexti {
+	font-size:20px;
+}
+
+.boxBox {
+	display:flex;
+}
+
+.LoL6 {
+	width:57%;
+}
+
+.salurHausTexti1 {
+	color:white;
+	font-weight:bold;
+	font-size:30px;
+	padding-left:15%
+}
+
+
+/*Bóka Íþróttasal*/
+
+
+
+
