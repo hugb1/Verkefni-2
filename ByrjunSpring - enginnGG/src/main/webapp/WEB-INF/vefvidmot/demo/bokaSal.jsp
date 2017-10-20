@@ -1,167 +1,137 @@
 <!DOCTYPE html>
-
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<!-- author: Brynjar Árnason -->
-<!-- email: bra13@hi.is -->
-<!-- vefur fyrir bókun veislusala viðmót-->
-
 <html lang="is">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>2 Column Layout &mdash; Left Menu with Header &amp; Footer</title>
-<style type="text/css">
-		
-body {
-		margin:0;
-		padding:0;
-		font-family: Sans-Serif;
-		line-height: 1.5em;
-	 }
+
+<!-- author: Vilhjállmur Jónsson -->
+<!-- email: vij7@hi.is -->
+<!-- vefur fyrir leitarviðmót -->
+<html>
+    <head>
+        <title>Search</title>
+           <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
+         
+    </head>
+    <body>
+    	<header>
+    		<section class ="headerSection">
+    			<div class = "header1">
+    				<div class = "loginToAdmin">
+    					<p> Innskráning </p>
+    				</div>	
+    			</div>
+    		</section>
+   		 </header>
+   		 <main>
+   		 	<section class="GunnarSection">
+   		 	<img class="salirIMG" src="https://notendur.hi.is/~vij7/asdf/salirLogo.jpg" alt="Salir.com logo">
+   		 
+   			 </section>
+   		<section class="searchSection">
+
+        	<div class="searchForm">
+        		<form class="LoL" action="/demo/submit" method="post">
+
+       			<div class ="locationID">
+            		<select name=loc>
+            			<option name=zero value="0">Staðsetning</option>
+            			<option name=one value="1">Reykjavík</option>
+            			<option name=two value="2">Hafnarfjörður</option>
+            			<option name=three value="3">Garðsbær</option>
+            			<option name=four value="4">Kópsvogur</option> 
+           			</select>
+            	</div>
+
+				<div class ="maxRoom">
+           			<select name=cap>
+           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=one value="1">50</option>
+           				<option name=two value="2">100</option>
+            			<option name=three value="3">150</option>
+            			<option name=four value="4">200+</option>
+            		</select>
+            	</div>
+            	
+            	<div class ="tegundSals">
+           			<select name=myradio>
+           				<option name=zero value="">Tegund sals</option>
+           				<option name=one value="1">Veislusalir</option>
+           				<option name=two value="2">íþróttasalir</option>
+            		</select>
+            	</div>
 			
-#header {
-		background: #ccc;
-		height: 100px;
-		background-color: #982149;
-		}
-			
-#header h1 {
-		margin: 0;
-		padding-top: 15px;
-		}
-			
-main {
-		padding-bottom: 10010px;
-		margin-bottom: -10000px;
-		float: left;
-		width: 100%;
-		}
-			
-#nav {
-		position: relative;
-		padding:40px 0 60px 0; 
-    	margin:0 auto 0 auto; 
-		float: left;
-		width: 230px;
-		margin-left: -100%;
-		background: #eee;
-	  }
-			
-#footer {
-		position: absolute;
-		height: 60px;
-		bottom:0;
-		clear: left;
-		width: 100%;
-		background: #ccc;
-		text-align: center;
-		padding: 4px 0;
-		background-color: #000000;
-		}
-	
-#wrapper {
-		overflow: hidden;
-		}
-						
-#content {
-		margin-left: 230px; 
-		}
-			
-.innertube {
-		margin: 15px; 
-		margin-top: 0;
-		}
-		
-p {
-		color: #F0F8FF;
-		}
-	
-nav ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		}
-			
-nav ul a {
-		color: darkgreen;
-		text-decoration: none;
-		}
-		
-</style>
-	</head>
-		<body>		
-			<header id="header">
-			<div class="innertube">
-				<h1><center>Bókun á Veislusal</center></h1>
+				<div class="leitarTakki">
+					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
+            		
+            	</div>
+            	</form>
+            	
+            	<form class="LoL1" action="/demo/nyrSalur">
+            	<div class="skraningarTakki">
+            		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
+            	</div>
+            	</form>
+            </div>
+        </section>
+		<section class="infoSection">
+			<div class="infosalurBox">
+				<P class="salurBokBok">Upplýsingar um salinn</p>
+				<p class="infoBoxTexti"> Nafn: ${banquet.getName()}</p>
+				<p class="infoBoxTexti">Gata: ${banquet.getAddress()}</p>
+				<p class="infoBoxTexti">Verð: ${banquet.getPrice()} kr.</p>
+				<p class="infoBoxTexti">Fjöldi: ${banquet.getMax()}</p>
+				<p class="infoBoxTexti">Sími: ${banquet.getPhonenr()}</p>
+				<p class="infoBoxTexti">Mail: ${banquet.getEmail()}</p>
 			</div>
-		</header>
-		
-		<div id="wrapper">
-			<main>
-				<div id="content">
-					<div class="innertube">
-					<h1>Bókunarupplýsingar</h1>
-					<h2>Vinsamlegast skráðu persónuupplýsingar:</h2>
-						<form action="/demo/salurStadfest" method="POST" >
-      					<table width="75%">
-        			<tr> 
-          				<td width="48%">Nafn:</td>
-          				<td width="52%">
-            			<input type="text" name="name" />
-          				</td>
-        			</tr>
-        			<tr> 
-          				<td width="48%">kennitala:</td>
-          				<td width="52%">
-            			<input type="text" name="kt" />
-          				</td>
-        			</tr>
-        			<tr> 
-          				<td width="48%">email:</td>
-          				<td width="52%">
-            			<input type="text" name="mail" />
-          				</td>
-        			</tr>
-        			<tr> 
-          				<td width="48%">sími:</td>
-          				<td width="52%">
-            			<input type="text" name="phone" />
-          				</td>
-        			</tr>
-        			<tr>
-        				<td> <input type = "hidden" name = "id" value = "${banquet.getId()}"/>
-        				</td>
-        			</tr>
-      					</table>
-      				<p> 
-        			<input type="submit" name="Submit" value="Bóka" />
-      				</p>
-						</form>
-					
-					</div>
-				</div>
-			</main>
 			
-<nav id="nav">
-	<div class="innertube">
-		<h2>Upplýsingar um salinn</h2>
-			<ul>
-			<h4>Nafn: ${banquet.getName()}</h4>
-			<h4>Gata: ${banquet.getAddress()}</h4>
-			<h4>Verð: ${banquet.getPrice()} kr.</h4>
-			<h4>Fjöldi: ${banquet.getMax()}</h4>
-			<h4>Sími: ${banquet.getPhonenr()}</h4>
-			<h4>Mail: ${banquet.getEmail()}</h4>	
-			</ul>
-	</div>
-</nav>
-		
-</div>
-		<footer id="footer">
-<div class="innertube">
-		<p></p>
-</div>
-</footer>
+        	<div class="infoInfoBokasal">
+				<form class="LoL6" action="/demo/salurStadfest" method="post">
+				<p class="salurHausTexti1">Fylltu inn eftirfarandi upplýsingar!</p>
+				
+  						<label for="nafn1">Nafn</label>
+  						<div class="salurNafn">
+  							<input id="nafn1" name="name" type="text" placeholder="Name">
+  						</div>
+ 
+   						<label for="kt1">Kennitala</label>
+  						<div class="salurNafn">
+  							<input id="kt1" name="kt" type="text" placeholder="Social Security number">
+  						</div>
+  						
+  						<label for="mail1">Netfang</label>
+  						<div class="salurNafn">
+  							<input id="mail1" name="mail" type="text" placeholder="E-mail">
+  						</div>  						
+  						
+  						 <label for="simi1">Símanúmer</label>
+  						<div class="salurNafn">
+  							<input id="simi1" name="phone" type="text" placeholder="Phone number">
+  						</div>
+  						
+  	  						<div>
+  								<input name="id" type="hidden"  value = "${banquet.getId()}">
+  							</div>
+  										
+  						
+  				
+  						<div class="stadfestaTakki">
+  							<button class="stadfesta" type="submit" value="Bóka">Bóka</button>
+						</div>
+						
+				</form>
+        	</div>
+        </section>
+        
+        </main>
+        <footer>
+        	<div class="followUs">
+        		<p>Follow us for more information!<p>
+        		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		<img class="twitter" src="https://notendur.hi.is/~vij7/asdf/twitter-icon@3x.png" alt="facebook icon" height="42" width="42">
+        		
+        		<p class="SalirTexti1">Salir.com</p>
+        	</div>
+     	</footer>       
+    </body>
 </html>
