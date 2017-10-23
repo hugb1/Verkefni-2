@@ -6,7 +6,7 @@
 
 <!-- author: Vilhjállmur Jónsson -->
 <!-- email: vij7@hi.is -->
-<!-- vefur fyrir leitarviðmót -->
+<!-- vefur fyrir bóka veislusal -->
 <html>
     <head>
         <title>Search</title>
