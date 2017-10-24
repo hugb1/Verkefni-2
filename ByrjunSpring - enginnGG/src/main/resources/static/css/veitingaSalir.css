@@ -569,9 +569,23 @@ label {
     padding-top: 10%;
 }
 
+.infosalurBox22 {
+    color: green;
+    font-weight: bold;
+    position: absolute;
+    right: 4%;
+    padding-top: 10%;
+}
+
+.infoBoxTexti22 {
+	font-size:20px;
+	line-height: 5px;
+}
+
 .salurBokBok {
 	font-size:25px;
 }
+
 .infoBoxTexti {
 	font-size:20px;
 }

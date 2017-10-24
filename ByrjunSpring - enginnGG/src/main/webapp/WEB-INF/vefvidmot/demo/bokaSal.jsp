@@ -85,6 +85,16 @@
 				<p class="infoBoxTexti">Mail: ${banquet.getEmail()}</p>
 			</div>
 			
+			<div class="infosalurBox22">
+				<P class="salurBokBok">Salurinn</p>
+				<p class="infoBoxTexti22">${banquet.getName()} er einn af mörgum</p>
+				<p class="infoBoxTexti22">sölum sem hægt er að panta í</p>	
+				<p class="infoBoxTexti22">gegnum vefsíðuna Salir.</p>	
+				<p class="infoBoxTexti22">Bókun er staðfest innan sólarhrings.</p>	
+				<p class="infoBoxTexti22">Einnig er hægt að hringja í síma</p>			
+				<p class="infoBoxTexti22">${banquet.getPhonenr()} til frekari upplýsinga.</p>	
+			</div>
+			
         	<div class="infoInfoBokasal">
 				<form class="LoL6" action="/demo/salurStadfest" method="post">
 				<p class="salurHausTexti1">Fylltu inn eftirfarandi upplýsingar!</p>
