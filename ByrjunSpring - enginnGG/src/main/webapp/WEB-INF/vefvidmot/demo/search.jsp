@@ -81,6 +81,12 @@
         
         </main>
         <footer>
+        
+         <form class="LoL1" action="/demo/veljaDags">
+            <div class="dagsetningartakki">
+            	<button class="dagsTakki" name="1" type="submit" value="Velja dags.">Dags</button>
+            </div>
+         </form>
         	<div class="followUs">
         		<p>Follow us for more information!<p>
         		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
