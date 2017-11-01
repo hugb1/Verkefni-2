@@ -102,37 +102,37 @@
 
   						<label for="nafn">Nafn á sal</label>
   						<div class="salurNafn">
-  							<input id="nafn" name="heiti" type="text" placeholder="Name of place" </label>
+  							<input id="nafn" name="heiti" type="text" required minlength="1" maxlength="30" placeholder="Name of place" </label>
   						</div>
   						
   						<label for="gata">Götuheiti</label>
   						<div class="salurGata">
-  							<input id="gata" name="streetAddress" type="text" placeholder="Street" </label>
+  							<input id="gata" name="streetAddress" type="text" required minlength="1" maxlength="30" placeholder="Street" </label>
   						</div>
   						
   						<label for="fjoldi">Max fjöldi</label>
   						<div class="salurFjoldi">
-  							<input id="fjoldi" name="maxppl" type="text" placeholder="Max people">
+  							<input id="fjoldi" name="maxppl" type="text" required minlength="1" maxlength="5000" placeholder="Max people">
   						</div>
   						
   						<label for="verd"> Verð í Kr.</lable>
   						<div class="salurVerd">
-  							<input id="verd" name="price" type="text" placeholder="Price">
+  							<input id="verd" name="price" type="text" required minlength="1" maxlength="9999999999999" placeholder="Price">
   						</div>
   						
   						<label for="simi"> Símanúmer</lable>
   						<div class="salurSimi">
-  							<input id="simi" name="phone" type="text" placeholder="Phone number">
+  							<input id="simi" name="phone" type="text" required minlength="7" maxlength="7" placeholder="Phone number">
   						</div>
   						
   						<label for="netfang"> Netfang</lable>
   						<div class="salurNetfang">
-  							<input id="netfang" name="mail" type="text" placeholder="Email">
+  							<input id="netfang" name="mail" type="email"  placeholder="email@email.com">
   						</div>
   						
   						<label for="lykill"> Lykilorð</lable>
   						<div class="salurLykill">
-  							<input id="lykill" name="key" type="text" placeholder="Password">
+  							<input id="lykill" name="key" type="text" required minlength="1" maxlength="15" placeholder="Password">
   						</div>
   						
   						<div class="stadfestaTakki">
