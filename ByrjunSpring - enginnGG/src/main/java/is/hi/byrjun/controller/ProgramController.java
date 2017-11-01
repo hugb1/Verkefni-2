@@ -100,7 +100,7 @@ public class ProgramController {
 			throw new IllegalArgumentException("Invalid Capacity Number");
 		}
 		
-		if (chosen == 1) {
+		if (searchService.checkChosen(chosen)) {
 			List<Banquet> all = searchService.getAllBanq();
 
 			List<Banquet> list = searchService.searchBanquet(all, location, maxcap);
@@ -122,8 +122,8 @@ public class ProgramController {
 	 */
 	@RequestMapping(value = "/salir", method = RequestMethod.POST)
 	public String birtaSali(Model model) {
-		ArrayList<Banquet> list;
-		list = (ArrayList<Banquet>) searchService.getAllBanq();
+		List<Banquet> list;
+		list = searchService.getAllBanq();
 		model.addAttribute("veislusalir", list);
 
 		return "demo/synaSali";

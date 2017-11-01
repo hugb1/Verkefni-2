@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * HBV501G Hugbúnaðarverkefni 1
  * Háskóli Íslands
  * 
- * Tekur við skipunum frá vefviðmóti til að leita af veislusölum og birta 
- * leitarniðurstöðurnar.
+ * Tekur við skipunum frá vefviðmóti til að breyta veislusölum og skrá nýja
+ * sali í gagnagrunninn.
  * 
  */
 
