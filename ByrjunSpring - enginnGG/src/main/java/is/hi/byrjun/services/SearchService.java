@@ -31,6 +31,13 @@ public interface SearchService {
 	List<Banquet> searchBanquet(List<Banquet> list, String loc, int maxCap);
 	
 	/*
+	 * Athugar hvort valið hafi verið veitingasal eða íþróttahús.
+	 * 
+	 * 
+	 */
+	boolean checkChosen(int chosen);
+	
+	/*
 	 * Nær í alla íþróttasali sem staðsettir eru í locaction
 	 * 
 	 * @param list   Listi af íþróttasölum

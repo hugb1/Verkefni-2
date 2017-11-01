@@ -37,9 +37,9 @@ public class HttpRequestTest {
          * @throws java.lang.Exception
          */
 	@Test
-        public void heimaSkilarKlukkan() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
-                String.class)).contains("Klukkan");
+        public void searchHefurSalir() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/demo/search",
+                String.class)).contains("Salir.com");
     }
 
 }

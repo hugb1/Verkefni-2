@@ -142,5 +142,14 @@ public class SearchServiceImp implements SearchService {
 		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email);
 		
 	}
+
+	@Override
+	public boolean checkChosen(int chosen) {
+		if (chosen == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 }
