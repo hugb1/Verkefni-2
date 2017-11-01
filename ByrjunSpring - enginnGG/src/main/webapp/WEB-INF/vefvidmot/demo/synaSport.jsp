@@ -109,7 +109,7 @@
              	<div class="bokasalinn">
                 <form action="/demo/bokaSport" method="post">
 
-					<p class="bokunarTexti1"> Sláðu inn Bókunar Nr:<p> <input name = "bokunNr" type = "text"/>
+					<p class="bokunarTexti1"> Sláðu inn Bókunar Nr:<p> <input name = "bokunNr" required minlength="1" maxlength="1000" type = "text"/>
 
 
 

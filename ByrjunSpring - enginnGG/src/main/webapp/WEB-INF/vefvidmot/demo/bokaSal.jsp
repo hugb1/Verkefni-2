@@ -101,22 +101,22 @@
 				
   						<label for="nafn1">Nafn</label>
   						<div class="salurNafn">
-  							<input id="nafn1" name="name" type="text" placeholder="Name">
+  							<input id="nafn1" name="name" type="text" required minlength="1" maxlength="30" placeholder="Name">
   						</div>
  
    						<label for="kt1">Kennitala</label>
   						<div class="salurNafn">
-  							<input id="kt1" name="kt" type="text" placeholder="Social Security number">
+  							<input id="kt1" name="kt" type="text" required minlength="10" maxlength="10" placeholder="Social Security number">
   						</div>
   						
   						<label for="mail1">Netfang</label>
   						<div class="salurNafn">
-  							<input id="mail1" name="mail" type="text" placeholder="E-mail">
+  							<input id="mail1" name="mail" type="email" placeholder="email@email.com">
   						</div>  						
   						
   						 <label for="simi1">Símanúmer</label>
   						<div class="salurNafn">
-  							<input id="simi1" name="phone" type="text" placeholder="Phone number">
+  							<input id="simi1" name="phone" type="text" required minlength="7" maxlength="7" placeholder="Phone number">
   						</div>
   						
   	  						<div>
