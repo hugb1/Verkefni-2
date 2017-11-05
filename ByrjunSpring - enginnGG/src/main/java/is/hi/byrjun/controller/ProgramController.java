@@ -48,6 +48,11 @@ public class ProgramController {
 		return "demo/search"; //Skilar .jsp skrá sem er /webapp/WEB-INF/vefvidmot/demo/search.jsp
 	}
 	
+	@RequestMapping("/datePicker")
+	public String pickDate() {
+		return "demo/datePicker";
+	}
+	
 	/*
 	 * Tekur við leitarupplýsingum frá notanda og birtir þá sali sem 
 	 * eiga við. Biður síðan notandann um að velja einn af þeim sölum

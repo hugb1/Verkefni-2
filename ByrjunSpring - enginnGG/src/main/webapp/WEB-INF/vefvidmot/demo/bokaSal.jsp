@@ -11,7 +11,10 @@
     <head>
         <title>Search</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
-         
+           <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  			<script src="/javascript/jquery-1.12.4.js"></script>
+  			<script src="/javascript/jquery-ui.js"></script>
+			<script src="/javascript/datepicker.js"></script>
     </head>
     <body>
     	<header>
@@ -117,6 +120,11 @@
   						 <label for="simi1">Símanúmer</label>
   						<div class="salurNafn">
   							<input id="simi1" name="phone" type="text" required minlength="7" maxlength="7" placeholder="Phone number">
+  						</div>
+  						
+  						<label for="datepicker">Dagsetning</label>
+  						<div class="salurNafn">
+  							<input id="datepicker" name="date" type="text">
   						</div>
   						
   	  						<div>
