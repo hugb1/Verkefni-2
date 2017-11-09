@@ -6,7 +6,6 @@ import is.hi.byrjun.model.SportVenues;
 import is.hi.byrjun.model.SportVenuesBookings;
 import is.hi.byrjun.services.SearchService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

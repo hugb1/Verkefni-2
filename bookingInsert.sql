@@ -85,10 +85,29 @@ ALTER TABLE sportvenuebookings ALTER COLUMN kennitala TYPE bigint using kennital
 ALTER TABLE banquets ADD COLUMN key text DEFAULT '12345' NOT NULL;
 ALTER TABLE sportvenues ADD COLUMN key text DEFAULT '12345' NOT NULL;
 
-*/
-
 ALTER TABLE banquets ADD UNIQUE (name);
 ALTER TABLE sportvenues ADD UNIQUE (name);
+
+*/
+
+ALTER TABLE banquetbookings ADD COLUMN dagsetning date;
+ALTER TABLE sportvenuebookings ADD COLUMN dagsetning date;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
