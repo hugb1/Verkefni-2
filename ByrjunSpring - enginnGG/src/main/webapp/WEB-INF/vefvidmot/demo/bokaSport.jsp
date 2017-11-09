@@ -11,6 +11,11 @@
     <head>
         <title>Search</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
+           <link rel="stylesheet" type="text/css" href="<c:url value="/css/jquery-ui.css"/>"/>
+           <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="/javascript/jquery-1.12.4.js"></script>
+        <script src="/javascript/jquery-ui.js"></script>
+      <script src="/javascript/datepicker.js"></script>
          
     </head>
     <body>
@@ -18,7 +23,7 @@
     		<section class ="headerSection">
     			<div class = "header1">
     				<div class = "loginToAdmin">
-    					<p> Innskráning </p>
+    					<p></p>
     				</div>	
     			</div>
     		</section>
@@ -107,7 +112,12 @@
   						<div class="salurNafn">
   							<input id="simi1" name="phone" type="text" required minlength="7" maxlength="7" placeholder="Phone number">
   						</div>
-  						
+
+  						<label for="datepicker">Dagsetning</label>
+              <div class="salurNafn">
+                <input id="datepicker" name="date" type="text">
+              </div>
+
   	  						<div>
   								<input name="id" type="hidden"  value = "${banquet.getId()}">
   							</div>
