@@ -1,5 +1,7 @@
 package is.hi.byrjun.model;
 
+import java.sql.Date;
+
 /**
  * 
  * @author Gunnar Már Harðarson
@@ -18,14 +20,16 @@ public class BanquetBookings {
 	private String email;
 	private int phonenr;
 	private int banquetnumber;
+	private String date;
 	
 	public BanquetBookings(String name, long kennitala, String email,
-							int phonenr, int banquetnumber) {
+							int phonenr, int banquetnumber, String dags) {
 		this.name = name;
 		this.kennitala = kennitala;
 		this.email = email;
 		this.phonenr = phonenr;
 		this.banquetnumber = banquetnumber;
+		this.date = dags;
 	}
 	
 	public int getId() {
@@ -74,5 +78,13 @@ public class BanquetBookings {
 	
 	public void setBanquetnumber(int banquetnumber) {
 		this.banquetnumber = banquetnumber;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+	
+	public void setDate(String dags) {
+		this.date = dags;
 	}
 }

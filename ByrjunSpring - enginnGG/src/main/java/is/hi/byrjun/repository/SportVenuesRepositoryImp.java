@@ -68,7 +68,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 													rs.getString("street"),
 													rs.getInt("price"),
 													rs.getInt("phonenr"),
-													rs.getString("email"));
+													rs.getString("email"),
+													rs.getString("desctription"));
 				list.add(temp);
 			}
 		} catch (Exception e) {
@@ -157,7 +158,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 							   rs.getString("street"),
 							   rs.getInt("price"),
 							   rs.getInt("phonenr"),
-							   rs.getString("email"));
+							   rs.getString("email"),
+							   rs.getString("description"));
 					return temp;
 				}
 			}

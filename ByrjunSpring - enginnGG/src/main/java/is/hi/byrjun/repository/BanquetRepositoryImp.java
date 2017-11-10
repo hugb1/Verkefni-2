@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
@@ -32,8 +33,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
 	private final String userName = "postgres";
-	private final String password = "villijons";
-	
+	private final String password = "villijons";	
 	
 	// Connection to Database
 	public Connection connect() {
@@ -69,7 +69,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 										   rs.getInt("price"),
 										   rs.getInt("maxppl"),
 										   rs.getInt("phonenr"),
-										   rs.getString("email"));
+										   rs.getString("email"),
+										   rs.getString("description"));
 				list.add(temp);
 			}
 		} catch (Exception e) {
@@ -86,14 +87,15 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO banquetbookings ("
-					+ "name, kennitala, email, phonenr, banquetnumber) VALUES ("
-					+ "?,?,?,?,?)");
+					+ "name, kennitala, email, phonenr, banquetnumber, dagsetning) VALUES ("
+					+ "?,?,?,?,?,?)");
 			
 			ps.setString(1, booking.getName());
 			ps.setLong(2, booking.getKennitala());
 			ps.setString(3, booking.getEmail());
 			ps.setInt(4, booking.getPhonenr());
 			ps.setInt(5, booking.getBanquetnumber());
+			ps.setString(6, booking.getDate());
 			
 			// execute the prepared statement insert
 			ps.executeUpdate();
@@ -160,7 +162,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 							   rs.getInt("price"),
 							   rs.getInt("maxppl"),
 							   rs.getInt("phonenr"),
-							   rs.getString("email"));
+							   rs.getString("email"),
+							   rs.getString("description"));
 					return temp;
 				}
 			}
@@ -220,6 +223,23 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public List<Date> checkAvalible(Banquet salur) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM banquetbookings");
+			ResultSet rs = ps.executeQuery();
+			List<Date> unavalible = new ArrayList<Date>();
+			
+			while (rs.next()) {
+				unavalible.add(rs.getDate("dagsetning"));
+			}
+			return unavalible;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
 

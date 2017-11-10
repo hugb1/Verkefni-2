@@ -19,9 +19,10 @@ public class SportVenues {
 	private int price;
 	private int phonenr;
 	private String email;
+	private String description;
 
 	public SportVenues(int id, String name, String location, String streetAddrs,
-						int price, int phonenr, String email) {
+						int price, int phonenr, String email, String descript) {
 		this.sportvenuenumber = id;
 		this.name = name;
 		this.location = location;
@@ -29,6 +30,7 @@ public class SportVenues {
 		this.price = price;
 		this.phonenr = phonenr;
 		this.email = email;
+		this.description = descript;
 	}
 	
 	public int getId() {
@@ -85,5 +87,13 @@ public class SportVenues {
 	
 	public void setEmail(String email) {
 		this.email = email;
-	}	
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String descript) {
+		this.description = descript;
+	}
 }
