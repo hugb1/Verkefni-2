@@ -88,14 +88,13 @@ ALTER TABLE sportvenues ADD COLUMN key text DEFAULT '12345' NOT NULL;
 ALTER TABLE banquets ADD UNIQUE (name);
 ALTER TABLE sportvenues ADD UNIQUE (name);
 
-*/
-
 ALTER TABLE banquetbookings ADD COLUMN dagsetning date;
 ALTER TABLE sportvenuebookings ADD COLUMN dagsetning date;
 
+ALTER TABLE banquets ADD COLUMN description text;
+ALTER TABLE sportvenues ADD COLUMN description text;
 
-
-
+*/
 
 
 
