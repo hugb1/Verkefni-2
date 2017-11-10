@@ -130,6 +130,11 @@
   							<input id="netfang" name="mail" type="email"  placeholder="email@email.com">
   						</div>
   						
+  						<label for="netfang"> Lýsing á sal</lable>
+  						<div class="salurLysing">
+  							<input id="netfang" name="mail" type="email"  placeholder="email@email.com">
+  						</div>
+  						
   						<label for="lykill"> Lykilorð</lable>
   						<div class="salurLykill">
   							<input id="lykill" name="key" type="text" required minlength="1" maxlength="15" placeholder="Password">
