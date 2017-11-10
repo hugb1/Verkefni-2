@@ -31,8 +31,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "gunnarmarhardarson";
-	private final String password = "abcd1234";
+	private final String userName = "postgres";
+	private final String password = "123456";
 	
 	
 	// Connection to Database
@@ -68,7 +68,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 													rs.getString("street"),
 													rs.getInt("price"),
 													rs.getInt("phonenr"),
-													rs.getString("email"));
+													rs.getString("email"),
+													rs.getString("desctription"));
 				list.add(temp);
 			}
 		} catch (Exception e) {
@@ -157,7 +158,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 							   rs.getString("street"),
 							   rs.getInt("price"),
 							   rs.getInt("phonenr"),
-							   rs.getString("email"));
+							   rs.getString("email"),
+							   rs.getString("description"));
 					return temp;
 				}
 			}

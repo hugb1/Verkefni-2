@@ -20,9 +20,10 @@ public class Banquet {
 	private int maxppl;
 	private int phonenr;
 	private String email;
+	private String description;
 
 	public Banquet(int idnr, String name, String loc, String address, int price,
-			int max, int phone, String email) {
+			int max, int phone, String email, String descript) {
 		this.banquetnumber = idnr;
 		this.name = name;
 		this.location = loc;
@@ -31,6 +32,7 @@ public class Banquet {
 		this.maxppl = max;
 		this.phonenr = phone;
 		this.email = email;
+		this.description = descript;
 	}
 	
 	public int getId() {
@@ -95,6 +97,14 @@ public class Banquet {
 
 	public void setEmail(String mail) {
 		this.email = mail;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String descript) {
+		this.description = descript;
 	}
 	
 	@Override

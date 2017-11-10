@@ -1,5 +1,6 @@
 package is.hi.byrjun.services;
 
+import java.sql.Date;
 import java.util.List;
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
@@ -113,4 +114,6 @@ public interface SearchService {
 	
 	void editSport(int id, String name, String loc, String streetAddrs,
 					 int price, int phoneNr, String email);
+
+	List<Date> checkAvalibleBanquet(Banquet salur);
 }

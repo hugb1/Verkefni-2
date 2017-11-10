@@ -7,6 +7,7 @@ import is.hi.byrjun.model.SportVenuesBookings;
 import is.hi.byrjun.services.SearchService;
 
 import java.util.List;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,11 +46,6 @@ public class ProgramController {
 	@RequestMapping("/search")
 	public String searchPage() {
 		return "demo/search"; //Skilar .jsp skrá sem er /webapp/WEB-INF/vefvidmot/demo/search.jsp
-	}
-	
-	@RequestMapping("/datePicker")
-	public String pickDate() {
-		return "demo/datePicker";
 	}
 	
 	/*
@@ -146,7 +142,9 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
 	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
 		Banquet salur = searchService.searchBanquetById(searchService.getAllBanq(), nr);
+		List<Date> booked = searchService.checkAvalibleBanquet(salur);
 		model.addAttribute("banquet", salur);
+		model.addAttribute("dateList", booked);
 		return "demo/bokaSal";
 	}
 	
@@ -185,8 +183,9 @@ public class ProgramController {
 							@RequestParam(value = "kt")long kennit,
 							@RequestParam(value = "mail")String mail,
 							@RequestParam(value = "phone")int phNr,
+							@RequestParam(value = "date")String date,
 							@RequestParam(value = "id")int id, Model model) {
-		BanquetBookings book = new BanquetBookings(nafn, kennit, mail, phNr, id);
+		BanquetBookings book = new BanquetBookings(nafn, kennit, mail, phNr, id, date);
 		
 		searchService.addBanquetBooking(book);
 		
@@ -238,6 +237,7 @@ public class ProgramController {
 						  @RequestParam(value = "maxppl", required = true)int maxppl,
 						  @RequestParam(value = "phone", required = true)int phoneNr,
 						  @RequestParam(value = "mail", required = true)String email,
+						  @RequestParam(value = "descript", required = true)String description,
 						  @RequestParam(value = "key", required = true)String key, Model model) {
 		
 		String location;
@@ -261,12 +261,12 @@ public class ProgramController {
 		
 		if (chosen == 1) {
 			id = searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
-			Banquet salur = new Banquet(id, name, location, streetAddrs, price, maxppl, phoneNr, email);
+			Banquet salur = new Banquet(id, name, location, streetAddrs, price, maxppl, phoneNr, email, description);
 			model.addAttribute("banquet", salur);
 			return "demo/skraLokid";
 		} else {
 			id = searchService.addSport(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
-			SportVenues salur = new SportVenues(id, name, location, streetAddrs, price, phoneNr, email);
+			SportVenues salur = new SportVenues(id, name, location, streetAddrs, price, phoneNr, email, description);
 			model.addAttribute("banquet", salur);
 			return "demo/skraLokid";
 		}

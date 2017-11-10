@@ -81,9 +81,6 @@
         
         </main>
         <footer>
-        <form action="/demo/datePicker">
-        	<button class = "dateButton" name="4" type="submit" value="DatePicker">Datepicker</button>
-        </form>
         	<div class="followUs">
         		<p>Follow us for more information!<p>
         		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
