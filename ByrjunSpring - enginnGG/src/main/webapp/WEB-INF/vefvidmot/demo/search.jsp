@@ -45,7 +45,7 @@
 
 				<div class ="maxRoom">
            			<select name=cap>
-           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=zero value="1">max Fjöldi</option>
            				<option name=one value="1">50</option>
            				<option name=two value="2">100</option>
             			<option name=three value="3">150</option>

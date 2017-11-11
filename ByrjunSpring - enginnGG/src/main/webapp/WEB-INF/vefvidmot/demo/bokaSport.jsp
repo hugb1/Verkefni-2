@@ -12,7 +12,6 @@
         <title>Search</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/jquery-ui.css"/>"/>
-           <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="/javascript/jquery-1.12.4.js"></script>
         <script src="/javascript/jquery-ui.js"></script>
       <script src="/javascript/datepicker.js"></script>
@@ -50,7 +49,7 @@
 
 				<div class ="maxRoom">
            			<select name=cap>
-           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=zero value="1">max Fjöldi</option>
            				<option name=one value="1">50</option>
            				<option name=two value="2">100</option>
             			<option name=three value="3">150</option>
