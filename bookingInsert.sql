@@ -94,9 +94,10 @@ ALTER TABLE sportvenuebookings ADD COLUMN dagsetning date;
 ALTER TABLE banquets ADD COLUMN description text;
 ALTER TABLE sportvenues ADD COLUMN description text;
 
+ALTER TABLE banquetbookings ALTER COLUMN dagsetning TYPE text using dagsetning::text;
+ALTER TABLE sportvenuebookings ALTER COLUMN dagsetning TYPE text using dagsetning::text;
+
 */
-
-
 
 
 
