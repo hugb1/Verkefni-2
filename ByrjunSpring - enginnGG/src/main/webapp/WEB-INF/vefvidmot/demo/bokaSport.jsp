@@ -9,7 +9,7 @@
 <!-- vefur fyrir bóka sportsal -->
 <html>
     <head>
-        <title>Search</title>
+        <title>Bóka sal</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/jquery-ui.css"/>"/>
         <script src="/javascript/jquery-1.12.4.js"></script>
@@ -22,7 +22,7 @@
     		<section class ="headerSection">
     			<div class = "header1">
     				<div class = "loginToAdmin">
-    					<p></p>
+    					
     				</div>	
     			</div>
     		</section>
@@ -34,8 +34,8 @@
    			 </section>
    		<section class="searchSection">
 
-        	<div class="searchForm">
-        		<form class="LoL" action="/demo/submit" method="post">
+        	<div class="leitarTakkar">
+        		<form class="nytt1" action="/demo/submit" method="post">
 
        			<div class ="locationID">
             		<select name=loc>
@@ -46,7 +46,9 @@
             			<option name=four value="4">Kópsvogur</option> 
            			</select>
             	</div>
-
+            	</form>
+				
+				<form class="nytt2" action="/demo/submit" method="post">
 				<div class ="maxRoom">
            			<select name=cap>
            				<option name=zero value="1">max Fjöldi</option>
@@ -56,7 +58,9 @@
             			<option name=four value="4">200+</option>
             		</select>
             	</div>
+            	</form>
             	
+            	<form class="nytt3" action="/demo/submit" method="post">
             	<div class ="tegundSals">
            			<select name=myradio>
            				<option name=zero value="">Tegund sals</option>
@@ -64,14 +68,16 @@
            				<option name=two value="2">íþróttasalir</option>
             		</select>
             	</div>
-			
+            	</form>
+            	
+				<form class="nytt3" action="/demo/submit" method="post">
 				<div class="leitarTakki">
 					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
             		
             	</div>
             	</form>
             	
-            	<form class="LoL1" action="/demo/nyrSalur">
+            	<form class="nytt4" action="/demo/nyrSalur">
             	<div class="skraningarTakki">
             		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             	</div>
