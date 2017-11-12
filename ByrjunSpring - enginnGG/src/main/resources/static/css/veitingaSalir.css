@@ -312,8 +312,8 @@ option:first {
 	font-size: 18px;
 	font-weight:bold;
 	text-align:center;
-	position: relative;
-    left: 2%;
+	position: absolute;
+    left: 43.6%;
 }
 
 .facebook, .twitter {

@@ -82,6 +82,56 @@
             		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             	</div>
             	</form>
+            </div>        	<div class="leitarTakkarr">
+        		<form class="nytt1" action="/demo/submit" method="post">
+        		<div class="leitarTakkar">
+
+       			<div class ="locationID">
+            		<select name=loc>
+            			<option name=zero value="0">Staðsetning</option>
+            			<option name=one value="1">Reykjavík</option>
+            			<option name=two value="2">Hafnarfjörður</option>
+            			<option name=three value="3">Garðabær</option>
+            			<option name=four value="4">Kópsvogur</option> 
+           			</select>
+            	</div>
+            	
+				
+				
+				<div class ="maxRoom">
+           			<select name=cap>
+           				<option name=zero value="1">max Fjöldi</option>
+           				<option name=one value="1">50</option>
+           				<option name=two value="2">100</option>
+            			<option name=three value="3">150</option>
+            			<option name=four value="4">200+</option>
+            		</select>
+            	</div>
+            	
+            	
+            	
+            	<div class ="tegundSals">
+           			<select name=myradio>
+           				<option name=zero value="">Tegund sals</option>
+           				<option name=one value="1">Veislusalir</option>
+           				<option name=two value="2">íþróttasalir</option>
+            		</select>
+            	</div>
+            	
+            	
+				
+				<div class="leitarTakki">
+					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
+            		
+            	</div>
+            	
+            	</form>
+            	<form class="nytt4" action="/demo/nyrSalur">
+            	<div class="skraningarTakki">
+            		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
+            	</div>
+            	</form>
+            	</div>
             </div>
         </section>
         <section class="infoSection">

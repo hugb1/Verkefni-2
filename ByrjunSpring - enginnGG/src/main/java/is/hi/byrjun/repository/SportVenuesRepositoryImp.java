@@ -69,7 +69,7 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 													rs.getInt("price"),
 													rs.getInt("phonenr"),
 													rs.getString("email"),
-													rs.getString("desctription"));
+													rs.getString("description"));
 				list.add(temp);
 			}
 		} catch (Exception e) {
