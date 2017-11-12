@@ -10,7 +10,7 @@
 
 <html lang="is">
   <head>
-    <title>Bókun sals</title>  
+    <title>Staðfesting á bókun</title>  
         <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
   </head>
   <body>
