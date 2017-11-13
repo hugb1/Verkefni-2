@@ -235,7 +235,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			
 			while (rs.next()) {
 				String temp = rs.getString("dagsetning");
-					unavalible.add(temp);
+				unavalible.add(temp);
 			}
 			return unavalible;
 		} catch (Exception e) {

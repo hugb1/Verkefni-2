@@ -160,7 +160,7 @@
 				}
 				%>);
 				</script>
-			<% } %>
+		<% } %>
         </main>
         <footer>
         	<div class="followUs">

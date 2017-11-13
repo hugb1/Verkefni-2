@@ -12,10 +12,9 @@
         <title>Bóka sal</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/jquery-ui.css"/>"/>
-           var unavalibleDates = ${dateList}
-        <script src="/javascript/jquery-1.12.4.js"></script>
-        <script src="/javascript/jquery-ui.js"></script>
-      <script src="/javascript/datepicker.js"></script>
+  			<script src="/javascript/jquery-1.12.4.js"></script>
+  			<script src="/javascript/jquery-ui.js"></script>
+			<script src="/javascript/datepicker.js"></script>
          
     </head>
     <body>
@@ -122,9 +121,9 @@
   						</div>
 
   						<label for="datepicker">Dagsetning</label>
-              <div class="salurNafn">
+  						<div class="salurNafn">
                 <input id="datepicker" name="date" type="text">
-              </div>
+  						</div>
 
   	  						<div>
   								<input name="id" type="hidden"  value = "${sportvenues.getId()}">
@@ -139,7 +138,21 @@
 				</form>
         	</div>
         </section>
-        
+
+        <%
+			String[] params = ((String[])request.getAttribute("dateArray"));
+			if(params != null) { %>
+				<script>
+				var params = new Array(<%
+				for(int i = 0; i < params.length; i++) {
+  					out.print("\""+params[i]+"\"");
+  					if(i+1 < params.length) {
+    				out.print(",");
+  					}
+				}
+				%>);
+				</script>
+		<% } %>
         </main>
         <footer>
         	<div class="followUs">

@@ -167,9 +167,13 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
 		SportVenues sport = searchService.searchSportVenuesById(searchService.getAllSport(), nr);
-		List<Date> booked = searchService.checkAvalibleSport(sport);
+		List<String> bookedDates = searchService.checkAvalibleSport(sport);
+		String[] stringArray = new String[bookedDates.size()];
+		for (int i = 0; i < bookedDates.size(); i++) {
+			stringArray[i] = bookedDates.get(i);
+		}
 		model.addAttribute("sportvenues", sport);
-		model.addAttribute("dateList", booked);
+		model.addAttribute("dateArray", stringArray);
 		return "demo/bokaSport";
 	}
 	
