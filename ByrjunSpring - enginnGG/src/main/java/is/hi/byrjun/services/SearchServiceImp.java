@@ -159,7 +159,7 @@ public class SearchServiceImp implements SearchService {
 	}
 	
 	@Override
-	public List<Date> checkAvalibleSport(SportVenues sport) {
+	public List<String> checkAvalibleSport(SportVenues sport) {
 		return sportRep.checkAvalible(sport);
 	}
 	
