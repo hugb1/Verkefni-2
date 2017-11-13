@@ -136,10 +136,13 @@
 						</div>
 						
 				</form>
-				<form class="LoL2" action="/demo/eydaSal" method="post">
+				<form class="LoL2" action="/demo/eydaSport" method="post">
 					<div class="innskratakki">
 						<button class="innskra" type="submit" value="Eyða Sal">Eyða sal</button>
 					</div>
+					<div class="innskratakki">
+  						<input type="hidden" name="id" value = "${sportvenue.getId()}">
+  					</div>
 				</form>
         	</div>
         </section>
