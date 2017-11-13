@@ -32,8 +32,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "gunnarmarhardarson";
-	private final String password = "abcd1234";
+	private final String userName = "postgres";
+	private final String password = "123456";
 	
 	
 	// Connection to Database
@@ -209,15 +209,17 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 		}
 	}
 	
-	public List<Date> checkAvalible(SportVenues sport) {
+	public List<String> checkAvalible(SportVenues sport) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenuebookings");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenuebookings WHERE sportvenuenumber = ? AND dagsetning IS NOT NULL");
+			ps.setInt(1, sport.getId());
 			ResultSet rs = ps.executeQuery();
-			List<Date> unavalible = new ArrayList<Date>();
+			List<String> unavalible = new ArrayList<String>();
 			
 			while (rs.next()) {
-				unavalible.add(rs.getDate("dagsetning"));
+				String temp = rs.getString("dagsetning");
+				unavalible.add(temp);
 			}
 			return unavalible;
 		} catch (Exception e) {

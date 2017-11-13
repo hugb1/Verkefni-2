@@ -6,6 +6,7 @@ import is.hi.byrjun.model.SportVenues;
 import is.hi.byrjun.model.SportVenuesBookings;
 import is.hi.byrjun.services.SearchService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
 
@@ -142,9 +143,14 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
 	public String bokaSal(@RequestParam(value = "bokunNr")int nr, Model model) {
 		Banquet salur = searchService.searchBanquetById(searchService.getAllBanq(), nr);
-		List<Date> booked = searchService.checkAvalibleBanquet(salur);
+		List<String> bookedDates = new ArrayList<String>();
+		bookedDates = searchService.findBookedBanquetDates(salur);
+		String[] stringArray = new String[bookedDates.size()];
+		for (int i = 0; i < bookedDates.size(); i++) {
+			stringArray[i] = bookedDates.get(i);
+		}
 		model.addAttribute("banquet", salur);
-		model.addAttribute("dateList", booked);
+		model.addAttribute("dateArray", stringArray);
 		return "demo/bokaSal";
 	}
 	
@@ -161,9 +167,13 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
 		SportVenues sport = searchService.searchSportVenuesById(searchService.getAllSport(), nr);
-		List<Date> booked = searchService.checkAvalibleSport(sport);
+		List<String> bookedDates = searchService.checkAvalibleSport(sport);
+		String[] stringArray = new String[bookedDates.size()];
+		for (int i = 0; i < bookedDates.size(); i++) {
+			stringArray[i] = bookedDates.get(i);
+		}
 		model.addAttribute("sportvenues", sport);
-		model.addAttribute("dateList", booked);
+		model.addAttribute("dateArray", stringArray);
 		return "demo/bokaSport";
 	}
 	

@@ -122,9 +122,9 @@
   						</div>
 
   						<label for="datepicker">Dagsetning</label>
-              <div class="salurNafn">
+  						<div class="salurNafn">
                 <input id="datepicker" name="date" type="text">
-              </div>
+  						</div>
 
   	  						<div>
   								<input name="id" type="hidden"  value = "${sportvenues.getId()}">
@@ -139,7 +139,21 @@
 				</form>
         	</div>
         </section>
-        
+
+        <%
+			String[] params = ((String[])request.getAttribute("dateArray"));
+			if(params != null) { %>
+				<script>
+				var params = new Array(<%
+				for(int i = 0; i < params.length; i++) {
+  					out.print("\""+params[i]+"\"");
+  					if(i+1 < params.length) {
+    				out.print(",");
+  					}
+				}
+				%>);
+				</script>
+		<% } %>
         </main>
         <footer>
         	<div class="followUs">
