@@ -138,9 +138,9 @@
   							<input id="netfang" name="mail" type="email"  placeholder="email@email.com">
   						</div>
   						
-  						<label for="descript"> Lýsing</label>
-  						<div class="salurDescript">
-  							<input id="description" name="descript">
+  						<label for="Lýsing á sal"> Lýsing á sal</lable>
+  						<div class="salurDescript"> 
+  							<textarea id=lysing" name="lysing" type="text" placeholder="Lýsing á sal" ></textarea>
   						</div>
   						
   						<label for="lykill"> Lykilorð</lable>

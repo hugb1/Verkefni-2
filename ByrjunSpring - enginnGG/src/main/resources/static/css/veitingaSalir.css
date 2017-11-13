@@ -494,6 +494,31 @@ label {
 	
 }
 
+
+textarea input{
+     width: 100px;
+     height: 40px;
+     padding: 10px;
+     }
+              
+textarea input[type=text]{
+     border-radius: 10px;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     border: none;
+     }
+              
+textarea {
+     height: 100px;
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+     }
+
 .salurLykill input{
 	width: 100%;
     padding: 12px 20px;
