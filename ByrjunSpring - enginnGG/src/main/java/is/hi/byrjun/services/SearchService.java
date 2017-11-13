@@ -116,4 +116,6 @@ public interface SearchService {
 					 int price, int phoneNr, String email);
 
 	List<Date> checkAvalibleBanquet(Banquet salur);
+	
+	List<Date> checkAvalibleSport(SportVenues sport);
 }

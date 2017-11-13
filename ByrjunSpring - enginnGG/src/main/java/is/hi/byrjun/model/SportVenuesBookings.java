@@ -18,14 +18,16 @@ public class SportVenuesBookings {
 	private String email;
 	private int phonenr;
 	private int sportvenuenumber;
+	private String date;
 
 	public SportVenuesBookings(String name, long kennitala, String email,
-			int phonenr, int sportvenuenumber) {
+			int phonenr, int sportvenuenumber, String dags) {
 		this.name = name;
 		this.kennitala = kennitala;
 		this.email = email;
 		this.phonenr = phonenr;
 		this.sportvenuenumber = sportvenuenumber;
+		this.date = dags;
 	}
 	
 	public int getId() {
@@ -75,5 +77,18 @@ public class SportVenuesBookings {
 	public void setSportvenuenumber(int sportvenuenumber) {
 		this.sportvenuenumber = sportvenuenumber;
 	}
-
+	
+	public String getDate() {
+		return date;
+	}
+	
+	public void setDate(String dags) {
+		this.date = dags;
+	}
 }
+
+
+
+
+
+
