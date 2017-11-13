@@ -1,4 +1,13 @@
-
+/**
+ *
+ * @author Pétur Logi Pétursson
+ * @date september 2017
+ * HBV501G Hugbúnaðarverkefni 1
+ * Háskóli Íslands
+ * 
+ * Tekur vid breytunni params frá jsp skrá og framkvæmir datepicker 
+ * aðgerðina.
+ */
 function unavailable(date) {
     dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     if ($.inArray(dmy, params) == -1) {
