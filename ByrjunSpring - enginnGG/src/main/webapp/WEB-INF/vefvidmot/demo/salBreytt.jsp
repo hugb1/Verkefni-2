@@ -11,7 +11,7 @@
     <head>
         <title>Breyting á sal</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
-         
+           <link rel="stylesheet" type="text/css" href="<c:url value="/css/breytingTokstTakki.css"/>"/>
     </head>
     <body>
     	<header>
@@ -86,7 +86,7 @@
         	<div class="skraLokidInfo">
         		<p class="skraningTokstTexti">Breyting tókst!</p>
         	<form action="/demo/search">
-        		<button class="stadfesta" type="submit" name="Submit" value="Aftur á byrjunarsíðu">Bóka</button>
+        		<button class="stadfesta2" type="submit" name="Submit" value="Aftur á byrjunarsíðu">Aftur á upphafssíðu</button>
 			</form>
         	</div>
         </section>
