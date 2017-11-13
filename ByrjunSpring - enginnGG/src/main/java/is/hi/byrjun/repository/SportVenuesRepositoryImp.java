@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
@@ -85,14 +86,15 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO sportvenuebookings ("
-					+ "name, kennitala, email, phonenr, sportvenuenumber) VALUES ("
-					+ "?,?,?,?,?)");
+					+ "name, kennitala, email, phonenr, sportvenuenumber, dagsetning) VALUES ("
+					+ "?,?,?,?,?,?)");
 			
 			ps.setString(1, booking.getName());
 			ps.setLong(2, booking.getKennitala());
 			ps.setString(3, booking.getEmail());
 			ps.setInt(4, booking.getPhonenr());
 			ps.setInt(5, booking.getSportvenuenumber());
+			ps.setString(6, booking.getDate());
 			
 			// execute the prepared statement insert
 			ps.executeUpdate();
@@ -206,4 +208,30 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Date> checkAvalible(SportVenues sport) {
+		try {
+			Connection con = DriverManager.getConnection(url, userName, password);
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenuebookings");
+			ResultSet rs = ps.executeQuery();
+			List<Date> unavalible = new ArrayList<Date>();
+			
+			while (rs.next()) {
+				unavalible.add(rs.getDate("dagsetning"));
+			}
+			return unavalible;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
+
+
+
+
+
+
+
+
+

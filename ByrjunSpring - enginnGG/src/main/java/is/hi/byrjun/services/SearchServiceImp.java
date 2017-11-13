@@ -158,4 +158,9 @@ public class SearchServiceImp implements SearchService {
 		return banquetRep.findBookedDates(salur);
 	}
 	
+	@Override
+	public List<Date> checkAvalibleSport(SportVenues sport) {
+		return sportRep.checkAvalible(sport);
+	}
+	
 }

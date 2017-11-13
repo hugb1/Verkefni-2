@@ -4,12 +4,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="is">
 
-<!-- author: Vilhjállmur Jónsson & Pétur L Pétursson -->
+<!-- author: Vilhjállmur Jónsson-->
 <!-- email: vij7@hi.is -->
-<!-- vefur fyrir skráningu nýrra sala -->
+<!-- vefur fyrir breytingu veitingasala -->
 <html>
     <head>
-        <title>Search</title>
+        <title>Breyta upplýsingum</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
          
     </head>
@@ -18,7 +18,7 @@
     		<section class ="headerSection">
     			<div class = "header1">
     				<div class = "loginToAdmin">
-    					<p> Innskráning </p>
+    					
     				</div>	
     			</div>
     		</section>
@@ -30,28 +30,33 @@
    			 </section>
    		<section class="searchSection">
 
-        	<div class="searchForm">
-        		<form class="LoL" action="/demo/submit" method="post">
+        	<div class="leitarTakkarr">
+        		<form class="nytt1" action="/demo/submit" method="post">
+        		<div class="leitarTakkar">
 
        			<div class ="locationID">
             		<select name=loc>
             			<option name=zero value="0">Staðsetning</option>
             			<option name=one value="1">Reykjavík</option>
             			<option name=two value="2">Hafnarfjörður</option>
-            			<option name=three value="3">Garðsbær</option>
+            			<option name=three value="3">Garðabær</option>
             			<option name=four value="4">Kópsvogur</option> 
            			</select>
             	</div>
-
+            	
+				
+				
 				<div class ="maxRoom">
            			<select name=cap>
-           				<option name=zero value="0">max Fjöldi</option>
+           				<option name=zero value="1">max Fjöldi</option>
            				<option name=one value="1">50</option>
            				<option name=two value="2">100</option>
             			<option name=three value="3">150</option>
             			<option name=four value="4">200+</option>
             		</select>
             	</div>
+            	
+            	
             	
             	<div class ="tegundSals">
            			<select name=myradio>
@@ -60,30 +65,32 @@
            				<option name=two value="2">íþróttasalir</option>
             		</select>
             	</div>
-			
+            	
+            	
+				
 				<div class="leitarTakki">
 					<button class="leitButton" name="1" type="submit" value="Leita">Leita</button>
             		
             	</div>
-            	</form>
             	
-            	<form class="LoL1" action="/demo/nyrSalur">
+            	</form>
+            	<form class="nytt4" action="/demo/nyrSalur">
             	<div class="skraningarTakki">
             		<button class="skraButton" name="1" type="submit" value="Skrá sal">Skrá</button>
             	</div>
             	</form>
+            	</div>
             </div>
         </section>
         <section class="infoSection">
         	<div class="infoInfoNyrSalur">
 				<h1>Skráningar síða</h1>
 				<form class="LoL4" action="/demo/breytaSal" method="post">
-				<p class="salurHausTexti">Fylltu inn eftirfarandi upplýsingar til að skrá þinn sal!</p>
+				<p class="salurHausTexti">Breyttu upplýsingum um salinn hér!</p>
             			
 						<label for="stadur">Staðsetning sals</label>
 						<div class="selStadur">
-							<select id="stadur" name=location value= "${banquet.getName()}>
-								<option name=one value="1">Staðsetning</option>
+							<select id="stadur" name="location" value= "${banquet.getName()}">
   								<option name=one value="1">Reykjavík</option>
   								<option name=two value="2">Hafnarfjörður</option>
   								<option name=three value="3">Garðsbær</option>
@@ -91,9 +98,9 @@
   							</select> 
   						</div>
 
-  						<label for="nafnn">Nafn á sal</label>
+  						<label for="nafn">Nafn á sal</label>
   						<div class="salurNafn">
-  							<input id="nafnn" name="nafn" type="text" required minlength="1" maxlength="30" value = "${banquet.getName()}">
+  							<input id="nafn" name="nafn" type="text" required minlength="1" maxlength="30" value = "${banquet.getName()}">
   						</div>
   						
   						<label for="gata">Götuheiti</label>
@@ -103,7 +110,7 @@
   						
   						<label for="fjoldi">Max fjöldi</label>
   						<div class="salurFjoldi">
-  							<input id="fjoldi" name="maxppl" type="text" required minlength="1" maxlength="5000" value = "${banquet.getMax()}">
+  							<input id="fjoldi" name="maxppl" type="text" required minlength="1" maxlength="5000" placeholder="Max people"value = "${banquet.getMax()}">
   						</div>
   						
   						<label for="verd"> Verð í Kr.</label>
@@ -111,30 +118,32 @@
   							<input id="verd" name="price" type="text" required minlength="1" maxlength="9999999999999" value = "${banquet.getPrice()}">
   						</div>
   						
-  						<label for="simi"> Símanúmer</label>
+  						<label for="simi"> Símanúmer</lable>
   						<div class="salurSimi">
   							<input id="simi" name="phonenr" type="text" required minlength="7" maxlength="7" value = "${banquet.getPhonenr()}">
   						</div>
   						
-  						<label for="netfang"> Netfang</label>
+  						<label for="netfang"> Netfang</lable>
   						<div class="salurNetfang">
   							<input id="netfang" name="email" type="email"  value = "${banquet.getEmail()}">
   						</div>
   						
+  						<div class="drasl2">
+  							<input type="hidden" name="id" value = "${banquet.getId()}">
+  						</div>
+  						
+  						<div class="drasl1">
+  							<input type="hidden" name="origLoc" value = "${banquet.getLocation()}">
+  						</div>
   						
   						<div class="stadfestaTakki">
-  							<button class="stadfesta" type="submit" value = "Staðfesta Breytingar">Staðfesta breytingar</button>
+  							<button class="stadfesta" type="submit" value="Staðfesta">Staðfesta breytingar</button>
 						</div>
-						<div>
-							<input type="hidden" name = "id" value = "${banquet.getId()}" />
-						</div>
-						<div>
-							<input type="hidden" name = "origLoc" value = "${banquet.getLocation()}" />
-						</div>
+						
 				</form>
-				<form class="LoL2" action="/demo/eydaSal">
+				<form class="LoL2" action="/demo/eydaSal" method="post">
 					<div class="innskratakki">
-						<button class="innskra" type="submit" value = "Eyða Sal">Eyða sal</button>
+						<button class="innskra" type="submit" value="Eyða Sal">Eyða sal</button>
 					</div>
 				</form>
         	</div>
