@@ -240,7 +240,7 @@ public class ProgramController {
 						  @RequestParam(value = "maxppl", required = true)int maxppl,
 						  @RequestParam(value = "phone", required = true)int phoneNr,
 						  @RequestParam(value = "mail", required = true)String email,
-						  @RequestParam(value = "descript", required = true)String description,
+						  @RequestParam(value = "description", required = true)String description,
 						  @RequestParam(value = "key", required = true)String key, Model model) {
 		
 		String location;
@@ -263,7 +263,7 @@ public class ProgramController {
 		}
 		
 		if (chosen == 1) {
-			id = searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key);
+			id = searchService.addBanquet(name, location, streetAddrs, price, maxppl, phoneNr, email, key, description);
 			Banquet salur = new Banquet(id, name, location, streetAddrs, price, maxppl, phoneNr, email, description);
 			model.addAttribute("banquet", salur);
 			return "demo/skraLokid";

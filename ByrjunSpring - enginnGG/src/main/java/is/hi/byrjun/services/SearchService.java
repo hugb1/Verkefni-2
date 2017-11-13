@@ -87,7 +87,7 @@ public interface SearchService {
 	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunninn.
 	 */
 	int addBanquet(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key);
+			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
 	 * Bætir við Íþróttasal með gefnar ulppýsingar í gagnagrunninn.
@@ -110,7 +110,7 @@ public interface SearchService {
 	void removeSport(int id);
 	
 	void editBanquet(int id, String name, String loc, String streetAddrs,
-					 int price, int maxppl, int phoneNr, String email);
+					 int price, int maxppl, int phoneNr, String email, String description);
 	
 	void editSport(int id, String name, String loc, String streetAddrs,
 					 int price, int phoneNr, String email);

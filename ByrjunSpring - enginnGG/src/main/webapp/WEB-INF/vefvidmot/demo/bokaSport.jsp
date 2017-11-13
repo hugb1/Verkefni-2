@@ -12,7 +12,7 @@
         <title>Bóka sal</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/jquery-ui.css"/>"/>
-           var unavalibleDates = ${dateList}
+           <!--var unavalibleDates = ${dateList}-->
         <script src="/javascript/jquery-1.12.4.js"></script>
         <script src="/javascript/jquery-ui.js"></script>
       <script src="/javascript/datepicker.js"></script>

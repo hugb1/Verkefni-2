@@ -32,7 +32,7 @@ public interface BanquetRepository {
 	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunn
 	 */
 	int addNewBanquet(String name, String loc, String streetAddrs, int price,
-					int maxppl, int phoneNr, String email, String key);
+					int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
 	 * Athugar hvort ID númer Veitingasals og key eigi saman.
@@ -50,5 +50,5 @@ public interface BanquetRepository {
 	void removeSport(int id);
 	
 	void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email);
+			int maxppl, int phoneNr, String email, String description);
 }

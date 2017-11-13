@@ -107,13 +107,13 @@ public class BanquetRepositoryImp implements BanquetRepository {
 
 	@Override
 	public int addNewBanquet(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key) {
+			int maxppl, int phoneNr, String email, String key, String description) {
 		int result = -1;
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO banquets ("
-					+ "name, location, street, price, maxppl, phonenr, email, key) VALUES ("
-					+ "?,?,?,?,?,?,?,?)");
+					+ "name, location, street, price, maxppl, phonenr, email, key, description) VALUES ("
+					+ "?,?,?,?,?,?,?,?,?)");
 			
 			ps.setString(1, name);
 			ps.setString(2, loc);
@@ -123,6 +123,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			ps.setInt(6, phoneNr);
 			ps.setString(7, email);
 			ps.setString(8, key);
+			ps.setString(9, description);
 			
 			//Execute the prepared statement insert
 			ps.executeUpdate();
@@ -201,12 +202,12 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	// Update Banquets in database
 	@Override
 	public void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email) {
+			int maxppl, int phoneNr, String email, String description) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("UPDATE banquets SET name = ?,"
 					+ "location = ?, street = ?, price = ?, maxppl = ?, phonenr = ?,"
-					+ "email = ? WHERE banquetnumber = ?");
+					+ "email = ?, description = ? WHERE banquetnumber = ?");
 			ps.setString(1, name);
 			ps.setString(2, loc);
 			ps.setString(3, streetAddrs);
@@ -215,6 +216,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			ps.setInt(6, phoneNr);
 			ps.setString(7, email);
 			ps.setInt(8, banquetnumber);
+			ps.setString(9, description);
 			
 			// Execute the prepared statement update
 			ps.executeUpdate();

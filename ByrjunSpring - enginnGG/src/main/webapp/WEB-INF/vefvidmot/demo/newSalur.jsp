@@ -140,7 +140,7 @@
   						
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
   						<div class="salurDescript"> 
-  							<textarea id=lysing" name="lysing" type="text" placeholder="Lýsing á sal" ></textarea>
+  							<textarea id="lysing" name="description" type="text" placeholder="Lýsing á sal"></textarea>
   						</div>
   						
   						<label for="lykill"> Lykilorð</lable>

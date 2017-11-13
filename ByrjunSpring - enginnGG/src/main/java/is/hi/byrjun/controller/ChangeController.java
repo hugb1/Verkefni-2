@@ -73,6 +73,7 @@ public class ChangeController {
 							  @RequestParam(value = "maxppl")int maxppl,
 							  @RequestParam(value = "phonenr")int phonenr,
 							  @RequestParam(value = "email")String email,
+							  @RequestParam(value = "description", required = true)String description,
 							  @RequestParam(value = "origLoc")String origLoc, Model model) {
 		String loc;
 		switch(locNr) {
@@ -93,7 +94,7 @@ public class ChangeController {
 		default :
 			throw new IllegalArgumentException("Invalid Location");
 		}
-		searchService.editBanquet(id, nafn, loc, street, price, maxppl, phonenr, email);
+		searchService.editBanquet(id, nafn, loc, street, price, maxppl, phonenr, email, description);
 		return "demo/salBreytt";
 	}
 	
