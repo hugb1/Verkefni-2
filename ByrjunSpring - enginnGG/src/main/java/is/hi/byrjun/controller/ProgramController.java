@@ -161,7 +161,9 @@ public class ProgramController {
 	@RequestMapping(value = "/bokaSport", method = RequestMethod.POST)
 	public String bokaSport(@RequestParam(value = "bokunNr")int nr, Model model) {
 		SportVenues sport = searchService.searchSportVenuesById(searchService.getAllSport(), nr);
+		List<Date> booked = searchService.checkAvalibleSport(sport);
 		model.addAttribute("sportvenues", sport);
+		model.addAttribute("dateList", booked);
 		return "demo/bokaSport";
 	}
 	
@@ -210,8 +212,9 @@ public class ProgramController {
 							@RequestParam(value = "kt")long kennit,
 							@RequestParam(value = "mail")String mail,
 							@RequestParam(value = "phone")int phNr,
+							@RequestParam(value = "date")String date,
 							@RequestParam(value = "id")int id, Model model) {
-		SportVenuesBookings book = new SportVenuesBookings(nafn, kennit, mail, phNr, id);
+		SportVenuesBookings book = new SportVenuesBookings(nafn, kennit, mail, phNr, id, date);
 		
 		searchService.addSportVenuesBooking(book);
 		
