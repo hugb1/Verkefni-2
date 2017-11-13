@@ -212,7 +212,7 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	public List<Date> checkAvalible(SportVenues sport) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenuesbookings");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM sportvenuebookings");
 			ResultSet rs = ps.executeQuery();
 			List<Date> unavalible = new ArrayList<Date>();
 			
