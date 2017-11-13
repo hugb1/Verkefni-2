@@ -11,7 +11,6 @@
     <head>
         <title>Breyting á sal</title>
            <link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
-           <link rel="stylesheet" type="text/css" href="<c:url value="/css/breytingTokstTakki.css"/>"/>
     </head>
     <body>
     	<header>

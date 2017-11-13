@@ -540,6 +540,20 @@ textarea {
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+.stadfesta2 {
+	width: 200px;
+	background-color: #4CAF50;
+	color:white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin:auto;
+    display:block;
+}
+
 .stadfesta:hover{
 	background-color: #45a049
 }
