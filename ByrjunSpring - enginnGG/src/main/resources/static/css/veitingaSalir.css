@@ -653,6 +653,7 @@ textarea {
     right: 4%;
     padding-top: 11%;
     width: 21em;
+    word-wrap: break-word;
 }
 
 .infoBoxTexti22 {

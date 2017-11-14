@@ -20,13 +20,13 @@ public interface SportVenuesRepository {
 	List<SportVenues> getAll();
 	
 	/*
-	 * Bætir við sportsal með gefnum uppýsingum í gangagrunn
+	 * Bætir við íþróttasal með gefnum uppýsingum í gangagrunn
 	 */
 	int addNewSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
-	 * Athugar hvort ID númer sportsals og key eigi saman.
+	 * Athugar hvort ID númer íþróttasals og key eigi saman.
 	 */
 	SportVenues verifySport(int id, String key);
 	
@@ -35,5 +35,8 @@ public interface SportVenuesRepository {
 	 */
 	void removeSport(int id);
 	
+	/*
+	 * Breytir íþróttasölum í gagnagrunni
+	 */
 	void changeSport(SportVenues updated);
 }

@@ -32,11 +32,27 @@ public class ChangeController {
 	@Autowired
 	SearchService searchService;
 	
+	/*
+	 * Takki sem skilar vefsíðu þar sem notandi getur skráð sig inn á sinn sal.
+	 * 
+	 * return vefsíðan authenticate.
+	 */
 	@RequestMapping(value = "/innskra")
 	public String skraning() {
 		return "demo/authenticate";
 	}
 	
+	/*
+	 * Tekur við id og key frá notanda og kíkir á hvort það eigi við salinn sem
+	 * notandinn er með skráðann á síðuna.
+	 * 
+	 * @param chosen Tegund sals
+	 * @param id     Id númer sals
+	 * @param key    Lykilorð sals
+	 * @param model  Módel með attributes
+	 * 
+	 * @return breytaSal vefsíða sem segir notanda að upplýsingum um sal hafi verið breytt.
+	 */
 	@RequestMapping(value = "/verify")
 	public String stadfesta(@RequestParam(value = "myradio", required = true)int chosen,
 							@RequestParam(value = "id", required = true)int id,
@@ -76,18 +92,51 @@ public class ChangeController {
 		}
 	}
 	
+	/*
+	 * Takki sem tekur við upplýsingum frá notanda um hvaða veislusal
+	 * hann vill eyða.
+	 * 
+	 * @param  id Id númer veislusals sem notandi vill eyða.
+	 * @return salEytt vefsíða sem segir notanda að veislusalnum
+	 * hafi verið eytt.
+	 */
 	@RequestMapping(value = "/eydaSal", method = RequestMethod.POST)
 	public String removeBanquet(@RequestParam(value = "id")int id) {
 		searchService.removeBanquet(id);
 		return "demo/salEytt";
 	}
 	
+	/*
+	 * Takki sem tekur við upplýsingum frá notanda um hvaða íþróttasal
+	 * hann vill eyða.
+	 * 
+	 * @param  id Id númer íþróttasals sem notandi vill eyða.
+	 * @return salEytt vefsíða sem segir notanda að íþróttasalnum
+	 * hafi verið eytt.
+	 */
 	@RequestMapping(value = "/eydaSport", method = RequestMethod.POST)
 	public String removeSport(@RequestParam(value = "id")int id) {
 		searchService.removeSport(id);
 		return "demo/salEytt";
 	}
 	
+	/*
+	 * Klasi sem gerir notanda kleyft að breyta upplýsingum um 
+	 * veislusalinn sem hann er með skráðann inn á síðunni.
+	 * 
+	 * @param id          Id númer sals
+	 * @param nafn        Nafn sals
+	 * @param locNr       Staðsetning sals
+	 * @param street      Götuheiti sals
+	 * @param price       Verð sals
+	 * @param maxppl      Hámarksfjöldi sals
+	 * @param phonenr     Símanúmer sals
+	 * @param email       Netfang sals
+	 * @param description Lýsing sals
+	 * @param origLoc     Upprunaleg staðsetning sals
+	 * @param model       Módel með attributes
+	 * @return salBreytt vefsíða sem staðfestir að sal hafi verið eytt.
+	 */
 	@RequestMapping(value = "/breytaSal", method = RequestMethod.POST)
 	public String editBanquet(@RequestParam(value = "id")int id,
 							  @RequestParam(value = "nafn")String nafn,
@@ -123,6 +172,22 @@ public class ChangeController {
 		return "demo/salBreytt";
 	}
 	
+	/*
+	 * Klasi sem gerir notanda kleyft að breyta upplýsingum um 
+	 * íþróttasalinn sem hann er með skráðann inn á síðunni.
+	 * 
+	 * @param id          Id númer sals
+	 * @param nafn        Nafn sals
+	 * @param locNr       Staðsetning sals
+	 * @param street      Götuheiti sals
+	 * @param price       Verð sals
+	 * @param phonenr     Símanúmer sals
+	 * @param email       Netfang sals
+	 * @param description Lýsing sals
+	 * @param origLoc     Upprunaleg staðsetning sals
+	 * @param model       Módel með attributes
+	 * @return salBreytt vefsíða sem staðfestir að sal hafi verið eytt.
+	 */
 	@RequestMapping(value = "/breytaSport", method = RequestMethod.POST)
 	public String editSport(@RequestParam(value = "id")int id,
 							@RequestParam(value = "nafn")String nafn,

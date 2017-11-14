@@ -8,7 +8,6 @@ import is.hi.byrjun.services.SearchService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +38,7 @@ public class ProgramController {
 	SearchService searchService;
 
 	/*
-	 * Biður notandann um leitarupplýsingar, tegund sals, staðsetningu
+	 * Biður notandann um leitarupplýsingar, tegund sals, staðsetningu,
 	 * og fjölda.
 	 * 
 	 * @return vefsíða með spurningum.
@@ -137,7 +136,7 @@ public class ProgramController {
 	 * síðan um persónuupplýsingar notanda fyrir bókun salsins.
 	 * 
 	 * @param nr    Id númer veislusals sem var valinn
-	 * @param model Módel með attributum
+	 * @param model Módel með attributes
 	 * @return Vefsíða sem birtir upplýsingar um veislusal
 	 */
 	@RequestMapping(value = "/bokaSal", method = RequestMethod.POST)
@@ -214,7 +213,7 @@ public class ProgramController {
 	 * @param mail     Netfang notanda
 	 * @param phNr     Símanúmer notanda
 	 * @param id       Id númer íþróttasals
-	 * @param model    Módel með attributum
+	 * @param model    Módel með attributes
 	 * return Vefsíða sem þakkar notandanum fyrir viðskiptin
 	 */
 	@RequestMapping(value = "/sportStadfest", method = RequestMethod.POST)
@@ -232,15 +231,35 @@ public class ProgramController {
 	}
 	
 	/*
-	 * Það sem kemur fyrir neðan þetta comment eru notendatilvik sem enn er verið að vinna að
-	 * fyrir verkefni 4
+	 * Takki sem skilar vefsíðu þar sem notandi getur srkáð nýjan sal.
+	 * 
+	 * @return vefsíðan newSalur.
 	 */
-	
 	@RequestMapping(value = "/nyrSalur")
 	public String nyrSalur() {
 		return "demo/newSalur";
 	}
 	
+	/*
+	 * Tekur við upplýsingum frá notanda og og sendir í viðeigandi gagnagrunn
+	 * fyrir hvaða sal notandi er að búa til, segir síðan notanda að bókun hafi
+	 * verið staðfest.
+	 * 
+	 * @param chosen        Tegund sals
+	 * @param name          Nafn sals
+	 * @param loc           Staðsetning sals
+	 * @param streetAddrs   Götuheiti sals
+	 * @param price         Verð sals
+	 * @param maxppl        Hámarksfjöldi sals
+	 * @param phoneNr       Símanúmer sals
+	 * @param email         Netfang sals
+	 * @param description   Lýsing sals
+	 * @param key           Lykilorð sals
+	 * @param model         Módel með attributes
+	 * 
+	 * @return skraLokid vefsíða sem segir notanda að skráning sals hafi tekist.
+	 * 
+	 */
 	@RequestMapping(value = "/skraSal")
 	public String skraSal(@RequestParam(value = "myradio", required = true)int chosen,
 						  @RequestParam(value = "heiti", required = true)String name,
