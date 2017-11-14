@@ -1,6 +1,5 @@
 package is.hi.byrjun.model;
 
-import java.sql.Date;
 
 /**
  * 
