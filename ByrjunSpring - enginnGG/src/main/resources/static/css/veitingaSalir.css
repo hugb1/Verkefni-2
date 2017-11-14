@@ -623,6 +623,13 @@ textarea {
 	font-size: 25px;
 }
 
+.villuTexti {
+	color: white;
+	text-align:center;
+	font-weight: bold;
+	font-size: 25px;
+}
+
 .takkFyrirTexti {
 	color:white;
 	text-align:center;
