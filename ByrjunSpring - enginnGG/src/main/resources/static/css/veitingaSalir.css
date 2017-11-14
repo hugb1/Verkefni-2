@@ -43,11 +43,8 @@ footer {
 .salirIMG {
 	position:relative;
 	top: 20px;
-	right: -40%;
-
+	left: 38.2%;
 	width: 357px;
-	height: 300x;
-
 }
 
 
@@ -312,8 +309,7 @@ option:first {
 	font-size: 18px;
 	font-weight:bold;
 	text-align:center;
-	position: absolute;
-    left: 43.6%;
+
 }
 
 .facebook, .twitter {
@@ -333,7 +329,7 @@ option:first {
 .leitarTakkar {
 	display: flex;
 	flex-direction: row;
-	left: 35%;
+	left: 33.3%;
 	align-items: center;
 	position: absolute;
 }
