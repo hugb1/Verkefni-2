@@ -83,10 +83,7 @@
         </section>
         <section class="infoSection">
         	<div class="skraLokidInfo">
-        		<p class="skraningTokstTexti">Breyting tókst!</p>
-        	<form action="/demo/search">
-        		<button class="stadfesta2" type="submit" name="Submit" value="Aftur á byrjunarsíðu">Aftur á upphafssíðu</button>
-			</form>
+        		<p class="skraningTokstTexti">Breyting á sal tókst!</p>
         	</div>
         </section>
         

@@ -84,7 +84,6 @@
         </section>
         <section class="infoSection">
         	<div class="infoInfoNyrSalur">
-				<h1>Skráningar síða</h1>
 				<form class="LoL4" action="/demo/breytaSport" method="post">
 				<p class="salurHausTexti">Breyttu upplýsingum um salinn hér!</p>
             			

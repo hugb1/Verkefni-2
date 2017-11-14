@@ -84,7 +84,7 @@
         </section>
         <section class="infoSection">
         	<div class="infoInfoNyrSalur">
-				<h1>Skráningar síða</h1>
+				
 				<form class="LoL4" action="/demo/skraSal" method="post">
 				<p class="salurHausTexti">Fylltu inn eftirfarandi upplýsingar til að skrá þinn sal!</p>
 				
