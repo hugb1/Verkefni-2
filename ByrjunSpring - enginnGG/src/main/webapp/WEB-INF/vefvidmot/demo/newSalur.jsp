@@ -103,8 +103,8 @@
 								<option name=one value="1">Staðsetning</option>
   								<option name=one value="1">Reykjavík</option>
   								<option name=two value="2">Hafnarfjörður</option>
-  								<option name=three value="3">Garðsbær</option>
-  								<option name=four value="4">Kópsvogur</option>
+  								<option name=three value="3">Garðabær</option>
+  								<option name=four value="4">Kópavogur</option>
   							</select> 
   						</div>
 
