@@ -400,8 +400,11 @@ label {
 	font-weight:bold;
 }
 .infoInfoNyrSalur {
-	display:Flex;
-	padding: 5% 5%;
+    display: Flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
 
 .fLuL {
