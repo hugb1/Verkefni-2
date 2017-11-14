@@ -1,4 +1,4 @@
-/* almennt dót */
+/* Body, header, section and footer */
 
 body {
 	margin: 0;
@@ -20,7 +20,7 @@ footer {
 
 }
 
-/*haus section*/
+/*haus svæði*/
 
 .headerSection {
 
@@ -106,6 +106,7 @@ option:first {
 
 }
 
+/*Taflan þegar maður leitaf af sölum*/
 .locationID{
     padding: 0;
     margin: 0;
@@ -320,7 +321,7 @@ option:first {
 
 }
 
-/*LoL eru FORMS*/
+/*Forms*/
 
 .LoL1 {
 	display: flex;
@@ -627,11 +628,11 @@ textarea {
 	font-size: 20px;
 }
 
-/*Bóka veislusal*/
+/*Bóka veislusali og sportsali*/
 
 .infoInfoBokasal {
     padding-left: 30%;
-    padding-top: 5%;
+    padding-top: 2%;
     padding-bottom: 5%;
 }
 .infosalurBox {
