@@ -10,10 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 // Athugið vel að þessi import séu rétt 
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.hamcrest.Matchers.containsString;
 /**
  *
  * @author Pétur Logi Pétursson

@@ -35,7 +35,7 @@ public interface BanquetRepository {
 					int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
-	 * Athugar hvort ID númer Veitingasals og key eigi saman.
+	 * Athugar hvort ID númer veitingasals og key eigi saman.
 	 */
 	Banquet verifyBanquet(int id, String key);
 	
@@ -44,5 +44,8 @@ public interface BanquetRepository {
 	 */
 	void removeBanquet(int id);
 	
+	/*
+	 * Breytir upplýsingum um veislusal í gagnagrunni
+	 */
 	void changeBanquet(Banquet updated);
 }

@@ -1,6 +1,5 @@
 package is.hi.byrjun.services;
 
-import java.sql.Date;
 import java.util.List;
 import is.hi.byrjun.model.Banquet;
 import is.hi.byrjun.model.BanquetBookings;
@@ -34,7 +33,9 @@ public interface SearchService {
 	/*
 	 * Athugar hvort valið hafi verið veitingasal eða íþróttahús.
 	 * 
-	 * 
+	 * @param chosen Tegund sals
+	 * @return skilar true ef valinn er veitingasalur, false ef valinn er
+	 * íþróttasalur.
 	 */
 	boolean checkChosen(int chosen);
 	
@@ -43,6 +44,7 @@ public interface SearchService {
 	 * 
 	 * @param list   Listi af íþróttasölum
 	 * @param loc    Staðsetning íþróttasala
+	 * 
 	 * @return Skilar lista af íþróttasölum sem eiga við
 	 */
 	List<SportVenues> searchSportVenues(List<SportVenues> list, String loc);
@@ -79,41 +81,111 @@ public interface SearchService {
 	 */
 	void addSportVenuesBooking(SportVenuesBookings book);
 
+	/*
+	 * Sækir lista með öllum upplýsingum um alla veislusali
+	 * 
+	 * @return listi af veitingasölum
+	 */
 	List<Banquet> getAllBanq();
 
+	/*
+	 * Sækir lista með öllum upplýsingum um alla íþróttasali
+	 * 
+	 * @return listi af íþróttasölum
+	 */
 	List<SportVenues> getAllSport();
 	
 	/*
 	 * Bætir við veislusal með gefnar upplýsingar í gagnagrunninn.
+	 * 
+	 * @param name        Nafn veislusals
+	 * @param loc         Staðsetning veislusals
+	 * @param streetAddrs Götuheiti veislusals
+	 * @param price       Verð veislusals
+	 * @param maxppl      Hámarksfjöldi veislusals
+	 * @param phoneNr     Símanúmer veislusals
+	 * @param email       Netfang veislusals
+	 * @param key         Lykilorð veislusals
+	 * @param description Lýsing veislusals
+	 * 
+	 * @return result, id númer veislusals
 	 */
 	int addBanquet(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
-	 * Bætir við Íþróttasal með gefnar ulppýsingar í gagnagrunninn.
+	 * Bætir við Íþróttasal með gefnar upplýsingar í gagnagrunninn.
+	 * 
+	 * @param name        Nafn íþróttasals
+	 * @param loc         Staðsetning íþróttasals
+	 * @param streetAddrs Götuheiti íþróttasals
+	 * @param price       Verð íþróttasals
+	 * @param maxppl      Hámarksfjöldi íþróttasals
+	 * @param phoneNr     Símanúmer íþróttasals
+	 * @param email       Netfang íþróttasals
+	 * @param key         Lykilorð íþróttasals
+	 * @param description Lýsing íþróttasals
+	 * 
+	 * @return result Id númer íþróttasals
 	 */
 	int addSport(String name, String loc, String streetAddrs, int price,
 			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
 	 * Athugar hvort ID númer Veitingasals og key eigi saman.
+	 * 
+	 * @param id  Id númer veislusals
+	 * @param key Lykilorð veislusals
+	 * 
+	 * @return temp Skilar veislusal sem passar við upplýsngar sem
+	 * hafa verið gefnar af notanda.
 	 */
 	Banquet verifyBanquet(int id, String key);
 	
 	/*
 	 * Athugar hvort ID númer Íþróttasals og key eigi saman.
+	 * 
+	 * @param id  Id númer íþróttasals
+	 * @param key Lykilorð íþróttasals
+	 * 
+	 * @return temp Skilar íþróttasal sem passar við upplýsingar sem
+	 * hafa verið gefnar af notanda.
 	 */
 	SportVenues verifySport(int id, String key);
 
+	/*
+	 * Eyðir veislusal úr gagnagrunni
+	 * 
+	 * @param id Id númer veislusals
+	 */
 	void removeBanquet(int id);
 
+	/*
+	 * Eyðir íþróttasal úr gagnagrunni
+	 * 
+	 * @param id Id númer íþróttasals
+	 */
 	void removeSport(int id);
 	
+	/*
+	 * Breytir upplýsingum um veislusali
+	 * 
+	 * @param updated Uppfærður 
+	 */
 	void editBanquet(Banquet updated);
 	
+	/*
+	 * Breytir upplýsingum um íþróttasali
+	 */
 	void editSport(SportVenues updated);
 
+	/*
+	 * Finnur hvaða dagsetningar eru bókaðar fyrir veislusali
+	 */
 	List<String> findBookedBanquetDates(Banquet salur);
 	
+	/*
+	 * Finnur hvaða dagsetningar eru bókaðar fyrir íþróttasali
+	 */
 	List<String> checkAvalibleSport(SportVenues sport);
 }
