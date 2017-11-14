@@ -178,7 +178,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("DELETE FROM banquets WHERE banquetnumber = " + id);
-			ps.executeQuery();
+			ps.execute();
 			ps.close();
 		} catch (Exception e) {
 			e.printStackTrace();

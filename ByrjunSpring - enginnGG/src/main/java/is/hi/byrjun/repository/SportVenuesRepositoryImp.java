@@ -177,7 +177,7 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("DELETE FROM sportvenues WHERE sportvenuenumber = " + id);
-			ps.executeQuery();
+			ps.execute();
 			ps.close();
 		} catch (Exception e) {
 			e.printStackTrace();
