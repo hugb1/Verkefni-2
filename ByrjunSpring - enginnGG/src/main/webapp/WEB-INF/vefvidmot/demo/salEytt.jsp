@@ -83,11 +83,9 @@
             </div>
         </section>
         <section class="infoSection">
-        	<div class="infoInfoLokasida">
-    			<p class="PontunLokidTexti">Sal hefur verið eytt!</p>
-       			<form action="/demo/search">
-					<input type = "submit" name = "Submit" value = "Aftur á byrjunarsíðu" />
-				</form>
+         	<div class="skraLokidInfo">
+        		<p class="skraningTokstTexti">Salnum hefur verið eytt!</p>
+
         	</div>
         </section>
         

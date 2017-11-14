@@ -1,3 +1,4 @@
+/* almennt dót */
 
 body {
 	margin: 0;
@@ -19,6 +20,8 @@ footer {
 
 }
 
+/*haus section*/
+
 .headerSection {
 
 
@@ -30,6 +33,7 @@ footer {
     justify-content: space-between;
     flex-wrap:wrap;
 }
+
 .loginToAdmin {
 	left: 75%;
 	position: relative;
@@ -43,7 +47,7 @@ footer {
 .salirIMG {
 	position:relative;
 	top: 20px;
-	left: 38.2%;
+	left: 37%;
 	width: 357px;
 }
 
@@ -329,10 +333,11 @@ option:first {
 .leitarTakkar {
 	display: flex;
 	flex-direction: row;
-	left: 33.3%;
+	left: 31.5%;
 	align-items: center;
 	position: absolute;
 }
+
 .LoL {
 	display: flex;
 	flex-direction: row;
@@ -352,7 +357,7 @@ option:first {
 
 .LoL4 {
 	width:50%;
-	margin-left: 15%
+	margin-left: 25%
 }
 
 .LoL5 {
@@ -564,6 +569,10 @@ textarea {
     display:block;
 }
 
+.stadfesta2:hover{
+	background-color: #45a049
+}
+
 .stadfesta:hover{
 	background-color: #45a049
 }
@@ -592,7 +601,8 @@ textarea {
 /*SkraLokid*/
 
 .skraLokidInfo {
-	padding: 3% 5%;
+	padding-top: 2%;
+	padding-bottom: 4%;
 }
 
 .skraningTokstTexti {
@@ -667,7 +677,6 @@ textarea {
 	color:white;
 	font-weight:bold;
 	font-size:30px;
-	padding-left:15%
 }
 
 
