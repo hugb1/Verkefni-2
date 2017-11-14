@@ -34,7 +34,7 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	private final String driver = "org.postgresql.Driver";
 	private final String userName = "postgres";
 	private final String password = "123456";
-	
+
 	
 	// Connection to Database
 	public Connection connect() {

@@ -93,7 +93,7 @@
         </main>
         <footer>
         	<div class="followUs">
-        		<p>Follow us for more information!<p>
+        		<p>Fylgið okkur á samfélagsmiðlum!<p>
         		<img class="facebook" src="https://notendur.hi.is/~vij7/asdf/facebook-icon@3x.png" alt="facebook icon" height="42" width="42">
         		<img class="twitter" src="https://notendur.hi.is/~vij7/asdf/twitter-icon@3x.png" alt="facebook icon" height="42" width="42">
         		
