@@ -170,22 +170,34 @@ public interface SearchService {
 	/*
 	 * Breytir upplýsingum um veislusali
 	 * 
-	 * @param updated Uppfærður 
+	 * @param updated Uppfærður veislusalur
 	 */
 	void editBanquet(Banquet updated);
 	
 	/*
 	 * Breytir upplýsingum um íþróttasali
+	 * 
+	 * @param updated Uppfærður íþróttasalur
 	 */
 	void editSport(SportVenues updated);
 
 	/*
 	 * Finnur hvaða dagsetningar eru bókaðar fyrir veislusali
+	 * 
+	 * @param salur Id númer veislusals
+	 * 
+	 * @return unavalible Skilar lista af dagsetningum sem eru
+	 * bókaðar af tilteknum veislusal.
 	 */
 	List<String> findBookedBanquetDates(Banquet salur);
 	
 	/*
 	 * Finnur hvaða dagsetningar eru bókaðar fyrir íþróttasali
+	 * 
+	 * @param sport Id númer íþróttasals.
+	 * 
+	 * @return unavalible Skilar lista af dagsetningum sem eru
+	 * bókaðar af tilteknum íþróttasal.
 	 */
 	List<String> checkAvalibleSport(SportVenues sport);
 }
