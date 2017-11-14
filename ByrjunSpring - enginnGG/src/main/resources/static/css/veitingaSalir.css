@@ -633,6 +633,7 @@ textarea {
     position: absolute;
     left: 8%;
     padding-top: 10%;
+
 }
 
 .infosalurBox22 {
@@ -641,11 +642,12 @@ textarea {
     position: absolute;
     right: 16%;
     padding-top: 11%;
+    width: 21em;
 }
 
 .infoBoxTexti22 {
-	font-size:20px;
-	line-height: 5px;
+	font-size: 20px;
+	line-height: 25px;
 }
 
 .salurBokBok {
