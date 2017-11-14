@@ -130,7 +130,7 @@
   						</div>
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
   						<div class="salurDescript"> 
-  							<textarea id=lysing" name="lysing" type="text" value = "${banquet.getDescription()}"></textarea>
+  							<input id="lysing" name="description" type="text" maxlength="600" value="${banquet.getDescription()}"></input>
   						</div>
   						<div class="drasl2">
   							<input type="hidden" name="id" value = "${banquet.getId()}">

@@ -125,7 +125,7 @@
   						</div>
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
   						<div class="salurDescript"> 
-  							<textarea id=lysing" name="lysing" type="text" value = "${sportvenue.getDescription()}"></textarea>
+  							<input id="lysing" name="description" type="text" maxlength="600" value="${sportvenue.getDescription()}"></input>
   						</div>
   						
   						<div class="drasl2">
