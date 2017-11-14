@@ -129,8 +129,8 @@
   							<input id="netfang" name="email" type="email"  value = "${banquet.getEmail()}">
   						</div>
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
-  						<div class="salurDescript"> 
-  							<input id="lysing" name="description" type="text" maxlength="600" value="${banquet.getDescription()}"></input>
+  						<div class="salurdescript"> 
+  							<textarea id = "lysing" name="lysing" maxlength="600">${banquet.getDescription()}</textarea>
   						</div>
   						<div class="drasl2">
   							<input type="hidden" name="id" value = "${banquet.getId()}">
