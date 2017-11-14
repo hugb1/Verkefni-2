@@ -93,7 +93,7 @@ public interface SearchService {
 	 * Bætir við Íþróttasal með gefnar ulppýsingar í gagnagrunninn.
 	 */
 	int addSport(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key);
+			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
 	 * Athugar hvort ID númer Veitingasals og key eigi saman.
@@ -113,7 +113,7 @@ public interface SearchService {
 					 int price, int maxppl, int phoneNr, String email, String description);
 	
 	void editSport(int id, String name, String loc, String streetAddrs,
-					 int price, int phoneNr, String email);
+					 int price, int phoneNr, String email, String description);
 
 	List<String> findBookedBanquetDates(Banquet salur);
 	

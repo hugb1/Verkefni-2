@@ -103,8 +103,8 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public int addSport(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key) {
-		return sportRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+			int maxppl, int phoneNr, String email, String key, String description) {
+		return sportRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key, description);
 		
 	}
 
@@ -139,8 +139,8 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public void editSport(int id, String name, String loc, String streetAddrs, int price, int phoneNr,
-			String email) {
-		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email);
+			String email, String description) {
+		sportRep.changeSport(id, name, loc, streetAddrs, price, phoneNr, email, description);
 		
 	}
 

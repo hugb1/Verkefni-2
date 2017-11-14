@@ -22,7 +22,7 @@ public class SportVenues {
 	private String description;
 
 	public SportVenues(int id, String name, String location, String streetAddrs,
-						int price, int phonenr, String email, String descript) {
+						int price, int phonenr, String email, String description) {
 		this.sportvenuenumber = id;
 		this.name = name;
 		this.location = location;
@@ -30,7 +30,7 @@ public class SportVenues {
 		this.price = price;
 		this.phonenr = phonenr;
 		this.email = email;
-		this.description = descript;
+		this.description = description;
 	}
 	
 	public int getId() {
@@ -93,7 +93,7 @@ public class SportVenues {
 		return description;
 	}
 	
-	public void setDescription(String descript) {
-		this.description = descript;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

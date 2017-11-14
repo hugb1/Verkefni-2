@@ -23,7 +23,7 @@ public interface SportVenuesRepository {
 	 * Bætir við sportsal með gefnum uppýsingum í gangagrunn
 	 */
 	int addNewSport(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key);
+			int maxppl, int phoneNr, String email, String key, String description);
 	
 	/*
 	 * Athugar hvort ID númer sportsals og key eigi saman.
@@ -36,5 +36,5 @@ public interface SportVenuesRepository {
 	void removeSport(int id);
 	
 	void changeSport(int sportvenuenumber, String name, String loc, String streetAddrs, int price,
-			int phonenr, String email);
+			int phonenr, String email, String description);
 }
