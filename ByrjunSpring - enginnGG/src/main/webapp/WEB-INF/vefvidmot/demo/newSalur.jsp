@@ -110,12 +110,12 @@
 
   						<label for="nafn">Nafn á sal</label>
   						<div class="salurNafn">
-  							<input id="nafn" name="heiti" type="text" required minlength="1" maxlength="30" placeholder="Name of place" </label>
+  							<input id="nafn" name="heiti" type="text" required minlength="1" maxlength="30" placeholder="Name of place">
   						</div>
   						
   						<label for="gata">Götuheiti</label>
   						<div class="salurGata">
-  							<input id="gata" name="streetAddress" type="text" required minlength="1" maxlength="30" placeholder="Street" </label>
+  							<input id="gata" name="streetAddress" type="text" required minlength="1" maxlength="30" placeholder="Street">
   						</div>
   						
   						<label for="fjoldi">Max fjöldi</label>

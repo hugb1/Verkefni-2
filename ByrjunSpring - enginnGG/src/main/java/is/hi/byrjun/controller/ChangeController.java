@@ -73,7 +73,7 @@ public class ChangeController {
 							  @RequestParam(value = "maxppl")int maxppl,
 							  @RequestParam(value = "phonenr")int phonenr,
 							  @RequestParam(value = "email")String email,
-							  @RequestParam(value = "description", required = true)String description,
+							  @RequestParam(value = "lysing")String description,
 							  @RequestParam(value = "origLoc")String origLoc, Model model) {
 		String loc;
 		switch(locNr) {
@@ -94,7 +94,8 @@ public class ChangeController {
 		default :
 			throw new IllegalArgumentException("Invalid Location");
 		}
-		searchService.editBanquet(id, nafn, loc, street, price, maxppl, phonenr, email, description);
+		Banquet changedBanq = new Banquet(id, nafn, loc, street, price, maxppl, phonenr, email, description);
+		searchService.editBanquet(changedBanq);
 		return "demo/salBreytt";
 	}
 	
@@ -106,7 +107,7 @@ public class ChangeController {
 							@RequestParam(value = "price")int price,
 							@RequestParam(value = "phonenr")int phonenr,
 							@RequestParam(value = "email")String email,
-							@RequestParam(value = "description", required = true)String description,
+							@RequestParam(value = "lysing")String description,
 							@RequestParam(value = "origLoc")String origLoc, Model model) {
 		String loc;
 		switch(locNr) {
@@ -127,7 +128,8 @@ public class ChangeController {
 		default :
 			throw new IllegalArgumentException("Invalid Location");
 		}
-		searchService.editSport(id, nafn, loc, street, price, phonenr, email, description);
+		SportVenues changedSport = new SportVenues(id, nafn, loc, street, price, phonenr, email, description);
+		searchService.editSport(changedSport);
 		return "demo/salBreytt";
 	}
 }

@@ -44,11 +44,5 @@ public interface BanquetRepository {
 	 */
 	void removeBanquet(int id);
 	
-	/*
-	 * Eyðir íþróttasal úr gagnagrunni.
-	 */
-	void removeSport(int id);
-	
-	void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String description);
+	void changeBanquet(Banquet updated);
 }

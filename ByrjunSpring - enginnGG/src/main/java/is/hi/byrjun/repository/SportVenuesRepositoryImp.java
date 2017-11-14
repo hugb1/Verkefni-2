@@ -186,21 +186,20 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	}
 		
 	// Update Sportvenues in database
-	public void changeSport(int sportvenuenumber, String name, String loc, String streetAddrs, int price,
-			int phoneNr, String email, String description) {
+	public void changeSport(SportVenues updated) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("UPDATE sportvenues SET name = ?,"
 					+ "location = ?, street = ?, price = ?, phonenr = ?,"
-					+ "email = ?, description = ? WHERE sportvenuenumber = ?");
-			ps.setString(1, name);
-			ps.setString(2, loc);
-			ps.setString(3, streetAddrs);
-			ps.setInt(4, price);
-			ps.setInt(5, phoneNr);
-			ps.setString(6, email);
-			ps.setInt(7, sportvenuenumber);
-			ps.setString(8, description);
+					+ "email = ?, " + "description = ? WHERE sportvenuenumber = ?");
+			ps.setString(1, updated.getName());
+			ps.setString(2, updated.getLocation());
+			ps.setString(3, updated.getAddress());
+			ps.setInt(4, updated.getPrice());
+			ps.setInt(5, updated.getPhonenr());
+			ps.setString(6, updated.getEmail());
+			ps.setString(7, updated.getDescription());
+			ps.setInt(8, updated.getId());
 			
 			// Execute the prepared statement update
 			ps.executeUpdate();

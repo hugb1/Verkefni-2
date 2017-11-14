@@ -35,6 +35,5 @@ public interface SportVenuesRepository {
 	 */
 	void removeSport(int id);
 	
-	void changeSport(int sportvenuenumber, String name, String loc, String streetAddrs, int price,
-			int phonenr, String email, String description);
+	void changeSport(SportVenues updated);
 }
