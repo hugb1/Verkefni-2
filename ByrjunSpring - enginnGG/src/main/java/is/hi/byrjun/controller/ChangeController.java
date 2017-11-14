@@ -43,15 +43,15 @@ public class ChangeController {
 	}
 	
 	/*
-	 * Tekur við id og key frá notanda og kíkir á hvort það eigi við salinn sem
-	 * notandinn er með skráðann á síðuna.
+	 * Tekur við id og key frá notanda og athugar hvort það sé salur
+	 * í gagnagrunninum með eftirfarandi id og key.
 	 * 
 	 * @param chosen Tegund sals
 	 * @param id     Id númer sals
 	 * @param key    Lykilorð sals
 	 * @param model  Módel með attributes
 	 * 
-	 * @return breytaSal vefsíða sem segir notanda að upplýsingum um sal hafi verið breytt.
+	 * @return vefsíða sem gerir notanda kleift að breyta sal result.
 	 */
 	@RequestMapping(value = "/verify")
 	public String stadfesta(@RequestParam(value = "myradio", required = true)int chosen,
@@ -121,8 +121,8 @@ public class ChangeController {
 	}
 	
 	/*
-	 * Klasi sem gerir notanda kleyft að breyta upplýsingum um 
-	 * veislusalinn sem hann er með skráðann inn á síðunni.
+	 * Tekur við upplýsingum um veislusal og gerir notanda kleift að breyta upplýsingum 
+	 * sem hann er með skráðann inn á síðunni.
 	 * 
 	 * @param id          Id númer sals
 	 * @param nafn        Nafn sals
@@ -173,8 +173,8 @@ public class ChangeController {
 	}
 	
 	/*
-	 * Klasi sem gerir notanda kleyft að breyta upplýsingum um 
-	 * íþróttasalinn sem hann er með skráðann inn á síðunni.
+	 * Tekur við upplýsingum um íþróttasal og gerir notanda kleift að breyta upplýsingum 
+	 * sem hann er með skráðann inn á síðunni.
 	 * 
 	 * @param id          Id númer sals
 	 * @param nafn        Nafn sals
