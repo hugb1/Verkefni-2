@@ -250,7 +250,7 @@ public class ProgramController {
 						  @RequestParam(value = "maxppl", required = true)int maxppl,
 						  @RequestParam(value = "phone", required = true)int phoneNr,
 						  @RequestParam(value = "mail", required = true)String email,
-						  @RequestParam(value = "lysing", required = true)String description,
+						  @RequestParam(value = "description", required = true)String description,
 						  @RequestParam(value = "key", required = true)String key, Model model) {
 		
 		String location;

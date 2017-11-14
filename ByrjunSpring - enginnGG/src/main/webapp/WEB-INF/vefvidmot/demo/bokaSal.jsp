@@ -134,7 +134,7 @@
   						
   						<label for="datepicker">Dagsetning</label>
   						<div class="salurNafn">
-                <input id="datepicker" name="date" type="text">
+                <input id="datepicker" name="date" type="text" required minlength="10" maxlength="10" placeholder="Dagsetning" readonly="readonly" style="background:white;">
   						</div>
   						
   	  						<div>
