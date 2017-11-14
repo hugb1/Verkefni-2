@@ -124,8 +124,8 @@
   							<input id="netfang" name="email" type="email"  value = "${sportvenue.getEmail()}">
   						</div>
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
-  						<div class="salurDescript"> 
-  							<input id="lysing" name="description" type="text" maxlength="600" value="${sportvenue.getDescription()}"></input>
+  						<div class="salurdescript"> 
+  							<textarea id = "lysing" name="lysing" maxlength="600">${sportvenue.getDescription()}</textarea>
   						</div>
   						
   						<div class="drasl2">

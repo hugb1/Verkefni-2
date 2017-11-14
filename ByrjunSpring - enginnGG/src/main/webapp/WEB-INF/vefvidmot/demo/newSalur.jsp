@@ -139,8 +139,8 @@
   						</div>
   						
   						<label for="Lýsing á sal"> Lýsing á sal</lable>
-  						<div class="salurDescript"> 
-  							<input id="lysing" name="description" type="text" maxlength="600" placeholder="Lýsing á sal"></input>
+  						<div class="salurdescript"> 
+  							<textarea id = "lysing" name="description" maxlength="600"></textarea>
   						</div>
   						
   						<label for="lykill"> Lykilorð</lable>
