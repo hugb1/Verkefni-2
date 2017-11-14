@@ -43,11 +43,35 @@ public class ChangeController {
 							@RequestParam(value = "key", required = true)String key, Model model) {
 		if (chosen == 1) {
 			Banquet result = searchService.verifyBanquet(id, key);
+			int locNr = 0;
+			String location = result.getLocation();
+			if (location.equalsIgnoreCase("Reykjavík")) {
+				locNr = 1;
+			} else if (location.equalsIgnoreCase("Hafnarfjörður")) {
+				locNr = 2;
+			} else if (location.equalsIgnoreCase("Garðabær")) {
+				locNr = 3;
+			} else if (location.equalsIgnoreCase("Kópavogur")) {
+				locNr = 4;
+			}
 			model.addAttribute("banquet", result);
+			model.addAttribute("locNr", locNr);
 			return "demo/breytaSal";
 		} else {
 			SportVenues result = searchService.verifySport(id, key);
+			int locNr = 0;
+			String location = result.getLocation();
+			if (location.equalsIgnoreCase("Reykjavík")) {
+				locNr = 1;
+			} else if (location.equalsIgnoreCase("Hafnarfjörður")) {
+				locNr = 2;
+			} else if (location.equalsIgnoreCase("Garðabær")) {
+				locNr = 3;
+			} else if (location.equalsIgnoreCase("Kópavogur")) {
+				locNr = 4;
+			}
 			model.addAttribute("sportvenue", result);
+			model.addAttribute("locNr", locNr);
 			return "demo/breytaSport";
 		}
 	}
