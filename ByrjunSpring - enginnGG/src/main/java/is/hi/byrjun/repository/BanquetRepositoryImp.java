@@ -32,8 +32,8 @@ public class BanquetRepositoryImp implements BanquetRepository {
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "postgres";
-	private final String password = "123456";	
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";	
 	
 	// Connection to Database
 	public Connection connect() {
@@ -107,13 +107,13 @@ public class BanquetRepositoryImp implements BanquetRepository {
 
 	@Override
 	public int addNewBanquet(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key) {
+			int maxppl, int phoneNr, String email, String key, String description) {
 		int result = -1;
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO banquets ("
-					+ "name, location, street, price, maxppl, phonenr, email, key) VALUES ("
-					+ "?,?,?,?,?,?,?,?)");
+					+ "name, location, street, price, maxppl, phonenr, email, key, description) VALUES ("
+					+ "?,?,?,?,?,?,?,?,?)");
 			
 			ps.setString(1, name);
 			ps.setString(2, loc);
@@ -123,6 +123,7 @@ public class BanquetRepositoryImp implements BanquetRepository {
 			ps.setInt(6, phoneNr);
 			ps.setString(7, email);
 			ps.setString(8, key);
+			ps.setString(9, description);
 			
 			//Execute the prepared statement insert
 			ps.executeUpdate();

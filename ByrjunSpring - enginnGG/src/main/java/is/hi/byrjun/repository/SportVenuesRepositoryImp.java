@@ -32,8 +32,8 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	Connection con;
 	private final String url = "jdbc:postgresql://localhost:5432/bookingdb";
 	private final String driver = "org.postgresql.Driver";
-	private final String userName = "postgres";
-	private final String password = "123456";
+	private final String userName = "gunnarmarhardarson";
+	private final String password = "abcd1234";
 	
 	
 	// Connection to Database
@@ -106,13 +106,13 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 	
 	@Override
 	public int addNewSport(String name, String loc, String streetAddrs, int price, int maxppl, int phoneNr,
-			String email, String key) {
+			String email, String key, String description) {
 		int result = -1;
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO sportvenues ("
-					+ "name, location, street, price, phonenr, email, key) VALUES ("
-					+ "?,?,?,?,?,?,?)");
+					+ "name, location, street, price, phonenr, email, key, description) VALUES ("
+					+ "?,?,?,?,?,?,?,?)");
 			
 			ps.setString(1, name);
 			ps.setString(2, loc);
@@ -121,6 +121,7 @@ public class SportVenuesRepositoryImp implements SportVenuesRepository{
 			ps.setInt(5, phoneNr);
 			ps.setString(6, email);
 			ps.setString(7, key);
+			ps.setString(8, description);
 			
 			//Execute the prepared statement insert
 			ps.executeUpdate();

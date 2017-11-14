@@ -97,14 +97,14 @@ public class SearchServiceImp implements SearchService {
 
 	@Override
 	public int addBanquet(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key) {
-		return banquetRep.addNewBanquet(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+			int maxppl, int phoneNr, String email, String key, String description) {
+		return banquetRep.addNewBanquet(name, loc, streetAddrs, price, maxppl, phoneNr, email, key, description);
 	}
 
 	@Override
 	public int addSport(String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email, String key) {
-		return sportRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key);
+			int maxppl, int phoneNr, String email, String key, String description) {
+		return sportRep.addNewSport(name, loc, streetAddrs, price, maxppl, phoneNr, email, key, description);
 		
 	}
 
