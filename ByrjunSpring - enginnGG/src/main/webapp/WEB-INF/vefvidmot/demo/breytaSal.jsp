@@ -127,7 +127,10 @@
   						<div class="salurNetfang">
   							<input id="netfang" name="email" type="email"  value = "${banquet.getEmail()}">
   						</div>
-  						
+  						<label for="Lýsing á sal"> Lýsing á sal</lable>
+  						<div class="salurDescript"> 
+  							<textarea id=lysing" name="lysing" type="text" value = "${banquet.getDescription()}"></textarea>
+  						</div>
   						<div class="drasl2">
   							<input type="hidden" name="id" value = "${banquet.getId()}">
   						</div>

@@ -109,11 +109,9 @@ public interface SearchService {
 
 	void removeSport(int id);
 	
-	void editBanquet(int id, String name, String loc, String streetAddrs,
-					 int price, int maxppl, int phoneNr, String email);
+	void editBanquet(Banquet updated);
 	
-	void editSport(int id, String name, String loc, String streetAddrs,
-					 int price, int phoneNr, String email);
+	void editSport(SportVenues updated);
 
 	List<String> findBookedBanquetDates(Banquet salur);
 	

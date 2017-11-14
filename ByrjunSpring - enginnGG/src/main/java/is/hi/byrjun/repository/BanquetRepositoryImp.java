@@ -186,35 +186,23 @@ public class BanquetRepositoryImp implements BanquetRepository {
 		
 	}
 	
-	@Override
-	public void removeSport(int id) {
-		try {
-			Connection con = DriverManager.getConnection(url, userName, password);
-			PreparedStatement ps = con.prepareStatement("DELETE FROM sportvenues WHERE sportvenuenumber = " + id);
-			ps.executeQuery();
-			ps.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	// Update Banquets in database
 	@Override
-	public void changeBanquet(int banquetnumber, String name, String loc, String streetAddrs, int price,
-			int maxppl, int phoneNr, String email) {
+	public void changeBanquet(Banquet updated) {
 		try {
 			Connection con = DriverManager.getConnection(url, userName, password);
 			PreparedStatement ps = con.prepareStatement("UPDATE banquets SET name = ?,"
 					+ "location = ?, street = ?, price = ?, maxppl = ?, phonenr = ?,"
-					+ "email = ? WHERE banquetnumber = ?");
-			ps.setString(1, name);
-			ps.setString(2, loc);
-			ps.setString(3, streetAddrs);
-			ps.setInt(4, price);
-			ps.setInt(5, maxppl);
-			ps.setInt(6, phoneNr);
-			ps.setString(7, email);
-			ps.setInt(8, banquetnumber);
+					+ "email = ?," + "description = ? WHERE banquetnumber = ?");
+			ps.setString(1, updated.getName());
+			ps.setString(2, updated.getLocation());
+			ps.setString(3, updated.getAddress());
+			ps.setInt(4, updated.getPrice());
+			ps.setInt(5, updated.getMax());
+			ps.setInt(6, updated.getPhonenr());
+			ps.setString(7, updated.getEmail());
+			ps.setString(8, updated.getDescription());
+			ps.setInt(9, updated.getId());
 			
 			// Execute the prepared statement update
 			ps.executeUpdate();
