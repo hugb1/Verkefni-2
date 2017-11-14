@@ -95,6 +95,10 @@
 				<p class="infoBoxTexti">Sími: ${sportvenues.getPhonenr()}</p>
 				<p class="infoBoxTexti">Mail: ${sportvenues.getEmail()}</p>
 			</div>
+
+      <div class="infosalurBox22">
+        <p class="infoBoxTexti22">${sportvenues.getDescription()}
+      </div>
 			
         	<div class="infoInfoBokasal">
 				<form class="LoL6" action="/demo/sportStadfest" method="post">
