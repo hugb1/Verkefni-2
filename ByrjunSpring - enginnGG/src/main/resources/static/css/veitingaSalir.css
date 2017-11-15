@@ -37,9 +37,7 @@ footer {
 }
 
 .loginToAdmin {
-	left: 75%;
-	position: relative;
-	font-weight: bold;
+
 
 
 }
@@ -49,7 +47,7 @@ footer {
 .salirIMG {
 	position:relative;
 	top: 20px;
-	left: 37%;
+	left: 38%;
 	width: 357px;
 }
 
@@ -336,7 +334,7 @@ option:first {
 .leitarTakkar {
 	display: flex;
 	flex-direction: row;
-	left: 31.5%;
+	left: 33.5%;
 	align-items: center;
 	position: absolute;
 }
@@ -578,6 +576,18 @@ textarea {
 
 .stadfesta:hover{
 	background-color: #45a049
+}
+
+.innskraLog{
+	background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left:70%;
+    top:1%;
+    font-weight:bold;
+
 }
 
 .innskra{

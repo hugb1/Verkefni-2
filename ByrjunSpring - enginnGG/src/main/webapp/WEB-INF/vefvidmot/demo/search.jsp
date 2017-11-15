@@ -16,16 +16,18 @@
     <body>
     	<header>
     		<section class ="headerSection">
-    			<div class = "header1">
     				<div class = "loginToAdmin">
+    				<form action="/demo/innskra">
+						<div class="innskratakki">
+						<button class="innskraLog" name="1" type="submit" value="innskra">Innskrá</button>
+					</form>
     				</div>	
-    			</div>
     		</section>
    		 </header>
    		 <main>
    		 	<section class="GunnarSection">
+   		 	
    		 	<img class="salirIMG" src="https://notendur.hi.is/~vij7/asdf/salirLogo.jpg" alt="Salir.com logo">
-   		 
    			 </section>
    		<section class="searchSection">
 

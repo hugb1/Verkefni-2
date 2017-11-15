@@ -16,11 +16,12 @@
     <body>
     	<header>
     		<section class ="headerSection">
-    			<div class = "header1">
     				<div class = "loginToAdmin">
-    					
+    				<form action="/demo/innskra">
+						<div class="innskratakki">
+						<button class="innskraLog" name="1" type="submit" value="innskra">Innskrá</button>
+					</form>
     				</div>	
-    			</div>
     		</section>
    		 </header>
    		 <main>
@@ -152,11 +153,6 @@
   							<button class="stadfesta" type="submit" value="Staðfesta">Staðfesta </button>
 						</div>
 						
-				</form>
-				<form class="LoL2" action="/demo/innskra">
-					<div class="innskratakki">
-						<button class="innskra" name="1" type="submit" value="innskra">Innskrá</button>
-					</div>
 				</form>
         	</div>
         </section>
