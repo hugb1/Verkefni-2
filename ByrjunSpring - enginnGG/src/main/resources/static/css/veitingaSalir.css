@@ -45,10 +45,8 @@ footer {
 /*main*/
 
 .salirIMG {
-	position:relative;
-	top: 20px;
-	left: 38%;
-	width: 357px;
+	display: block;
+	margin: 0 auto;
 }
 
 
@@ -101,8 +99,9 @@ option:first {
     background-color: #982149;
 }
 
+/*forsidu forms*/
 .nytt1{
-
+	display:flex
 
 }
 
@@ -333,10 +332,10 @@ option:first {
 
 .leitarTakkar {
 	display: flex;
-	flex-direction: row;
-	left: 33.5%;
+	flex-direction:row;
+	flex-wrap: wrap;
 	align-items: center;
-	position: absolute;
+	margin: auto;
 }
 
 .LoL {
