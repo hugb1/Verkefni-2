@@ -13,12 +13,13 @@
     	<link rel="stylesheet" type="text/css" href="<c:url value="/css/veitingaSalir.css"/>"/>
 </head>
 <body>
-<section class ="headerSection">
-    			<div class = "header1">
+    		<section class ="headerSection">
     				<div class = "loginToAdmin">
-    					
+    				<form action="/demo/innskra">
+						<div class="innskratakki">
+						<button class="innskraLog" name="1" type="submit" value="innskra">Innskrá</button>
+					</form>
     				</div>	
-    			</div>
     		</section>
    		 </header>
    		 <main>

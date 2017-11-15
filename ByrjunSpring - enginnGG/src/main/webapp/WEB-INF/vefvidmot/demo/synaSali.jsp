@@ -20,11 +20,12 @@
     <body>
     	<header>
     		<section class ="headerSection">
-    			<div class = "header1">
     				<div class = "loginToAdmin">
-    					
-    				</div>
-    			</div>
+    				<form action="/demo/innskra">
+						<div class="innskratakki">
+						<button class="innskraLog" name="1" type="submit" value="innskra">Innskrá</button>
+					</form>
+    				</div>	
     		</section>
    		 </header>
    		 <main>
