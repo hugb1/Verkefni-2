@@ -6,3 +6,4 @@ Verkefni 6 í hugbúnaðarverkefni 1
 1. Postgresql gagnagrunnur (skrá fylgir með til að setja
    réttan gagnagrunn upp).
 2. Spring framework.
+
