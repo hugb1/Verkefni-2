@@ -1,5 +1,7 @@
 # Verkefni-2
-Verkefni 2 í hugbúnaðarverkefni 1
+Verkefni 6 í hugbúnaðarverkefni 1
 
+Það sem þarf til þess að keyra þetta forrit er:
 
-Er bara að gá hvort að ég geti commitað.
+1. Postgresql gagnagrunnur (fylgir með).
+2. Spring framework.
